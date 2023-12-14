@@ -1,0 +1,67 @@
+[
+  {
+    "username": "Titan_Mark",
+    "response": "A web developer is responsible for creating and maintaining websites. They write code using languages such as HTML, CSS, and JavaScript.",
+    "questionKey": "web developer"
+  },
+  {
+    "username": "Genius_Boi",
+    "response": "The basic responsibilities of a web developer include designing and building websites, creating and implementing web applications, testing and fixing bugs, and ensuring website performance and security. They may also collaborate with designers, marketers, and other stakeholders to create an optimal user experience.",
+    "questionKey": "web developer"
+  },
+  {
+    "username": "Tech_Guru_Jess",
+    "response": "As a web developer, you are responsible for the full development life cycle of websites and web applications. This includes understanding user requirements, creating technical specifications, writing clean and maintainable code, testing and debugging, and deploying and updating the website or application. Additionally, you may be responsible for ongoing optimization, scalability, security, and user experience testing and improvement.",
+    "questionKey": "web developer"
+  },
+  {
+    "username": "Scala_Ninja",
+    "response": "As a freelance web developer, you have the added responsibilities of managing your own workload, communicating effectively with clients, meeting deadlines, and managing your own finances and billing. You may also need to continually upskill in order to stay ahead of the latest trends and technologies in web development.",
+    "questionKey": "web developer"
+  },
+  {
+    "username": "Savvy_Marie",
+    "response": "A full stack web developer has a more comprehensive understanding of both front-end and back-end development. In addition to the responsibilities mentioned above, they may also be responsible for creating and integrating APIs, managing databases, and creating and managing server-side logic.",
+    "questionKey": "web developer"
+  },
+  {
+    "username": "Data_Science_Pro",
+    "response": "In addition to the responsibilities of a web developer, a team lead is also responsible for leading and mentoring a team of developers. This includes delegating tasks, providing guidance and feedback, fostering a positive and productive work environment, and ensuring the team is meeting project deadlines and delivering high-quality work.",
+    "questionKey": "web developer"
+  },
+  {
+    "username": "Savvy_Marie",
+    "response": "A client-side API runs on the client-side or user's device and is used to interact with the resources or data from a server. On the other hand, a server-side API runs on the server and is used to interact with the client or user's device. The main difference is where the API is running and who it is interacting with.",
+    "questionKey": "API"
+  },
+  {
+    "username": "Genius_Boi",
+    "response": "As someone who has worked mostly in backend development, I can say that the difference between client-side API and server-side API is pretty straightforward. Client-side APIs run on the client's device and interact with the server to access data, while server-side APIs run on the server and allow the client to interact with the server's data.",
+    "questionKey": "API"
+  },
+  {
+    "username": "Scala_Ninja",
+    "response": "As a freelancer developer with a background in the Arts, I have come to understand that the difference between client-side API and server-side API lies in their location and purpose. Client-side API is located on the client's device and is used to access data from the server, while server-side API is located on the server and is used to interact with the client's device.",
+    "questionKey": "API"
+  },
+  {
+    "username": "Savvy_Marie",
+    "response": "The core concepts of Object-Oriented Programming (OOP) include encapsulation, inheritance, and polymorphism. Encapsulation involves grouping data and functions together in an object to protect the data from outside access and modification. Inheritance allows objects to inherit properties and methods from a parent object. Polymorphism refers to the ability of an object to take on multiple forms. An example of encapsulation in OOP would be creating a `Person` object that contains the person's name and age, as well as methods for getting and setting those properties. An example of inheritance could be creating a `Student` object that inherits from the `Person` object and adds properties and methods specific to a student. An example of polymorphism could be creating multiple objects that all share a common interface, such as `Shape`, but have different implementations of a method, such as `calculateArea`.",
+    "questionKey": "object oriented programming"
+  },
+  {
+    "username": "Genius_Boi",
+    "response": "In OOP, the core concepts are encapsulation, inheritance, and polymorphism. Encapsulation refers to the bundling of data and functions that operate on that data within a single unit or object. Inheritance allows a new class to take on the properties and methods of an existing class. Polymorphism allows objects of different classes to be used interchangeably through a common interface. For example, encapsulation can be demonstrated by creating a class `Person` that has properties like name and age, and methods like `setName` and `getAge`. Inheritance can be shown by creating a `Student` class that inherits from the `Person` class and adds properties and methods specific to a student. Polymorphism can be illustrated by creating classes for different shapes, such as `Circle` and `Rectangle`, which both implement a method to calculate the area, but in different ways.",
+    "questionKey": "object oriented programming"
+  },
+  {
+    "username":"Data_Science_Pro",
+    "response":"The core principles of Object-Oriented Programming (OOP) are encapsulation, inheritance, and polymorphism. Encapsulation involves encapsulating the data and behavior of an object within a single unit, while inheritance enables a new class to inherit properties and methods from an existing class. Polymorphism refers to the ability of objects of different classes to be used interchangeably through a common interface. For instance, encapsulation could be demonstrated by creating an object for a person that contains their personal information such as name, age, and address, and methods for retrieving and updating that information. Inheritance could be demonstrated by creating a subclass for a student that inherits properties and methods from the person class and adds properties and methods specific to students. Polymorphism could be shown by creating multiple classes for different shapes, each with a unique implementation of a method to calculate the area.",
+    "questionKey":"object oriented programming"
+ },
+ {
+    "username":"OOPs_Wizard",
+    "response":"The fundamental concepts of Object-Oriented Programming (OOP) are encapsulation, inheritance, and polymorphism. Encapsulation is the act of bundling data and functions that operate on that data within a single unit or object. Inheritance is a mechanism that enables a new class to inherit properties and methods from an existing class. Polymorphism refers to the ability of objects of different classes to be used interchangeably through a common interface. For example, encapsulation can be demonstrated by creating a `Person` class that contains personal information like name and age, as well as methods for accessing and updating this information. Inheritance can be shown by creating a `Student` class that inherits from the `Person` class and adds properties and methods specific to students. Polymorphism can be demonstrated by creating different shape classes, such as `Circle` and `Rectangle`, that have a common interface for calculating area but different implementations.",
+    "questionKey":"object oriented programming"
+ }
+]

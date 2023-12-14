@@ -1,0 +1,26 @@
+[
+  {
+    "prompt": "What are the basic responsibilities of a web developer?"
+  },
+  {
+    "prompt": "What are the roles of HTML, CSS & JavaScript? Could you provide an example of their interaction?"
+  },
+  {
+    "prompt": "What is the difference between client-side API and a server-side API?"
+  },
+  {
+    "prompt": "What are something we could be mindful of when creating a context?"
+  },
+  {
+    "prompt": "What are the core concepts of object oriented programming? Can you provide examples of how they would be used?"
+  },
+  {
+    "prompt": "What is MVC? Why would a developer want to utilize it?"
+  },
+  {
+    "prompt": "What is the difference between scope and context in JavaScript?"
+  },
+  {
+    "prompt": "What are the components of MERN? What are some of the benefits of using the MERN stack?"
+  }
+]

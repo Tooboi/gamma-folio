@@ -1,0 +1,32 @@
+[
+  {
+    "username": "Maven_Maven",
+    "thoughts": "Good start! But it's worth mentioning that web developers also need to keep up with the latest technology and industry trends to stay competitive.",
+    "replyTo": "Titan_Mark",
+    "promptKey": "web developer"
+  },
+  {
+    "username": "Savvy_Marie",
+    "thoughts": "Your answer is correct, but it's important to note that web developers also need to be able to work well with a team and understand user experience design principles.",
+    "replyTo": "Titan_Mark",
+    "promptKey": "web developer"
+  },
+  {
+    "username": "Tech_Guru_Jess",
+    "thoughts": "While writing code is a big part of a web developer's role, it's also important to understand project management, testing and quality assurance, and to have strong problem-solving skills.",
+    "replyTo": "Titan_Mark",
+    "promptKey": "web developer"
+  },
+  {
+    "username": "Data_Science_Pro",
+    "thoughts": "It's also worth noting that web developers need to have strong communication skills to effectively communicate with clients, stakeholders, and other team members.",
+    "replyTo": "Titan_Mark",
+    "promptKey": "web developer"
+  },
+  {
+    "username": "The_React_Whizkid",
+    "thoughts": "Your answer provides a good foundation, but it's important to understand that web developers need to have a solid understanding of security and accessibility principles to ensure that websites are safe and usable for all users.",
+    "replyTo": "Titan_Mark",
+    "promptKey": "web developer"
+  }
+]

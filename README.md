@@ -1,70 +1,66 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub language count](https://img.shields.io/github/languages/count/eawiggans/bubble-up?color=73daca&logoColor=73daca)
+![GitHub top language](https://img.shields.io/github/languages/top/eawiggans/bubble-up?color=73daca&logo=javascript&logoColor=73daca)
+![GitHub](https://img.shields.io/github/license/eawiggans/bubble-up?color=73daca)
+![GitHub repo size](https://img.shields.io/github/repo-size/eawiggans/bubble-up?color=73daca&label=clone%20size)
 
-## Available Scripts
+# Bubble Up
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+A place to record your interview experiences and talk about them with your peers
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Have a record of your interviews
+- Chat with peers about their tech interview experience
+- Have all of your job prep solutions in one place
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+- If you want to develop this app yourself you first need to have [Node.js](https://nodejs.org/en/) installed and a [mongoDB](https://www.mongodb.com/) account set up
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- After you clone this repo, `npm i` in the root of the folder to install all the node packages (this will take a minute)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Then create a `.env` file in the root of the folder and add: `AUTH_SECRET='<your secret key>'`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Then run `npm run seed` to add template data to the app
 
-### `npm run eject`
+- Finally you can run `npm run develop` to open the app in development mode and play around
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+No installation necessary, please visit the following link to view the deployed site [Bubble Up]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- To use this site, you must first make an account and sign in
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- You can then view interview prompts, interviews, prompt solutions, and your own stats
 
-## Learn More
+- You also have the ability to log your interview experiences
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- You will be met with the following page with your username as the profile name
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![DEMO](./client/src/assets/DEMO.png)
 
-### Code Splitting
+## Credits
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- ChatGPT
 
-### Analyzing the Bundle Size
+- Leif Hetland
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Boring Avatars](https://github.com/boringdesigners/boring-avatars-service)
 
-### Making a Progressive Web App
+- [The Web School.](https://www.youtube.com/watch?v=WkREeDy2WQ4&ab_channel=TheWebSchool.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+This app is licensed under the [MIT License](./LICENSE)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## How to Contribute
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you would like to contribute, reach out on GitHub
