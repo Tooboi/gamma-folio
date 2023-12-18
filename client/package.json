@@ -2,7 +2,7 @@
   "name": "gamma-folio-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "gamma-folio-server.vercel.app",
+  "proxy": "https://gamma-folio-server.vercel.app",
   "engine": {
     "node": "16.16.0",
     "npm": "9.2.0"
