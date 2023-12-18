@@ -43,7 +43,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className='bg-stone-900 text-stone-200 h-screen'>
+        <div className='bg-stone-900 text-stone-200 h-screen grid-bg'>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
