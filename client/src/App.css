@@ -1,0 +1,316 @@
+:root {
+  --col-bg: #1a1b26;
+  --col-surface: #24283b;
+  --col-surface2: #414868;
+  --col-surface3: #565f89;
+  --col-p-200: #7dcfff;
+  --col-p-500: #7aa2f7;
+  --col-p-700: #bb9af7;
+  --col-s-200: #b4f9f8;
+  --col-s-500: #73daca;
+  --col-s-700: #9ece6a;
+  --col-on-surface: #c0caf5;
+  --col-on-primary: #1a1b26;
+  --col-on-secondary: #1a1b26;
+  --col-success: #2aa39a;
+  --col-danger: #ec4561;
+  --col-warning: #f8b425;
+  --col-info: #38a5f8;
+}
+.select-none {
+  -webkit-user-select: none;
+  user-select: none;
+}
+::placeholder {
+  color: var(--col-p-200);
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: var(--col-p-200);
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.select-none {
+  -webkit-user-select: none;
+  user-select: none;
+}
+.nav-bubble-logo {
+  width: 3rem;
+}
+.navbar .container img {
+  max-height: 3rem;
+}
+.full-dvh {
+  height: 100vh;
+}
+.force-v-center {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.home-page {
+  background-size: cover;
+  background-position: center;
+  height: 100dvh;
+}
+
+/* - Links */
+
+a h3 {
+  transition: color 140ms ease-in-out;
+}
+a:hover h3 {
+  color: var(--col-p-200);
+}
+a:active:focus h3 {
+  color: var(--col-p-500);
+}
+.signup-link {
+  color: var(--col-on-primary);
+}
+
+/* - Radio Buttons */
+
+svg {
+  fill: var(--col-on-surface);
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.homeForm input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+}
+input[type='radio'] + svg {
+  -webkit-transition: fill 160ms;
+  transition: fill 160ms;
+}
+input + svg {
+  cursor: pointer;
+}
+.svg-html input[type='radio']:hover + svg,
+.svg-html input[type='radio']:checked + svg,
+.svg-html input[type='radio']:focus + svg {
+  fill: #e44d26;
+}
+.svg-css input[type='radio']:hover + svg,
+.svg-css input[type='radio']:checked + svg,
+.svg-css input[type='radio']:focus + svg {
+  fill: #1572b6;
+}
+.svg-js input[type='radio']:hover + svg,
+.svg-js input[type='radio']:checked + svg,
+.svg-js input[type='radio']:focus + svg {
+  fill: #f0db4f;
+}
+.svg-react input[type='radio']:hover + svg,
+.svg-react input[type='radio']:checked + svg,
+.svg-react input[type='radio']:focus + svg {
+  fill: #61dafb;
+}
+.svg-easy input[type='radio']:hover + svg,
+.svg-easy input[type='radio']:checked + svg,
+.svg-easy input[type='radio']:focus + svg {
+  fill: #2aa39a;
+}
+.svg-med input[type='radio']:hover + svg,
+.svg-med input[type='radio']:checked + svg,
+.svg-med input[type='radio']:focus + svg {
+  fill: #f8b425;
+}
+.svg-hard input[type='radio']:hover + svg,
+.svg-hard input[type='radio']:checked + svg,
+.svg-hard input[type='radio']:focus + svg {
+  fill: #ec4561;
+}
+
+/* - Styles for profile page */
+
+.profile-subheads {
+  text-decoration: underline;
+}
+
+.user-card {
+  background-color: var(--col-bg) !important;
+}
+
+/* - Quiz page */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+}
+textarea {
+  min-width: 376px;
+  width: 900px;
+  max-width: 900px;
+  background-color: var(--col-surface);
+  border: 2px solid var(--col-surface3);
+  border-radius: 0.5rem;
+  color: var(--col-on-surface);
+}
+textarea:focus-visible {
+  outline: var(--col-surface3) auto 1px;
+  background-color: var(--col-surface2);
+}
+.custom-btn {
+  width: 128px;
+}
+
+/* - Card Adjustments */
+
+.max-376 {
+  max-width: 376px;
+}
+.max-576 {
+  max-width: 576px;
+}
+.max-960 {
+  max-width: 960px;
+}
+
+/* - Styles for Blog */
+
+.comment-section {
+  font-size: 0.75rem;
+}
+hr {
+  width: 100%;
+  background-color: var(--col-surface2);
+  height: 2px;
+  border: none;
+}
+.comment-header {
+  color: var(--col-p-200);
+}
+.comment-user-info {
+  color: var(--col-p-500);
+}
+.comment-body {
+  font-size: 0.85rem;
+}
+.blog-post .btn a {
+  color: var(--col-on-secondary);
+}
+.card-thin {
+  background-color: var(--col-surface2);
+  border: var(--line-2) solid var(--col-surface3);
+  border-radius: 0.5rem;
+}
+.corner-border {
+  display: inline;
+  color: var(--col-on-surface);
+  font-weight: 800;
+  font-size: 0.85rem;
+  background-color: var(--col-surface3);
+  border-top: var(--line-2) solid var(--col-surface3);
+  border-right: var(--line-2) solid var(--col-surface3);
+  border-bottom: var(--line-2) solid var(--col-surface3);
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  text-shadow: 1px 1px 2px var(--col-on-primary);
+}
+.plus-btn {
+  background-color: transparent;
+  border: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: var(--col-on-surface);
+  cursor: pointer;
+}
+.plus-btn:hover .plus-svg {
+  fill: var(--col-p-200);
+}
+.plus-btn:focus:active .plus-svg {
+  fill: var(--col-p-500);
+}
+.plus-svg {
+  height: 100%;
+}
+.plus-svg-2 {
+  height: 1.8rem;
+  fill: var(--col-p-500);
+}
+.plus-svg-2:hover {
+  fill: var(--col-p-200);
+}
+.plus-svg-2:focus:active {
+  fill: var(--col-p-500);
+}
+.custom-textarea {
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--col-surface);
+  border: 2px solid var(--col-surface3);
+  border-radius: 0.5rem;
+  color: var(--col-on-surface);
+}
+
+.custom-textarea:focus-visible {
+  outline: var(--col-surface3) auto 1px;
+  background-color: var(--col-surface2);
+}
+/* End styles for blog */
+
+/* Profile */
+
+.tabs {
+  background-color: var(--col-surface);
+  border-top: var(--line-2) solid var(--col-surface2);
+  border-left: var(--line-2) solid var(--col-surface2);
+  border-right: var(--line-2) solid var(--col-surface2);
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  cursor: pointer;
+  transition: margin 150ms ease-out;
+}
+.active-tabs {
+  background-color: var(--col-surface2);
+}
+.content {
+  display: none;
+}
+.content-active {
+  display: flex;
+}
+.profile-img {
+  border: var(--line-3) solid var(--col-surface3);
+  border-radius: 100%;
+}
+/* - Inputs */
+
+input {
+  background-color: var(--col-surface);
+  border: var(--line-2) solid var(--col-surface3);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  color: var(--col-on-surface);
+}
+input:focus-visible {
+  outline: var(--col-surface3) auto 1px;
+  background-color: var(--col-surface2);
+}
+
+/* - Interview */
+
+.interview-form input {
+  background-color: var(--col-surface);
+  border: var(--line-2) solid var(--col-surface3);
+  border-radius: 0.5rem;
+  width: 50%;
+}
+.interview-form input:focus-visible {
+  outline: var(--col-surface3) auto 1px;
+  background-color: var(--col-surface2);
+}
+
+/* - Stats */
+
+td {
+  background-color: var(--col-surface2);
+  border-radius: 0.25rem;
+}
