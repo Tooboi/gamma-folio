@@ -8,6 +8,10 @@ import Blog from './pages/Blog';
 import Quiz from './pages/Quiz';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Development from './pages/Development';
+import Render from './pages/Render';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './pages/Profile';
 import Prompt from './pages/Prompt';
@@ -45,6 +49,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/development" element={<Development />} />
+            <Route path="/render" element={<Render />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/me" element={<Profile />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/blog" element={<Blog />} />
