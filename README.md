@@ -1,8 +1,8 @@
 
-![GitHub language count](https://img.shields.io/github/languages/count/tooboi/gamma-folio?color=73daca&logoColor=73daca)
-![GitHub top language](https://img.shields.io/github/languages/top/tooboi/gamma-folio?color=73daca&logo=javascript&logoColor=73daca)
-![GitHub](https://img.shields.io/github/license/tooboi/gamma-folio?color=73daca)
-![GitHub repo size](https://img.shields.io/github/repo-size/tooboi/gamma-folio?color=73daca&label=clone%20size)
+![GitHub language count](https://img.shields.io/github/languages/count/Tooboi/gamma-folio?color=73daca&logoColor=73daca)
+![GitHub top language](https://img.shields.io/github/languages/top/Tooboi/gamma-folio?color=73daca&logo=javascript&logoColor=73daca)
+![GitHub](https://img.shields.io/github/license/Tooboi/gamma-folio?color=73daca)
+![GitHub repo size](https://img.shields.io/github/repo-size/Tooboi/gamma-folio?color=73daca&label=clone%20size)
 
 # Bubble Up
 
