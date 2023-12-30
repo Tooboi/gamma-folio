@@ -1,7 +1,8 @@
 import FormSubmitButton from "@/components/FormSubmitButton";
 import { prisma } from "@/lib/db/prisma";
-import { google } from "googleapis";
+import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export const metadata = {
   title: "Add Render - GAMMA2DOT2",
@@ -9,6 +10,8 @@ export const metadata = {
 
 async function addRender(formData: FormData) {
   "use server";
+
+  const session = await getServerSession(authOptions);
 
   const name = formData.get("name")?.toString();
   const description = formData.get("description")?.toString();
@@ -19,6 +22,13 @@ async function addRender(formData: FormData) {
     throw Error("Missing required fields");
   }
 
+  //- Loop to add many
+  // for (let i = 0; i < 50; i++) {
+  //   await prisma.render.create({
+  //     data: { name, description, imageUrl, year },
+  //   });
+  // }
+
   await prisma.render.create({
     data: { name, description, imageUrl, year },
   });
@@ -26,32 +36,13 @@ async function addRender(formData: FormData) {
   redirect("/");
 }
 
-// const oauth2Client = new google.auth.OAuth2(
-//   process.env.CLIENT_ID,
-//   process.env.CLIENT_SECRET,
-//   process.env.REDIRECT_URI
-// );
+export default async function AddRenderPage() {
+  const session = await getServerSession(authOptions);
 
-// oauth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
+  if (!session) {
+    redirect("/api/auth/signin?callbackUrl=/add-product");
+  }
 
-// const drive = google.drive({
-//   version: "v3",
-//   auth: oauth2Client,
-// });
-
-// async function uploadFile() {
-//   try {
-//     const response = await drive.files.create({
-//       requestBody: {
-
-//       }
-//     })
-//   } catch (error) {
-    
-//   }
-// }
-
-export default function AddRenderPage() {
   return (
     <div>
       <h1 className="mb-3 text-lg font-bold">Add Render</h1>
