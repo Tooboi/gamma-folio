@@ -1,28 +1,39 @@
+"use client";
+import Artstation from "@/assets/artstation.svg";
+import Insta from "@/assets/insta.svg";
+import Linked from "@/assets/linked.svg";
+import Github from "@/assets/github.svg";
+import Link from "next/link";
+
 export default function Footer() {
-    return (
-      <footer className="bg-neutral p-10 text-neutral-content">
-        <div className="footer m-auto max-w-7xl">
-          <div>
-            <span className="footer-title">Services</span>
-            <a className="link-hover link">Branding</a>
-            <a className="link-hover link">Design</a>
-            <a className="link-hover link">Marketing</a>
-            <a className="link-hover link">Advertisement</a>
-          </div>
-          <div>
-            <span className="footer-title">Company</span>
-            <a className="link-hover link">About us</a>
-            <a className="link-hover link">Contact</a>
-            <a className="link-hover link">Jobs</a>
-            <a className="link-hover link">Press kit</a>
-          </div>
-          <div>
-            <span className="footer-title">Legal</span>
-            <a className="link-hover link">Terms of use</a>
-            <a className="link-hover link">Privacy policy</a>
-            <a className="link-hover link">Cookie policy</a>
-          </div>
-        </div>
-      </footer>
-    );
-  }
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <div className="static bottom-0 flex w-full justify-between px-8 pb-4">
+      <div className="h-full">
+        <p className="mt-3 select-none text-stone-700">© All Rights Reserved</p>
+      </div>
+      <div onClick={scrollToTop}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-8 w-8 stroke-stone-600 hover:animate-pulse"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+          />
+        </svg>
+      </div>
+    </div>
+  );
+}

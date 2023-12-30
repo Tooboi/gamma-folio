@@ -32,6 +32,7 @@ export async function generateMetadata(
 
 export default async function RenderPage({ params: { id } }: RenderPageProps) {
   const render = await getRender(id);
+console.log(render);
 
   return (
     <div className="flex-cols flex gap-4 lg:flex-row lg:items-center">
@@ -47,6 +48,34 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
         <h1 className="text-5xl font-bold">{render.name}</h1>
         <p className="mt-4">{render.description}</p>
         <p>{render.year}</p>
+        {render.blender ? (
+          <p>blender</p>
+        ) : (
+          <p></p>
+        )} 
+        {render.maya ? (
+          <p>maya</p>
+        ) : (
+          <p></p>
+        )}
+        {render.substance ? (
+          <p>substance</p>
+        ) : (
+          <p></p>
+        )}
+        {render.arnold ? (
+          <p>arnold</p>
+        ) : (
+          <p></p>
+        )}
+        {render.zbrush ? (
+          <p>zbrush</p>
+        ) : (
+          <p></p>
+        )}
+          
+        
+        
       </div>
     </div>
   );
