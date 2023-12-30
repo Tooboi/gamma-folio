@@ -9,11 +9,10 @@ datasource db {
 
 model Render {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  date        Int
+  year        Int
   description String
   imageUrl    String
   name        String
-  tag         String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
