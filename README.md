@@ -4,7 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/Tooboi/gamma-folio?color=73daca)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Tooboi/gamma-folio?color=73daca&label=clone%20size)
 
-# Bubble Up
+# GAMMA2DOT2
 
 ## Description
 
