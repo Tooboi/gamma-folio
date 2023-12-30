@@ -20,7 +20,7 @@ export default async function Navbar() {
   const session = await getServerSession(authOptions);
 
   return (
-    <div className="bg-base-100">
+    <div className="bg-transparent">
       <div className="navbar m-auto max-w-7xl flex-col gap-2 sm:flex-row">
         <div className="flex-1">
           <Link href="/" className="btn-ghost btn text-2xl normal-case">
@@ -34,7 +34,7 @@ export default async function Navbar() {
               <input
                 name="searchQuery"
                 placeholder="Search"
-                className="input-bordered input w-full min-w-[100px]"
+                className="input-bordered input w-full min-w-[100px] bg-transparent backdrop-blur-sm"
               />
             </div>
           </form>

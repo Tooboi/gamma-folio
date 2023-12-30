@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="forest">
-      <body className={rubik.className}>
+    <html lang="en" data-theme="forest" className="background-grid">
+      <body className={rubik.className} >
         <SessionProvider>
           <Navbar />
           <main className="m-auto min-h-screen min-w-[300px] max-w-7xl p-4">

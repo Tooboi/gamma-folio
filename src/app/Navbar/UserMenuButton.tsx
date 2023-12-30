@@ -4,6 +4,7 @@ import profilePicPlaceholder from "@/assets/profile-pic-placeholder.png";
 import { Session } from "next-auth";
 import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface UserMenuButtonProps {
   session: Session | null;
@@ -17,7 +18,10 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
       <label tabIndex={0} className="btn-ghost btn-circle btn">
         {user ? (
           <Image
-            src={user?.image || 'https://source.boringavatars.com/marble/40/Maria%20Mitchell'}
+            src={
+              user?.image ||
+              "https://source.boringavatars.com/marble/40/Maria%20Mitchell"
+            }
             alt="Profile picture"
             width={40}
             height={40}
@@ -41,15 +45,20 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
       </label>
       <ul
         tabIndex={0}
-        className="dropdown-content menu rounded-box menu-sm z-30 mt-3 w-52 bg-base-100 p-2 shadow"
+        className="dropdown-content menu rounded-box menu-sm z-30 mt-3 w-52 p-2 "
       >
         <li>
           {user ? (
-            <button onClick={() => signOut({ callbackUrl: "/" })}>
-              Sign Out
-            </button>
+            <div className="hover:bg-transparent hover:cursor-default">
+              <button className="btn-accent btn-sm btn" onClick={() => signOut({ callbackUrl: "/" })}>
+                Sign Out
+              </button>
+              <Link href="/add-render" className="btn-accent btn-sm btn">
+                Add Render
+              </Link>
+            </div>
           ) : (
-            <button onClick={() => signIn()}>Sign In</button>
+            <button className="btn-accent btn-sm btn" onClick={() => signIn()}>Sign In</button>
           )}
         </li>
       </ul>
