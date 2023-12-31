@@ -28,7 +28,9 @@ export default async function Home({
   });
   return (
     <div className="flex flex-col items-center">
-      {currentPage === 1 && (
+      {/* //- HERO */}
+
+      {/* {currentPage === 1 && (
         <div className="hero rounded-xl">
           <div className="hero-content flex-col lg:flex-row">
             <Image
@@ -51,13 +53,20 @@ export default async function Home({
             </div>
           </div>
         </div>
-      )}
-
-      <div className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {(currentPage === 1 ? renders.slice(1) : renders).map((render) => (
+      )} */}
+      {/* //- NO HERO */}
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 2xl:grid-cols-4">
+        {renders.map((render) => (
           <RenderCard render={render} key={render.id} />
         ))}
       </div>
+
+      {/* //- HERO */}
+      {/* <div className="my-4 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {(currentPage === 1 ? renders.slice(1) : renders).map((render) => (
+          <RenderCard render={render} key={render.id} />
+        ))}
+      </div> */}
       {totalPages > 1 && (
         <PaginationBar currentPage={currentPage} totalPages={totalPages} />
       )}

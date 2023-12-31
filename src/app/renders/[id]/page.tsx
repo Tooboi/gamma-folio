@@ -32,7 +32,7 @@ export async function generateMetadata(
 
 export default async function RenderPage({ params: { id } }: RenderPageProps) {
   const render = await getRender(id);
-console.log(render);
+// console.log(render);
 
   return (
     <div className="flex-cols flex gap-4 lg:flex-row lg:items-center">
