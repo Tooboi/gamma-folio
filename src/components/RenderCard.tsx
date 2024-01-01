@@ -12,31 +12,50 @@ export default function RenderCard({ render }: RenderCardProps) {
     Date.now() - new Date(render.createdAt).getTime() < 1000 * 60 * 60 * 24 * 7;
 
   return (
-    <Link
-      href={"/renders/" + render.id}
-      className="card border-2 border-stone-800 w-full bg-base-100 transition-shadow hover:shadow-xl"
-    >
+    // <Link
+    //   href={"/renders/" + render.id}
+    //   className="card w-full border-2 border-stone-800 bg-base-100 transition-shadow hover:shadow-xl"
+    // >
+    <div className="p-2">
+      <Link
+        href={"/renders/" + render.id}
+        className="aspect-h-1 aspect-w-1 mx-auto min-w-[150px] max-w-[512px] overflow-hidden rounded-lg bg-stone-800"
+      >
+        <section className="absolute z-10 opacity-0 transition hover:opacity-100">
+          <div className="image-gradient flex h-full w-full flex-row" />
+          <div className="absolute bottom-0 left-0 z-20 p-4">
+            <p className="select-none text-left text-2xl font-medium text-stone-200">
+              {render.name}
+            </p>
+            <p className="text-md select-none font-medium text-stone-200">
+              {render.year}
+            </p>
+            <p className="text-md select-none font-light text-stone-200">
+              {render.description}
+            </p>
+            <h2 className="inline-flex items-center rounded-md bg-purple-900/20 px-2 py-1 text-xs font-medium text-purple-500/80 ring-1 ring-inset ring-purple-500/10">
+              NEW
+            </h2>
 
-<div className="mx-auto max-w-[512px] min-w-[150px] aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-stone-800">
-            <section className="absolute z-10 opacity-0 hover:opacity-100 transition">
-              <div className="image-gradient h-full w-full flex flex-row" />
-              <div className="z-20 absolute bottom-0 left-0 p-4">
-                <p className="text-2xl font-medium text-stone-200 text-left select-none">{render.name}</p>
-                <p className="text-md font-medium text-stone-200 select-none">{render.year}</p>
-                <p className="text-md font-light text-stone-200 select-none">{render.description}</p>
-                {/* <div className="">
+            {/* <div className="">
                   <Logo logoOption={render.logo} />
                 </div> */}
-              </div>
-              <div className="z-20 absolute bottom-0 right-0 p-4">
-                {/* <a href={project.link} target="_blank" rel="noreferrer">
+          </div>
+          <div className="absolute bottom-0 right-0 z-20 p-4">
+            {/* <a href={project.link} target="_blank" rel="noreferrer">
                   <Artststion className="w-6 mx-2 fill-stone-700 hover:fill-stone-600 hover:scale-105 transition-all active:scale-100" />
                 </a> */}
-              </div>
-            </section>
-            <Image src={render.imageUrl} width={512} height={512} alt={render.name} className="object-cover" />
           </div>
-      {/* <figure>
+        </section>
+        <Image
+          src={render.imageUrl}
+          width={512}
+          height={512}
+          alt={render.name}
+          className="object-cover"
+        />
+        {/* </Link> */}
+        {/* <figure>
         <Image
           src={render.imageUrl}
           alt={render.name}
@@ -50,6 +69,7 @@ export default function RenderCard({ render }: RenderCardProps) {
         <p>{render.description}</p>
         <h2>{render.year}</h2>
       </div> */}
-    </Link>
+      </Link>
+    </div>
   );
 }
