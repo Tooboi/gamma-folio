@@ -16,12 +16,12 @@ export default function RenderCard({ render }: RenderCardProps) {
     //   href={"/renders/" + render.id}
     //   className="card w-full border-2 border-stone-800 bg-base-100 transition-shadow hover:shadow-xl"
     // >
-    <div className="p-2">
+    <div className="overflow-hidden rounded-lg">
       <Link
         href={"/renders/" + render.id}
-        className="aspect-h-1 aspect-w-1 mx-auto min-w-[150px] max-w-[512px] overflow-hidden rounded-lg bg-stone-800"
+        className="aspect-h-1 aspect-w-1 relative mx-auto min-w-[150px] max-w-[512px] bg-stone-800"
       >
-        <section className="absolute z-10 opacity-0 transition hover:opacity-100">
+        <section className="absolute inset-0 z-10 opacity-0 transition hover:opacity-100">
           <div className="image-gradient flex h-full w-full flex-row" />
           <div className="absolute bottom-0 left-0 z-20 p-4">
             <p className="select-none text-left text-2xl font-medium text-stone-200">
@@ -33,7 +33,7 @@ export default function RenderCard({ render }: RenderCardProps) {
             <p className="text-md select-none font-light text-stone-200">
               {render.description}
             </p>
-            <h2 className="inline-flex items-center rounded-md bg-purple-900/20 px-2 py-1 text-xs font-medium text-purple-500/80 ring-1 ring-inset ring-purple-500/10">
+            <h2 className="inline-flex items-center rounded-md bg-stone-800/30 px-2 py-1 text-xs font-medium text-stone-400/70 ring-1 ring-inset ring-stone-400/20">
               NEW
             </h2>
 

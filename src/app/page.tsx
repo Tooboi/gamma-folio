@@ -55,10 +55,12 @@ export default async function Home({
         </div>
       )} */}
       {/* //- NO HERO */}
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 2xl:grid-cols-4">
-        {renders.map((render) => (
-          <RenderCard render={render} key={render.id} />
-        ))}
+      <div className="mx-auto max-w-8xl md:px-4 lg:px-10 pt-10 pb-6 min-h-screen">
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 2xl:grid-cols-4">
+          {renders.map((render) => (
+            <RenderCard render={render} key={render.id} />
+          ))}
+        </div>
       </div>
 
       {/* //- HERO */}
