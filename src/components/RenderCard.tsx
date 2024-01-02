@@ -12,10 +12,6 @@ export default function RenderCard({ render }: RenderCardProps) {
     Date.now() - new Date(render.createdAt).getTime() < 1000 * 60 * 60 * 24 * 7;
 
   return (
-    // <Link
-    //   href={"/renders/" + render.id}
-    //   className="card w-full border-2 border-stone-800 bg-base-100 transition-shadow hover:shadow-xl"
-    // >
     <div className="overflow-hidden rounded-lg">
       <Link
         href={"/renders/" + render.id}
@@ -31,17 +27,16 @@ export default function RenderCard({ render }: RenderCardProps) {
               {render.year}
             </p>
             <p className="text-md select-none font-light text-stone-200">
-              {render.description}
+              {render.caption}
             </p>
-            <h2 className="inline-flex items-center rounded-md bg-stone-800/30 px-2 py-1 text-xs font-medium text-stone-400/70 ring-1 ring-inset ring-stone-400/20">
-              NEW
-            </h2>
-
             {/* <div className="">
                   <Logo logoOption={render.logo} />
                 </div> */}
           </div>
           <div className="absolute bottom-0 right-0 z-20 p-4">
+          <h2 className="inline-flex items-center rounded-md bg-stone-800/30 px-2 py-1 text-xs font-medium text-stone-400/70 ring-1 ring-inset ring-stone-400/20">
+              NEW
+            </h2>
             {/* <a href={project.link} target="_blank" rel="noreferrer">
                   <Artststion className="w-6 mx-2 fill-stone-700 hover:fill-stone-600 hover:scale-105 transition-all active:scale-100" />
                 </a> */}
@@ -54,21 +49,6 @@ export default function RenderCard({ render }: RenderCardProps) {
           alt={render.name}
           className="object-cover"
         />
-        {/* </Link> */}
-        {/* <figure>
-        <Image
-          src={render.imageUrl}
-          alt={render.name}
-          width={800}
-          height={400}
-          className="h-48 object-cover"
-        />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{render.name} {isNew && <div className="badge badge-secondary">NEW</div>}</h2>
-        <p>{render.description}</p>
-        <h2>{render.year}</h2>
-      </div> */}
       </Link>
     </div>
   );

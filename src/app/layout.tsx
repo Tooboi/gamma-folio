@@ -8,7 +8,7 @@ const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
   title: "GAMMA2DOT2",
-  description: "Gamma 2.2 - Josh Pica",
+  caption: "Gamma 2.2 - Josh Pica",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="forest" className="background-grid">
+    <html lang="en" data-theme="forest" className="background-grid text-stone-300">
       <body className={rubik.className} >
         <SessionProvider>
           <Navbar />

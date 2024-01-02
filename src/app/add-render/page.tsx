@@ -3,9 +3,18 @@ import { prisma } from "@/lib/db/prisma";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
+import CldUploadWrapper from "@/components/CldUploadWrapper";
+import React, { useState } from "react";
 
 export const metadata = {
   title: "Add Render - GAMMA2DOT2",
+};
+
+type UploadResult = {
+  info: {
+    public_id: string;
+  };
+  event: "success";
 };
 
 async function addRender(formData: FormData) {
@@ -14,6 +23,7 @@ async function addRender(formData: FormData) {
   const session = await getServerSession(authOptions);
 
   const name = formData.get("name")?.toString();
+  const caption = formData.get("caption")?.toString();
   const description = formData.get("description")?.toString();
   const imageUrl = formData.get("imageUrl")?.toString();
   const year = Number(formData.get("year") || 0);
@@ -24,12 +34,39 @@ async function addRender(formData: FormData) {
   const maya = Boolean(formData.get("maya") || false);
   const arnold = Boolean(formData.get("arnold") || false);
 
-  if (!name || !description || !imageUrl || !year) {
+  // Check if running on the client side before using localStorage
+  const storedPublicIds =
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
+      : [];
+
+  // Set the imageCollectionArray to the retrieved array
+  const imageCollectionArray = storedPublicIds;
+
+  console.log("Stored Public IDs:", storedPublicIds);
+
+  if (!name || !caption || !description || !imageUrl || !year) {
     throw Error("Missing required fields");
   }
 
   await prisma.render.create({
-    data: { name, description, imageUrl, year, blender, zbrush, substance, maya, arnold },
+    data: {
+      name,
+      caption,
+      description,
+      imageUrl,
+      year,
+      blender,
+      zbrush,
+      substance,
+      maya,
+      arnold,
+    },
+  });
+  await prisma.imageCollection.create({
+    data: {
+      imageCollectionArray,
+    },
   });
 
   redirect("/");
@@ -55,6 +92,12 @@ export default async function AddRenderPage() {
           required
           name="name"
           placeholder="Name"
+          className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
+        />
+        <input
+          required
+          name="caption"
+          placeholder="Caption"
           className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
         />
         <textarea
@@ -124,7 +167,8 @@ export default async function AddRenderPage() {
           </div>
           <div className="join join-vertical"></div>
         </div>
-        <FormSubmitButton className="btn-block btn-accent rounded-lg">
+        <CldUploadWrapper />
+        <FormSubmitButton className="btn-accent btn-block rounded-lg">
           Add Render
         </FormSubmitButton>
       </form>
