@@ -25,7 +25,7 @@ async function addRender(formData: FormData) {
   const name = formData.get("name")?.toString();
   const caption = formData.get("caption")?.toString();
   const description = formData.get("description")?.toString();
-  const imageUrl = formData.get("imageUrl")?.toString();
+  const thumbnail = formData.get("thumbnail")?.toString();
   const year = Number(formData.get("year") || 0);
 
   const blender = Boolean(formData.get("blender") || false);
@@ -35,17 +35,14 @@ async function addRender(formData: FormData) {
   const arnold = Boolean(formData.get("arnold") || false);
 
   // Check if running on the client side before using localStorage
-  const storedPublicIds =
+  const imageCollection =
     typeof window !== "undefined"
       ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
       : [];
 
-  // Set the imageCollectionArray to the retrieved array
-  const imageCollectionArray = storedPublicIds;
+  console.log("Stored Public IDs:", imageCollection);
 
-  console.log("Stored Public IDs:", storedPublicIds);
-
-  if (!name || !caption || !description || !imageUrl || !year) {
+  if (!name || !caption || !description || !thumbnail || !year) {
     throw Error("Missing required fields");
   }
 
@@ -54,18 +51,14 @@ async function addRender(formData: FormData) {
       name,
       caption,
       description,
-      imageUrl,
+      thumbnail,
+      imageCollection,
       year,
       blender,
       zbrush,
       substance,
       maya,
       arnold,
-    },
-  });
-  await prisma.imageCollection.create({
-    data: {
-      imageCollectionArray,
     },
   });
 
@@ -108,8 +101,8 @@ export default async function AddRenderPage() {
         />
         <input
           required
-          name="imageUrl"
-          placeholder="Image URL"
+          name="thumbnail"
+          placeholder="Thumbnail"
           type="url"
           className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
         />

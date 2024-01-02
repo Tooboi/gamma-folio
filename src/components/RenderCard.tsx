@@ -43,7 +43,7 @@ export default function RenderCard({ render }: RenderCardProps) {
           </div>
         </section>
         <Image
-          src={render.imageUrl}
+          src={render.thumbnail}
           width={512}
           height={512}
           alt={render.name}

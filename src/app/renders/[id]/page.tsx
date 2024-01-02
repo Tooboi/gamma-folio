@@ -25,7 +25,7 @@ export async function generateMetadata(
     title: render.name + " - GAMMA2DOT2",
     description: render.description,
     openGraph: {
-      images: [{ url: render.imageUrl}],
+      images: [{ url: render.thumbnail}],
     }
   }
 }
@@ -37,7 +37,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
   return (
     <div className="flex-cols flex gap-4 lg:flex-row lg:items-center">
       <Image
-        src={render.imageUrl}
+        src={render.thumbnail}
         alt={render.name}
         width={500}
         height={500}

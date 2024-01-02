@@ -35,7 +35,7 @@ export default async function Home({
         <div className="hero rounded-xl">
           <div className="hero-content flex-col lg:flex-row">
             <Image
-              src={renders[0].imageUrl}
+              src={renders[0].thumbnail}
               alt={renders[0].name}
               width={400}
               height={800}

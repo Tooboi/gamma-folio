@@ -8,32 +8,23 @@ datasource db {
 }
 
 model Render {
-  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  id              String     @id @default(auto()) @map("_id") @db.ObjectId
   name            String
   caption         String
   description     String
   year            Int
-  imageUrl        String
+  thumbnail       String
+  imageCollection String[]
   blender         Boolean
   substance       Boolean
   maya            Boolean
   zbrush          Boolean
   arnold          Boolean
-  createdAt       DateTime          @default(now())
-  updatedAt       DateTime          @updatedAt
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
   CartItem        CartItem[]
-  imageCollection ImageCollection[]
 
   @@map("renders")
-}
-
-model ImageCollection {
-  id                   String   @id @default(auto()) @map("_id") @db.ObjectId
-  imageCollectionArray String[]
-  Render               Render?  @relation(fields: [renderId], references: [id])
-  renderId             String?  @db.ObjectId
-
-  @@map("imageCollections")
 }
 
 model Cart {

@@ -33,7 +33,7 @@ export default function CldUploadWrapper() {
 
     setTimeout(() => {
       router.refresh();
-    }, 5000);
+    }, 2000);
     console.log(newPublicId);
   };
 
