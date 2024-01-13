@@ -1,9 +1,9 @@
-import { CldImage } from 'next-cloudinary';
+import { CldImage } from "next-cloudinary";
 import { prisma } from "@/lib/db/prisma";
 import { Render } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
-import CldImageWrapped from './CldImageWrapper';
+import CldImageWrapped from "./CldImageWrapper";
 
 interface RenderCardProps {
   render: Render;
@@ -52,6 +52,7 @@ export default function RenderCard({ render }: RenderCardProps) {
           className="object-cover"
         /> */}
         <CldImageWrapped
+          priority
           width="960"
           height="600"
           src={render.thumbnail}

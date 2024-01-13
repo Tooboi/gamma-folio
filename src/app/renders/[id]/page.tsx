@@ -36,24 +36,8 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
   // console.log(render);
 
   return (
-    <div className="flex-cols flex gap-4 lg:flex-row lg:items-center">
-      {/* Map through the ImageCollection array */}
-      {render.imageCollection && render.imageCollection.length > 0 && (
-          <div>
-            {render.imageCollection.map((pubID, index) => (
-              <CldImageWrapped
-                key={index}
-                width="960"
-                height="600"
-                src={pubID}
-                sizes="100vw"
-                alt={render.name}
-              />
-            ))}
-          </div>
-        )}
-
-      <div>
+    <div className="container-2xl">
+      <div className="flex-cols flex gap-4 lg:flex-row lg:items-center">
         <h1 className="text-5xl font-bold">{render.name}</h1>
         <p className="mt-4">{render.description}</p>
         <p>{render.year}</p>
@@ -62,6 +46,26 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
         {render.substance ? <p>substance</p> : <p></p>}
         {render.arnold ? <p>arnold</p> : <p></p>}
         {render.zbrush ? <p>zbrush</p> : <p></p>}
+      </div>
+      <div>
+        {/* Map through the ImageCollection array */}
+        {render.imageCollection && render.imageCollection.length > 0 && (
+          <div>
+            {render.imageCollection.map((pubID, index) => (
+              <CldImageWrapped
+                priority
+                key={index}
+                quality={100}
+                dpr={"auto"}
+                width={1350}
+                height={1080}
+                src={pubID}
+                sizes="100dvw"
+                alt={render.name}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
