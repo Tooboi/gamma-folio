@@ -69,6 +69,8 @@ export default async function AddRenderPage() {
   const session = await getServerSession(authOptions);
   const user = session?.user;
 
+  const [imageCollection, setImageCollection] = useState([]);
+
   if (user?.email != process.env.ADMIN_EMAIL) {
     redirect("/unathorized");
   }
@@ -77,9 +79,16 @@ export default async function AddRenderPage() {
     redirect("/api/auth/signin?callbackUrl=/add-product");
   }
 
+  const [uploadedImages, setUploadedImages] = useState([]);
+
+  const handleUploadSuccess = (updatedPublicIds) => {
+    // Update the state with the latest uploaded images
+    setUploadedImages(updatedPublicIds);
+  };
+
   return (
     <div>
-      <h1 className="mb-3 text-lg font-bold">Add Render</h1>
+      <h1 className="mb-3 text-lg font-bold mx-auto">Add Render</h1>
       <form action={addRender}>
         <input
           required
@@ -160,7 +169,7 @@ export default async function AddRenderPage() {
           </div>
           <div className="join join-vertical"></div>
         </div>
-        <CldUploadWrapper />
+        <CldUploadWrapper onUploadSuccess={handleUploadSuccess} />
         <FormSubmitButton className="btn-accent btn-block rounded-lg">
           Add Render
         </FormSubmitButton>

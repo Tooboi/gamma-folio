@@ -1,7 +1,9 @@
+import { CldImage } from 'next-cloudinary';
 import { prisma } from "@/lib/db/prisma";
 import { Render } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
+import CldImageWrapped from './CldImageWrapper';
 
 interface RenderCardProps {
   render: Render;
@@ -34,7 +36,7 @@ export default function RenderCard({ render }: RenderCardProps) {
                 </div> */}
           </div>
           <div className="absolute bottom-0 right-0 z-20 p-4">
-          <h2 className="inline-flex items-center rounded-md bg-stone-800/30 px-2 py-1 text-xs font-medium text-stone-400/70 ring-1 ring-inset ring-stone-400/20">
+            <h2 className="inline-flex items-center rounded-md bg-stone-800/30 px-2 py-1 text-xs font-medium text-stone-400/70 ring-1 ring-inset ring-stone-400/20">
               NEW
             </h2>
             {/* <a href={project.link} target="_blank" rel="noreferrer">
@@ -42,12 +44,19 @@ export default function RenderCard({ render }: RenderCardProps) {
                 </a> */}
           </div>
         </section>
-        <Image
+        {/* <Image
           src={render.thumbnail}
           width={512}
           height={512}
           alt={render.name}
           className="object-cover"
+        /> */}
+        <CldImageWrapped
+          width="960"
+          height="600"
+          src={render.thumbnail}
+          sizes="100vw"
+          alt="Description of my image"
         />
       </Link>
     </div>

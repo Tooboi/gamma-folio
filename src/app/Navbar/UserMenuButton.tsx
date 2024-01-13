@@ -53,9 +53,10 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
               <button className="btn-accent btn-sm btn" onClick={() => signOut({ callbackUrl: "/" })}>
                 Sign Out
               </button>
-              <Link href="/add-render" className="btn-accent btn-sm btn">
+              {/* ADD RENDER BUTTON NOT WORKING */}
+              {/* <Link href="/add-render" className="btn-accent btn-sm btn">
                 Add Render
-              </Link>
+              </Link> */}
             </div>
           ) : (
             <button className="btn-accent btn-sm btn" onClick={() => signIn()}>Sign In</button>
