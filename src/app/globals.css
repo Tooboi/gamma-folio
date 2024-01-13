@@ -15,3 +15,11 @@ body::-webkit-scrollbar {
     background-image: linear-gradient(rgba(41, 37, 36, 0.5) 0.2em, transparent 0.2em), linear-gradient(90deg, rgba(41, 37, 36, 0.5) 0.2em, transparent 0.2em);
     background-size: 18dvw 18dvw;
   }
+
+  .image-gradient {
+    background: rgb(0, 0, 0);
+    background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0.9) 20%, rgba(12, 10, 9, 0) 85%);
+    background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0.9) 20%, rgba(12, 10, 9, 0) 85%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 20%, rgba(12, 10, 9, 0) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#0c0a09",GradientType=1);
+  }

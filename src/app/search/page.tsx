@@ -21,6 +21,7 @@ export default async function SearchPage({
     where: {
       OR: [
         { name: { contains: query, mode: "insensitive" } },
+        { caption: { contains: query, mode: "insensitive" } },
         { description: { contains: query, mode: "insensitive" } },
       ],
     },

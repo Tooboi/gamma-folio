@@ -8,19 +8,21 @@ datasource db {
 }
 
 model Render {
-  id          String     @id @default(auto()) @map("_id") @db.ObjectId
-  year        Int
-  description String
-  imageUrl    String
-  name        String
-  blender     Boolean
-  substance   Boolean
-  maya        Boolean
-  zbrush      Boolean
-  arnold      Boolean
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-  CartItem    CartItem[]
+  id              String     @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  caption         String
+  description     String
+  year            Int
+  thumbnail       String
+  imageCollection String[]
+  blender         Boolean
+  substance       Boolean
+  maya            Boolean
+  zbrush          Boolean
+  arnold          Boolean
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  CartItem        CartItem[]
 
   @@map("renders")
 }

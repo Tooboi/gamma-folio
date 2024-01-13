@@ -3,6 +3,7 @@ import RenderCard from "@/components/RenderCard";
 import Image from "next/image";
 import Link from "next/link";
 import PaginationBar from "@/components/PaginationBar";
+import { CldImage } from "next-cloudinary";
 
 interface HomeProps {
   searchParams: { page: string };
@@ -34,7 +35,7 @@ export default async function Home({
         <div className="hero rounded-xl">
           <div className="hero-content flex-col lg:flex-row">
             <Image
-              src={renders[0].imageUrl}
+              src={renders[0].thumbnail}
               alt={renders[0].name}
               width={400}
               height={800}
@@ -43,7 +44,7 @@ export default async function Home({
             />
             <div>
               <h1 className="text-5xl font-bold">{renders[0].name}</h1>
-              <p className="py-6">{renders[0].description}</p>
+              <p className="py-6">{renders[0].caption}</p>
               <Link
                 href={"/renders/" + renders[0].id}
                 className="btn-primary btn rounded-lg"
@@ -55,10 +56,13 @@ export default async function Home({
         </div>
       )} */}
       {/* //- NO HERO */}
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 2xl:grid-cols-4">
-        {renders.map((render) => (
-          <RenderCard render={render} key={render.id} />
-        ))}
+      <div className="max-w-8xl mx-auto min-h-screen pb-6 pt-10 md:px-4 lg:px-10">
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 2xl:grid-cols-4">
+          
+          {renders.map((render) => (
+            <RenderCard render={render} key={render.id} />
+          ))}
+        </div>
       </div>
 
       {/* //- HERO */}
