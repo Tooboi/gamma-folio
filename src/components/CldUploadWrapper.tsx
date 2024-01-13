@@ -1,50 +1,52 @@
 "use client";
 import { CldImage, CldUploadButton } from "next-cloudinary";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export default function CldUploadWrapper({ onUploadSuccess }) {
+export default function CldUploadWrapper(
+  // { onUploadSuccess }
+  ) {
   const router = useRouter();
-  const [imageId, setImageId] = useState("");
-  const [publicIdsArray, setPublicIdsArray] = useState([]);
+  // const [imageId, setImageId] = useState("");
+  // const [publicIdsArray, setPublicIdsArray] = useState([]);
 
-  useEffect(() => {
-    // Retrieve existing array from local storage or initialize an empty array
-    const storedPublicIds = JSON.parse(
-      localStorage.getItem("uploadedPublicIds") || "[]"
-    );
-    setPublicIdsArray(storedPublicIds);
-  }, []);
+  // useEffect(() => {
+  //   // Retrieve existing array from local storage or initialize an empty array
+  //   const storedPublicIds = JSON.parse(
+  //     localStorage.getItem("uploadedPublicIds") || "[]"
+  //   );
+  //   setPublicIdsArray(storedPublicIds);
+  // }, []);
 
-  const handleUploadSuccess = (result) => {
-    const newPublicId = result.info.public_id;
-    setImageId(newPublicId);
+  // const handleUploadSuccess = (result) => {
+  //   const newPublicId = result.info.public_id;
+  //   setImageId(newPublicId);
 
-    // Retrieve existing array from local storage or initialize an empty array
-    const storedPublicIds = JSON.parse(
-      localStorage.getItem("uploadedPublicIds") || "[]"
-    );
+  //   // Retrieve existing array from local storage or initialize an empty array
+  //   const storedPublicIds = JSON.parse(
+  //     localStorage.getItem("uploadedPublicIds") || "[]"
+  //   );
 
-    // Add the new public_id to the array
-    const updatedPublicIds = [...storedPublicIds, newPublicId];
+  //   // Add the new public_id to the array
+  //   const updatedPublicIds = [...storedPublicIds, newPublicId];
 
-    // Save the updated array to local storage
-    localStorage.setItem("uploadedPublicIds", JSON.stringify(updatedPublicIds));
+  //   // Save the updated array to local storage
+  //   localStorage.setItem("uploadedPublicIds", JSON.stringify(updatedPublicIds));
 
-    setPublicIdsArray(updatedPublicIds);
+  //   setPublicIdsArray(updatedPublicIds);
 
-    // Pass the updatedPublicIds to the parent component
-    onUploadSuccess(updatedPublicIds);
+  //   // Pass the updatedPublicIds to the parent component
+  //   onUploadSuccess(updatedPublicIds);
 
-    setTimeout(() => {
-      router.refresh();
-    }, 2000);
-    console.log(newPublicId);
-  };
+  //   setTimeout(() => {
+  //     router.refresh();
+  //   }, 2000);
+  //   console.log(newPublicId);
+  // };
 
   return (
     <div className="flex flex-row py-4">
-      <CldUploadButton
+      {/* <CldUploadButton
         uploadPreset="gamma-folio"
         onSuccess={handleUploadSuccess}
         className="btn-secondary btn"
@@ -66,8 +68,8 @@ export default function CldUploadWrapper({ onUploadSuccess }) {
           </svg>
           <h1 className="mt-[0.15rem]">Upload Images</h1>
         </div>
-      </CldUploadButton >
-      {imageId && (
+      </CldUploadButton > */}
+      {/* {imageId && (
         <div className="mx-4 rounded-lg border-2 border-stone-800 bg-transparent p-2 backdrop-blur-sm">
           <h2 className="text-sm">Uploaded Public IDs:</h2>
           <ul>
@@ -86,7 +88,7 @@ export default function CldUploadWrapper({ onUploadSuccess }) {
             ))}
           </ul>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
