@@ -78,8 +78,8 @@ export default function RenderCard({ render }: RenderCardProps) {
         <div className="h-full w-full">
           <CldImageWrapped
             priority
-            width="960"
-            height="960"
+            width="800"
+            height="800"
             crop="fill"
             aspectRatio="1:1"
             src={render.thumbnail}
