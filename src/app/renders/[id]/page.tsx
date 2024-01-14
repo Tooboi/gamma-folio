@@ -58,28 +58,28 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
           <div className="mb-4 flex justify-center">
             {/* <p className="text-md font-semibold">Software Used</p> */}
             <div className=" flex flex-row gap-1">
-              {render.blender ? (
-                <Image src={Blender} alt={"Blender"} width={28} />
-              ) : (
-                <p></p>
-              )}
               {render.maya ? (
-                <Image src={Maya} alt={"Maya"} width={28} />
-              ) : (
-                <p></p>
-              )}
-              {render.substance ? (
-                <Image src={Substance} alt={"Substance"} width={28} />
+                <Image src={Maya} alt={"Maya"} width={32} />
               ) : (
                 <p></p>
               )}
               {render.arnold ? (
-                <Image src={Arnold} alt={"Arnold"} width={28} />
+                <Image src={Arnold} alt={"Arnold"} width={32} />
               ) : (
                 <p></p>
               )}
               {render.zbrush ? (
-                <Image src={Zbrush} alt={"Zbrush"} width={28} />
+                <Image src={Zbrush} alt={"Zbrush"} width={32} />
+              ) : (
+                <p></p>
+              )}
+              {render.blender ? (
+                <Image src={Blender} alt={"Blender"} width={32} />
+              ) : (
+                <p></p>
+              )}
+              {render.substance ? (
+                <Image src={Substance} alt={"Substance"} width={32} />
               ) : (
                 <p></p>
               )}
@@ -118,18 +118,8 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
             <div className="">
               <p className="text-lg font-semibold">Software Used</p>
               <div className=" flex flex-row gap-1">
-                {render.blender ? (
-                  <Image src={Blender} alt={"Blender"} width={32} />
-                ) : (
-                  <p></p>
-                )}
                 {render.maya ? (
                   <Image src={Maya} alt={"Maya"} width={32} />
-                ) : (
-                  <p></p>
-                )}
-                {render.substance ? (
-                  <Image src={Substance} alt={"Substance"} width={32} />
                 ) : (
                   <p></p>
                 )}
@@ -140,6 +130,16 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                 )}
                 {render.zbrush ? (
                   <Image src={Zbrush} alt={"Zbrush"} width={32} />
+                ) : (
+                  <p></p>
+                )}
+                {render.blender ? (
+                  <Image src={Blender} alt={"Blender"} width={32} />
+                ) : (
+                  <p></p>
+                )}
+                {render.substance ? (
+                  <Image src={Substance} alt={"Substance"} width={32} />
                 ) : (
                   <p></p>
                 )}
