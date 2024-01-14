@@ -53,7 +53,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
           <h1 className="text-pretty  text-center text-2xl font-bold">
             {render.name}
           </h1>
-          <p className="text-lg font-bold text-center">{render.year}</p>
+          <p className="text-center text-lg font-bold">{render.year}</p>
           <p className="text-pretty mb-4 text-center">{render.description}</p>
           <div className="mb-4 flex justify-center">
             {/* <p className="text-md font-semibold">Software Used</p> */}
@@ -109,7 +109,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
             </div>
           )}
         </div>
-        <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-2 border-stone-700 bg-stone-800 md:col-span-3 md:flex lg:col-span-2">
+        <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-2 border-stone-700 bg-stone-800 md:col-span-3 lg:col-span-2  lg:flex">
           <div className="p-4">
             <h1 className="text-pretty mb-4 text-3xl font-bold">
               {render.name}
