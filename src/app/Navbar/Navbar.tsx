@@ -21,11 +21,11 @@ export default async function Navbar() {
 
   return (
     <div className="bg-transparent">
-      <div className="navbar m-auto max-w-7xl flex-col gap-2 sm:flex-row">
+      <div className="navbar m-auto max-w-7xl flex-row gap-2">
         <div className="flex-1">
           <Link
             href="/"
-            className="btn-ghost btn text-2xl normal-case hover:bg-transparent"
+            className="btn-ghost btn text-3xl normal-case hover:bg-transparent"
           >
             {/* <Image src={logo} height={40} width={40} alt="GAMMA2DOT2" /> */}
             GAMMA2DOT2
@@ -37,7 +37,7 @@ export default async function Navbar() {
               <input
                 name="searchQuery"
                 placeholder="Search"
-                className="input w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm"
+                className="hidden xs:flex input h-[2.5rem] w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm"
               />
             </div>
           </form>
