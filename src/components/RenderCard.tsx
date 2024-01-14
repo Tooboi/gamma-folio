@@ -47,18 +47,8 @@ export default function RenderCard({ render }: RenderCardProps) {
           </div>
           <div className="absolute right-0 top-0 z-20 p-4">
             <div className="flex flex-row gap-1">
-              {render.blender ? (
-                <Image src={Blender} alt={"Blender"} width={32} />
-              ) : (
-                <p></p>
-              )}
               {render.maya ? (
                 <Image src={Maya} alt={"Maya"} width={32} />
-              ) : (
-                <p></p>
-              )}
-              {render.substance ? (
-                <Image src={Substance} alt={"Substance"} width={32} />
               ) : (
                 <p></p>
               )}
@@ -69,6 +59,16 @@ export default function RenderCard({ render }: RenderCardProps) {
               )}
               {render.zbrush ? (
                 <Image src={Zbrush} alt={"Zbrush"} width={32} />
+              ) : (
+                <p></p>
+              )}
+              {render.blender ? (
+                <Image src={Blender} alt={"Blender"} width={32} />
+              ) : (
+                <p></p>
+              )}
+              {render.substance ? (
+                <Image src={Substance} alt={"Substance"} width={32} />
               ) : (
                 <p></p>
               )}
