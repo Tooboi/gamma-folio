@@ -109,7 +109,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
             </div>
           )}
         </div>
-        <div className="ml-4 hidden h-fit flex-row rounded-lg border-2 border-stone-700 bg-stone-800 md:col-span-3 md:flex lg:col-span-2">
+        <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-2 border-stone-700 bg-stone-800 md:col-span-3 md:flex lg:col-span-2">
           <div className="p-4">
             <h1 className="text-pretty mb-4 text-3xl font-bold">
               {render.name}
