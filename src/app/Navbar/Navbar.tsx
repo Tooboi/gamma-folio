@@ -31,13 +31,19 @@ export default async function Navbar() {
             GAMMA2DOT2
           </Link>
         </div>
+        {/* <ul className="px-2">
+          <li className="px-2 font-semibold">Renders</li>
+          <li className="px-2">Dev</li>
+          <li className="px-2">About</li>
+          <li className="px-2">Contact</li>
+        </ul> */}
         <div className="flex-none gap-2">
           <form action={searchProducts}>
             <div className="form-control">
               <input
                 name="searchQuery"
                 placeholder="Search"
-                className="hidden xs:flex input h-[2.5rem] w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm"
+                className="input hidden h-[2.5rem] w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm xs:flex"
               />
             </div>
           </form>

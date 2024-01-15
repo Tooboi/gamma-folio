@@ -1,5 +1,6 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar/Navbar";
+import Tabs from "./Navbar/Tabs";
 import "./globals.css";
 import { Rubik } from "next/font/google";
 import SessionProvider from "./SessionProvider";
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={rubik.className} >
         <SessionProvider>
           <Navbar />
+          <Tabs />
           <main className="m-auto min-h-screen min-w-[300px] max-w-7xl p-4">
             {children}
           </main>

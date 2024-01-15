@@ -27,6 +27,19 @@ model Render {
   @@map("renders")
 }
 
+model DevProject {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  description String
+  image       String
+  link        String
+  repo        String
+  title       String
+
+  @@map("devs")
+}
+
 model Cart {
   id        String     @id @default(auto()) @map("_id") @db.ObjectId
   items     CartItem[]

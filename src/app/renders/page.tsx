@@ -6,13 +6,13 @@ interface HomeProps {
   searchParams: { page: string };
 }
 
-export default async function Home({
+export default async function Renders({
   searchParams: { page = "1" },
 }: HomeProps) {
   const currentPage = parseInt(page);
 
-  const pageSize = 6;
-  const heroItemCount = 1;
+  const pageSize = 10;
+  const heroItemCount = 0;
 
   const totalItemCount = await prisma.render.count();
 
@@ -28,7 +28,6 @@ export default async function Home({
     <div className="flex flex-col items-center">
       <div className="max-w-8xl mx-auto min-h-screen pb-6 pt-4 md:px-4 lg:px-10">
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 2xl:grid-cols-4">
-          
           {renders.map((render) => (
             <RenderCard render={render} key={render.id} />
           ))}
