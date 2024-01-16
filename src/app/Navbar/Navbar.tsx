@@ -5,6 +5,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import UserMenuButton from "./UserMenuButton";
+import Tabs from "./Tabs";
 
 async function searchProducts(formData: FormData) {
   "use server";
@@ -25,25 +26,22 @@ export default async function Navbar() {
         <div className="flex-1">
           <Link
             href="/"
-            className="btn-ghost btn text-3xl normal-case hover:bg-transparent"
+            className="btn-ghost btn text-3xl mx-auto xs:mx-0 normal-case hover:bg-transparent tracking-widest xs:tracking-wide"
           >
             {/* <Image src={logo} height={40} width={40} alt="GAMMA2DOT2" /> */}
             GAMMA2DOT2
           </Link>
         </div>
-        {/* <ul className="px-2">
-          <li className="px-2 font-semibold">Renders</li>
-          <li className="px-2">Dev</li>
-          <li className="px-2">About</li>
-          <li className="px-2">Contact</li>
-        </ul> */}
-        <div className="flex-none gap-2">
+        <div className=" hidden lg:flex">
+          <Tabs />
+        </div>
+        <div className="flex-none gap-2 hidden xs:flex">
           <form action={searchProducts}>
             <div className="form-control">
               <input
                 name="searchQuery"
                 placeholder="Search"
-                className="input hidden h-[2.5rem] w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm xs:flex"
+                className="input  h-[2.5rem] w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm "
               />
             </div>
           </form>
