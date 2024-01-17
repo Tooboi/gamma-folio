@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-20 md:px-4 lg:px-10">
+    <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-6 md:px-4 lg:px-10">
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-stone-400">
-        Hey I'm Josh Pica :)
+        Hey I&apos;m Josh Pica :)
       </h1>
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-stone-400">
         I am a passionate 3D artist who loves to create original and visually
@@ -23,6 +23,9 @@ export default function About() {
         Through my passion for 3D art, I aspire to contribute to the
         ever-evolving landscape of digital creativity and make a meaningful
         difference in the world.
+      </h1>
+      <h1 className="select-none py-3 text-center text-2xl tracking-tight text-stone-400">
+        Over the past few years my love for web development has grown. I am always trying to keep up to date with recent technologies and improve on my JS development skills.
       </h1>
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-stone-400">
         Inspired by the world around me
