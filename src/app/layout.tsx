@@ -1,6 +1,6 @@
 import Footer from "./Footer";
-import Navbar from "./Navbar/Navbar";
-import Tabs from "./Navbar/Tabs";
+import Navbar from "../components/Navbar/Navbar";
+import Tabs from "../components/Navbar/Tabs";
 import "./globals.css";
 import { Rubik } from "next/font/google";
 import SessionProvider from "./SessionProvider";

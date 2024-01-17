@@ -3,13 +3,6 @@ import { Render } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
 import CldImageWrapped from "./CldImageWrapper";
-
-import Blender from "../assets/blender.png";
-import Substance from "../assets/substance.png";
-import Maya from "../assets/maya-01.png";
-import Zbrush from "../assets/zbrush512-01-01.png";
-import Arnold from "../assets/arnold-01.png";
-
 interface RenderCardProps {
   render: Render;
 }
@@ -258,7 +251,7 @@ export default function RenderCard({ render }: RenderCardProps) {
           <CldImageWrapped
             priority
             width="800"
-            height="800"
+            height="800"      
             crop="fill"
             aspectRatio="1:1"
             src={render.thumbnail}

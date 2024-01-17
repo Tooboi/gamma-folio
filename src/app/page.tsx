@@ -1,5 +1,4 @@
 import { prisma } from "@/lib/db/prisma";
-import RenderCard from "@/components/RenderCard";
 import PaginationBar from "@/components/PaginationBar";
 
 interface HomeProps {

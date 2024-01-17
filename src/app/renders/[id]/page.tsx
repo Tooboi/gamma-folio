@@ -4,13 +4,6 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 import CldImageWrapped from "../../../components/CldImageWrapper";
-
-import Blender from "../../../assets/blender.png";
-import Substance from "../../../assets/substance.png";
-import Maya from "../../../assets/maya-01.png";
-import Zbrush from "../../../assets/zbrush512-01-01.png";
-import Arnold from "../../../assets/arnold-01.png";
-
 interface RenderPageProps {
   params: {
     id: string;
@@ -39,21 +32,20 @@ export async function generateMetadata({
 
 export default async function RenderPage({ params: { id } }: RenderPageProps) {
   const render = await getRender(id);
-  // const createdAtDate = new Date(render.createdAt).toLocaleDateString("en-US", {
-  //   year: "numeric",
-  //   month: "short",
-  //   day: "numeric",
-  // });
+  const createdAtDate = new Date(render.createdAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+  });
   // console.log(render);
 
   return (
     <div className="container-2xl">
       <div className="mb-4 h-fit flex-row lg:hidden">
         <div className="w-full lg:p-4">
-          <h1 className="text-pretty  text-center text-2xl font-bold">
+          <h1 className="text-pretty text-center text-2xl font-bold">
             {render.name}
           </h1>
-          <p className="text-center text-lg font-bold">{render.year}</p>
+          <p className="text-center text-lg font-bold">{createdAtDate}</p>
           <p className="text-pretty mb-4 text-center">{render.description}</p>
           <div className="mb-4 flex justify-center">
             {/* <p className="text-md font-semibold">Software Used</p> */}
@@ -289,7 +281,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
           )}
         </div>
         <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-4 border-stone-800 bg-stone-900 md:col-span-3 lg:col-span-2  lg:flex">
-          <div className="p-4">
+          <div className="p-4 w-full">
             <h1 className="text-pretty mb-4 text-3xl font-bold text-stone-300">
               {render.name}
             </h1>
@@ -503,7 +495,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
               )}
             </div>
             </div>
-            <p className="text-right text-lg font-bold text-stone-300">{render.year}</p>
+            <p className="text-right text-lg font-bold text-stone-300">{createdAtDate}</p>
           </div>
         </div>
       </div>

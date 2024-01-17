@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "../../app/api/auth/[...nextauth]/route";
 import UserMenuButton from "./UserMenuButton";
 import Tabs from "./Tabs";
 
@@ -26,7 +26,7 @@ export default async function Navbar() {
         <div className="flex-1">
           <Link
             href="/"
-            className="btn-ghost btn text-3xl mx-auto xs:mx-0 normal-case hover:bg-transparent tracking-widest xs:tracking-wide hover:animate-pulse"
+            className="btn-ghost btn text-3xl mx-auto xs:mx-0 normal-case hover:bg-transparent tracking-widest xs:tracking-wide"
           >
             {/* <Image src={logo} height={40} width={40} alt="GAMMA2DOT2" /> */}
             GAMMA2DOT2
@@ -41,11 +41,11 @@ export default async function Navbar() {
               <input
                 name="searchQuery"
                 placeholder="Search"
-                className="input  h-[2.5rem] w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm "
+                className="input placeholder-stone-500 h-[2.5rem] w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm "
               />
             </div>
           </form>
-          <UserMenuButton session={session} />
+          {/* <UserMenuButton session={session} /> */}
         </div>
       </div>
     </div>
