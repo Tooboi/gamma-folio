@@ -27,7 +27,7 @@ export default async function Renders({
   return (
     <div className="flex flex-col items-center">
       <div className="max-w-8xl mx-auto min-h-screen pb-6 pt-4 md:px-4 lg:px-10">
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 2xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
           {renders.map((render) => (
             <RenderCard render={render} key={render.id} />
           ))}

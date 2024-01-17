@@ -3,6 +3,7 @@ import { Render } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
 import CldImageWrapped from "./CldImageWrapper";
+import Skeleton from "react-loading-skeleton";
 interface RenderCardProps {
   render: Render;
 }
@@ -31,9 +32,9 @@ export default function RenderCard({ render }: RenderCardProps) {
               {render.caption}
             </p>
           </div>
-          <div className="absolute top-0 left-0 z-20 p-4">
+          <div className="absolute left-0 top-0 z-20 p-4">
             {isNew && (
-              <h2 className="inline-flex items-center rounded-md bg-stone-800/40 backdrop-blur-sm px-2 py-1 text-xs font-medium text-stone-400/90 ring-2 ring-inset ring-stone-400/40">
+              <h2 className="inline-flex items-center rounded-md bg-stone-800/40 px-2 py-1 text-xs font-medium text-stone-400/90 ring-2 ring-inset ring-stone-400/40 backdrop-blur-sm">
                 NEW
               </h2>
             )}
@@ -251,7 +252,7 @@ export default function RenderCard({ render }: RenderCardProps) {
           <CldImageWrapped
             priority
             width="800"
-            height="800"      
+            height="800"
             crop="fill"
             aspectRatio="1:1"
             src={render.thumbnail}
