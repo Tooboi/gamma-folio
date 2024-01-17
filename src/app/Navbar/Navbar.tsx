@@ -26,7 +26,7 @@ export default async function Navbar() {
         <div className="flex-1">
           <Link
             href="/"
-            className="btn-ghost btn text-3xl mx-auto xs:mx-0 normal-case hover:bg-transparent tracking-widest xs:tracking-wide"
+            className="btn-ghost btn text-3xl mx-auto xs:mx-0 normal-case hover:bg-transparent tracking-widest xs:tracking-wide hover:animate-pulse"
           >
             {/* <Image src={logo} height={40} width={40} alt="GAMMA2DOT2" /> */}
             GAMMA2DOT2

@@ -11,7 +11,7 @@ export default async function Home({
 }: HomeProps) {
   const currentPage = parseInt(page);
 
-  const pageSize = 6;
+  const pageSize = 10;
   const heroItemCount = 0;
 
   const totalItemCount = await prisma.render.count();
