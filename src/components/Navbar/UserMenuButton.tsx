@@ -38,7 +38,7 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+              d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
         )}
@@ -50,7 +50,7 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
         <li>
           {user ? (
             <div className="hover:bg-transparent hover:cursor-default">
-              <button className="btn-accent btn-sm btn" onClick={() => signOut({ callbackUrl: "/" })}>
+              <button className="btn-ghost btn-sm btn" onClick={() => signOut({ callbackUrl: "/" })}>
                 Sign Out
               </button>
               {/* ADD RENDER BUTTON NOT WORKING */}
@@ -59,7 +59,7 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
               </Link> */}
             </div>
           ) : (
-            <button className="btn-accent btn-sm btn" onClick={() => signIn()}>Sign In</button>
+            <button className="btn-acc btn-sm btn" onClick={() => signIn()}>Sign In</button>
           )}
         </li>
       </ul>

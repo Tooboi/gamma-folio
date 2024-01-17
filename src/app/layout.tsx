@@ -1,5 +1,6 @@
 import Footer from "./Footer";
-import Navbar from "./Navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
+import Tabs from "../components/Navbar/Tabs";
 import "./globals.css";
 import { Rubik } from "next/font/google";
 import SessionProvider from "./SessionProvider";
@@ -17,10 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="forest" className="background-grid text-stone-300">
-      <body className={rubik.className} >
+    <html
+      lang="en"
+      data-theme="forest"
+      className="background-grid text-stone-300"
+    >
+      <body className={rubik.className}>
         <SessionProvider>
           <Navbar />
+          <div className="flex lg:hidden">
+            <Tabs />
+          </div>
           <main className="m-auto min-h-screen min-w-[300px] max-w-7xl p-4">
             {children}
           </main>
