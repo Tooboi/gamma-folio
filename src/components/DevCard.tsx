@@ -29,10 +29,10 @@ export default function DevCard({ dev }: DevCardProps) {
         <div className="h-full w-full">
               <CldImageWrapped
                 priority
-                width="960"
-                height="540"
+                width="800"
+                height="800"
                 crop="thumb"
-                aspectRatio="16:9"
+                aspectRatio="1:1"
                 src={dev.image}
                 sizes="100vw"
                 alt={dev.title}
