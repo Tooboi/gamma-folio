@@ -33,7 +33,7 @@ export default function DevCard({ dev }: DevCardProps) {
                 height="800"
                 crop="thumb"
                 aspectRatio="1:1"
-                src={dev.image}
+                src={`gamma-folio/` + dev.image}
                 sizes="100vw"
                 alt={dev.title}
               />

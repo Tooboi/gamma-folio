@@ -127,7 +127,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                   dpr={"auto"}
                   width={1080}
                   height={1080}
-                  src={pubID}
+                  src={`gamma-folio/` + pubID}
                   sizes="100vw"
                   alt={render.name}
                   className="w-full border-b-4 border-stone-900 last:border-b-0"
