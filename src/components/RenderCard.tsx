@@ -56,12 +56,11 @@ export default function RenderCard({ render }: RenderCardProps) {
         </section>
         <div className="h-full w-full">
           <CldImageWrapped
-            priority
-            width="800"
-            height="800"
+            width={800}
+            height={800}
             crop="fill"
             aspectRatio="1:1"
-            src={render.thumbnail}
+            src={`gamma-folio/` + render.thumbnail}
             sizes="100vw"
             alt={render.name}
           />

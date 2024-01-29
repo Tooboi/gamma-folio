@@ -43,7 +43,7 @@ export default async function Home() {
                   height="720"
                   crop="thumb"
                   aspectRatio="16:9"
-                  src={latestRender.thumbnail}
+                  src={`gamma-folio/` + latestRender.thumbnail}
                   sizes="100vw"
                   alt={latestRender.name}
                 />
@@ -71,7 +71,7 @@ export default async function Home() {
                   height="720"
                   crop="thumb"
                   aspectRatio="16:9"
-                  src={latestDev.image}
+                  src={`gamma-folio/` + latestDev.image}
                   sizes="100vw"
                   alt={latestDev.title}
                 />
