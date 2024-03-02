@@ -28,10 +28,10 @@ function formatBytes(fileSize: number): string {
   return `${formattedSizeWithoutDecimal} ${sizes[i]}`;
 }
 
-export default function CldUploadImageWrapper() {
+export default function CldThumbWrapper() {
   const [imageId, setImageId] = useState("");
   const [buttonClassName, setButtonClassName] = useState(
-    "btn-block btn btn-secondary rounded-lg "
+    "btn-block btn rounded-lg border-2 border-byte-700 bg-byte-600 hover:bg-byte-700 active:border-byte-800 active:bg-byte-950 hover:border-byte-400 active:text-byte-400 text-byte-200"
   );
   const maxFileSize = 10485760; // 25MB in B
 
@@ -41,7 +41,7 @@ export default function CldUploadImageWrapper() {
         uploadPreset="gamma-folio"
         options={{
           maxImageFileSize: maxFileSize,
-          maxFiles: 10,
+          maxFiles: 1,
           sources: [
             "local",
             "dropbox",
@@ -61,7 +61,7 @@ export default function CldUploadImageWrapper() {
         {({ open }) => {
           return (
             <button className={buttonClassName} onClick={() => open()}>
-              Add Images
+              Add Thumbnail
             </button>
           );
         }}
@@ -84,16 +84,16 @@ export default function CldUploadImageWrapper() {
           <input
             required
             placeholder={imageId}
-            className="input-disabled input mb-3 hidden w-full rounded-lg border-2 border-stone-500 bg-transparent text-stone-600 backdrop-blur-sm placeholder:text-stone-600 focus:border-stone-600 focus:ring-2 focus:ring-stone-600 focus:ring-offset-2 focus:ring-offset-stone-950"
+            className="input-disabled input mb-3 hidden w-full rounded-lg border-2 border-byte-500 bg-transparent text-stone-600 backdrop-blur-sm placeholder:text-stone-600 focus:border-byte-600 focus:ring-2 focus:ring-stone-600 focus:ring-offset-2 focus:ring-offset-stone-950"
             name="publicId"
             value={imageId}
           />
         </div>
       ) : (
-        <div className="mx-auto mt-2 max-w-[128px] rounded-lg border border-stone-600 bg-stone-950">
-          <PhotoIcon className="mx-auto w-full text-stone-800/80" />
-          <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-stone-800/80 lg:text-sm">
-            Max {formatBytes(maxFileSize)}
+        <div className="mx-auto mt-2 max-w-[256px] rounded-lg border border-byte-600 bg-byte-950">
+          <PhotoIcon className="mx-auto w-full text-byte-800/80" />
+          <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-byte-800/80 lg:text-sm">
+            Max {formatBytes(maxFileSize)} - 1:1
           </p>
         </div>
       )}

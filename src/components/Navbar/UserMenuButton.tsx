@@ -6,6 +6,12 @@ import { signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
+import {
+  ArrowRightStartOnRectangleIcon,
+  AdjustmentsHorizontalIcon,
+  UserIcon,
+} from "@heroicons/react/24/solid";
+
 interface UserMenuButtonProps {
   session: Session | null;
 }
@@ -15,7 +21,7 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
 
   return (
     <div className="dropdown-end dropdown">
-      <label tabIndex={0} className="btn-ghost btn-circle btn">
+      <div role="button" tabIndex={0} className="btn-ghost btn-circle btn">
         {user ? (
           <Image
             src={
@@ -42,27 +48,59 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
             />
           </svg>
         )}
-      </label>
-      <ul
-        tabIndex={0}
-        className="dropdown-content menu rounded-box menu-sm z-30 mt-3 w-52 p-2 "
-      >
-        <li>
-          {user ? (
-            <div className="hover:bg-transparent hover:cursor-default">
-              <button className="btn-ghost btn-sm btn" onClick={() => signOut({ callbackUrl: "/" })}>
-                Sign Out
-              </button>
-              {/* ADD RENDER BUTTON NOT WORKING */}
-              {/* <Link href="/add-render" className="btn-accent btn-sm btn">
+      </div>
+      {user ? (
+        <ul
+          tabIndex={0}
+          role="list"
+          className="dropdown-content menu menu-sm z-30 mt-2 w-52 rounded-lg border-2 border-stone-700 bg-stone-900 p-2 shadow "
+        >
+          <li className="group rounded-lg transition-all hover:bg-stone-800 active:bg-stone-900 active:ring-2 active:ring-inset active:ring-stone-700">
+            <Link
+              href="/add-render"
+              className="z-30 flex items-center rounded-lg p-2 text-stone-300 transition group-hover:bg-stone-800 group-active:bg-stone-900"
+              role="button"
+            >
+              <AdjustmentsHorizontalIcon className="h-6 w-6 text-stone-400 group-hover:text-stone-500" />
+              <span className="ml-3 flex group-hover:text-stone-200">
                 Add Render
-              </Link> */}
-            </div>
-          ) : (
-            <button className="btn-acc btn-sm btn" onClick={() => signIn()}>Sign In</button>
-          )}
-        </li>
-      </ul>
+              </span>
+            </Link>
+          </li>
+          <li className="group rounded-lg transition-all hover:bg-stone-800 active:bg-stone-900 active:ring-2 active:ring-inset active:ring-stone-700">
+            <button
+              onClick={() => signOut({ callbackUrl: "/" })}
+              className="text  flex w-full items-center rounded-lg p-2 text-stone-300 transition "
+            >
+              <ArrowRightStartOnRectangleIcon className="h-6 w-6 text-stone-400 group-hover:text-stone-500" />
+
+              <span className="ml-3 flex group-hover:text-stone-200">
+                Sign Out
+              </span>
+            </button>
+          </li>
+          
+        </ul>
+      ) : (
+        <ul
+          tabIndex={0}
+          role="list"
+          className="dropdown-content menu menu-sm z-30 mt-2 w-52 rounded-lg border-2 border-stone-700 bg-stone-900 p-2 shadow "
+        >
+          <li className="group rounded-lg transition-all hover:bg-stone-800 active:bg-stone-900 active:ring-2 active:ring-inset active:ring-stone-700">
+            <button
+              onClick={() => signIn()}
+              className="text flex w-full items-center rounded-lg p-2 text-stone-300 transition active:bg-stone-900 group-hover:bg-stone-800"
+            >
+              <UserIcon className="h-6 w-6 text-stone-400 group-hover:text-stone-500 " />
+
+              <span className="ml-3 hidden group-hover:text-stone-200 md:flex">
+                Sign In
+              </span>
+            </button>
+          </li>
+        </ul>
+      )}
     </div>
   );
 }

@@ -4,6 +4,8 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import CldUploadWrapper from "@/components/CldUploadWrapper";
+import CldThumbWrapper from "@/components/CldThumbWrapper";
+import CldImgColWrapper from "@/components/CldImgColWrapper";
 // import React, { useState } from "react";
 
 export const metadata = {
@@ -108,13 +110,13 @@ export default async function AddRenderPage() {
           placeholder="Description"
           className="textarea-secondary textarea mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
         />
-        <input
+        {/* <input
           required
           name="thumbnail"
           placeholder="Thumbnail"
           type="url"
           className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
-        />
+        /> */}
         <input
           required
           name="year"
@@ -122,6 +124,8 @@ export default async function AddRenderPage() {
           type="number"
           className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
         />
+        <CldThumbWrapper />
+        <CldImgColWrapper />
         <div className="join join-horizontal">
           <div className="join join-vertical">
             <label className="label join-item cursor-pointer">
