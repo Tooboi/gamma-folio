@@ -4,6 +4,8 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import CldUploadWrapper from "@/components/CldUploadWrapper";
+import CldThumbWrapper from "@/components/CldThumbWrapper";
+import CldImgColWrapper from "@/components/CldImgColWrapper";
 // import React, { useState } from "react";
 
 export const metadata = {
@@ -25,7 +27,7 @@ async function addRender(formData: FormData) {
   const name = formData.get("name")?.toString();
   const caption = formData.get("caption")?.toString();
   const description = formData.get("description")?.toString();
-  const thumbnail = formData.get("thumbnail")?.toString();
+  const thumbnail = formData.get("publicId")?.toString();
   const year = Number(formData.get("year") || 0);
 
   const blender = Boolean(formData.get("blender") || false);
@@ -35,12 +37,12 @@ async function addRender(formData: FormData) {
   const arnold = Boolean(formData.get("arnold") || false);
 
   // Check if running on the client side before using localStorage
-  const imageCollection =
-    typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
-      : [];
+  const imageCollection = ['one', 'two', 'three', 'four'];
+  //   typeof window !== "undefined"
+  //     ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
+  //     : [];
 
-  console.log("Stored Public IDs:", imageCollection);
+  // console.log("Stored Public IDs:", imageCollection);
 
   if (!name || !caption || !description || !thumbnail || !year) {
     throw Error("Missing required fields");
@@ -88,7 +90,7 @@ export default async function AddRenderPage() {
 
   return (
     <div>
-      <h1 className="mb-3 text-lg font-bold mx-auto">Add Render</h1>
+      <h1 className="mx-auto mb-3 text-lg font-bold">Add Render</h1>
       <form action={addRender}>
         <input
           required
@@ -108,13 +110,13 @@ export default async function AddRenderPage() {
           placeholder="Description"
           className="textarea-secondary textarea mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
         />
-        <input
+        {/* <input
           required
           name="thumbnail"
           placeholder="Thumbnail"
           type="url"
           className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
-        />
+        /> */}
         <input
           required
           name="year"
@@ -122,6 +124,8 @@ export default async function AddRenderPage() {
           type="number"
           className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
         />
+        <CldThumbWrapper />
+        <CldImgColWrapper />
         <div className="join join-horizontal">
           <div className="join join-vertical">
             <label className="label join-item cursor-pointer">
