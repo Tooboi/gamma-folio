@@ -29,11 +29,18 @@ function formatBytes(fileSize: number): string {
 }
 
 export default function CldUploadImageWrapper() {
+  const [publicIds, setPublicIds] = useState<string[]>([]);
   const [imageId, setImageId] = useState("");
   const [buttonClassName, setButtonClassName] = useState(
     "btn-block btn rounded-lg border-2 border-byte-700 bg-byte-600 hover:bg-byte-700 active:border-byte-800 active:bg-byte-950 hover:border-byte-400 active:text-byte-400 text-byte-200"
   );
-  const maxFileSize = 41943040; // 25MB in B
+  const maxFileSize = 41943040; // 40MB in B
+
+  const handleSuccess = (result: UploadResult) => {
+    const { info } = result;
+    const newPublicIds = [...publicIds, info.public_id];
+    setPublicIds(newPublicIds);
+  };
 
   return (
     <div className="h-full">
@@ -52,6 +59,8 @@ export default function CldUploadImageWrapper() {
           autoMinimize: true,
         }}
         onSuccess={(result: any) => {
+          console.log(result.info);
+          
           const publicId = result.info.public_id;
           setImageId(publicId);
           setButtonClassName("hidden");
@@ -85,7 +94,7 @@ export default function CldUploadImageWrapper() {
             required
             placeholder={imageId}
             className="input-disabled input mb-3 hidden w-full rounded-lg border-2 border-byte-500 bg-transparent text-stone-600 backdrop-blur-sm placeholder:text-stone-600 focus:border-byte-600 focus:ring-2 focus:ring-stone-600 focus:ring-offset-2 focus:ring-offset-stone-950"
-            name="publicId"
+            name="publicIdCol"
             value={imageId}
           />
         </div>

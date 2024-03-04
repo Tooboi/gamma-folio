@@ -27,7 +27,7 @@ async function addRender(formData: FormData) {
   const name = formData.get("name")?.toString();
   const caption = formData.get("caption")?.toString();
   const description = formData.get("description")?.toString();
-  const thumbnail = formData.get("thumbnail")?.toString();
+  const thumbnail = formData.get("publicId")?.toString();
   const year = Number(formData.get("year") || 0);
 
   const blender = Boolean(formData.get("blender") || false);
@@ -37,12 +37,12 @@ async function addRender(formData: FormData) {
   const arnold = Boolean(formData.get("arnold") || false);
 
   // Check if running on the client side before using localStorage
-  const imageCollection =
-    typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
-      : [];
+  const imageCollection = ['one', 'two', 'three', 'four'];
+  //   typeof window !== "undefined"
+  //     ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
+  //     : [];
 
-  console.log("Stored Public IDs:", imageCollection);
+  // console.log("Stored Public IDs:", imageCollection);
 
   if (!name || !caption || !description || !thumbnail || !year) {
     throw Error("Missing required fields");
@@ -90,7 +90,7 @@ export default async function AddRenderPage() {
 
   return (
     <div>
-      <h1 className="mb-3 text-lg font-bold mx-auto">Add Render</h1>
+      <h1 className="mx-auto mb-3 text-lg font-bold">Add Render</h1>
       <form action={addRender}>
         <input
           required

@@ -33,7 +33,7 @@ export default function CldThumbWrapper() {
   const [buttonClassName, setButtonClassName] = useState(
     "btn-block btn rounded-lg border-2 border-byte-700 bg-byte-600 hover:bg-byte-700 active:border-byte-800 active:bg-byte-950 hover:border-byte-400 active:text-byte-400 text-byte-200"
   );
-  const maxFileSize = 10485760; // 25MB in B
+  const maxFileSize = 41943040; // 40MB in B
 
   return (
     <div className="h-full">
