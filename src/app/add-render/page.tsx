@@ -41,15 +41,23 @@ async function addRender(formData: FormData) {
   const maya = Boolean(formData.get("maya") || false);
   const arnold = Boolean(formData.get("arnold") || false);
 
-  // Check if running on the client side before using localStorage
-  const imageCollection = ["one", "two", "three", "four"];
-  //   typeof window !== "undefined"
-  //     ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
-  //     : [];
+  const imageCollectionString = formData
+    .get("imageCollectionArray")
+    ?.toString();
+  const imageCollection = imageCollectionString
+    ? imageCollectionString.split(",")
+    : [];
+  console.log(imageCollection);
+  console.log(imageCollectionString);
 
-  // console.log("Stored Public IDs:", imageCollection);
-
-  if (!name || !caption || !description || !thumbnail || !year) {
+  if (
+    !name ||
+    !caption ||
+    !description ||
+    !thumbnail ||
+    !year ||
+    !imageCollection
+  ) {
     throw Error("Missing required fields");
   }
 
@@ -136,7 +144,7 @@ export default async function AddRenderPage() {
               <div className="text-md border-b-2 border-r-2 border-stone-700 bg-stone-700 pl-2 font-semibold text-stone-300/80">
                 Software Used
               </div>
-              <div className="flex w-full flex-wrap px-2">
+              <div className="flex w-full flex-wrap justify-center px-2">
                 <label className="label join-item cursor-pointer justify-start">
                   <input
                     type="checkbox"
@@ -211,19 +219,16 @@ export default async function AddRenderPage() {
                     </p>
                   </span>
                 </label>
-
                 <div className="join-vertical join"></div>
               </div>
             </div>
           </div>
         </div>
         <div className="divider"></div>
-
         <CldImgColWrapper />
-
-        {/* <CldUploadWrapper onUploadSuccess={handleUploadSuccess} /> */}
-        <FormSubmitButton className="btn-accent btn-block rounded-lg">
-          Add Render
+        <div className="divider"></div>
+        <FormSubmitButton className=" btn-block btn mx-auto mb-4 justify-center rounded-lg border-0 border-stone-600 bg-stone-600 text-lg font-medium text-stone-300 transition-all hover:border-2 hover:border-amber-600 hover:bg-amber-950 hover:text-amber-500">
+          Create New Render
         </FormSubmitButton>
       </form>
     </div>

@@ -60,7 +60,7 @@ export default function CldThumbWrapper() {
       >
         {({ open }) => {
           return (
-            <button className={buttonClassName} onClick={() => open()}>
+            <button className={buttonClassName} onClick={(e) => {e.preventDefault(); open()}}>
               Add Thumbnail
             </button>
           );
@@ -84,7 +84,7 @@ export default function CldThumbWrapper() {
           <input
             required
             placeholder={imageId}
-            className="input-disabled input mb-3 hidden w-full rounded-lg border-2 border-byte-500 bg-transparent text-stone-600 backdrop-blur-sm placeholder:text-stone-600 focus:border-byte-600 focus:ring-2 focus:ring-stone-600 focus:ring-offset-2 focus:ring-offset-stone-950"
+            className="border-byte-500 focus:border-byte-600 input-disabled input mb-3 hidden w-full rounded-lg border-2 bg-transparent text-stone-600 backdrop-blur-sm placeholder:text-stone-600 focus:ring-2 focus:ring-stone-600 focus:ring-offset-2 focus:ring-offset-stone-950"
             name="publicId"
             value={imageId}
           />
@@ -93,7 +93,10 @@ export default function CldThumbWrapper() {
         <div className="mt-2 max-w-[256px] rounded-lg border-2 border-stone-700 bg-stone-900">
           <PhotoIcon className="mx-auto w-full text-stone-700" />
           <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-stone-600 lg:text-sm">
-            Max {formatBytes(maxFileSize)} - 1:1
+            Max {formatBytes(maxFileSize)}
+          </p>
+          <p className="mt-[-0.5rem] select-none pb-2 text-center text-xs text-stone-600 lg:text-sm">
+            800px x 800px
           </p>
         </div>
       )}
