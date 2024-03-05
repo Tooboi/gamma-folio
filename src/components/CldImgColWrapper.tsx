@@ -45,7 +45,7 @@ export default function CldUploadImageWrapper() {
   };
 
   useEffect(() => {
-    console.log("PublicIdsArray: ", publicIdsArray);
+    // console.log("PublicIdsArray: ", publicIdsArray);
   }, [publicIdsArray]);
 
   return (

@@ -84,8 +84,6 @@ export default async function AddRenderPage() {
   const session = await getServerSession(authOptions);
   const user = session?.user;
 
-  // const [imageCollection, setImageCollection] = useState([]);
-
   if (user?.email != process.env.ADMIN_EMAIL) {
     redirect("/unathorized");
   }
@@ -93,13 +91,6 @@ export default async function AddRenderPage() {
   if (!session) {
     redirect("/api/auth/signin?callbackUrl=/add-product");
   }
-
-  // const [uploadedImages, setUploadedImages] = useState([]);
-
-  // const handleUploadSuccess = (updatedPublicIds) => {
-  //   // Update the state with the latest uploaded images
-  //   setUploadedImages(updatedPublicIds);
-  // };
 
   return (
     <div className="w-full">
@@ -131,7 +122,7 @@ export default async function AddRenderPage() {
               required
               name="description"
               placeholder="Description"
-              className="textarea mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+              className="textarea mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 placeholder:text-[1.025rem] focus-within:border-stone-500"
             />
             <input
               required
@@ -227,7 +218,7 @@ export default async function AddRenderPage() {
         <div className="divider"></div>
         <CldImgColWrapper />
         <div className="divider"></div>
-        <FormSubmitButton className=" btn-block btn mx-auto mb-4 justify-center rounded-lg border-0 border-stone-600 bg-stone-600 text-lg font-medium text-stone-300 transition-all hover:border-2 hover:border-amber-600 hover:bg-amber-950 hover:text-amber-500">
+        <FormSubmitButton className=" btn-block btn mx-auto mb-4 justify-center rounded-lg border-0 border-stone-600 bg-stone-600 text-lg font-medium text-stone-300 transition-all hover:border-2 hover:border-teal-600 hover:bg-teal-950 hover:text-teal-500">
           Create New Render
         </FormSubmitButton>
       </form>
