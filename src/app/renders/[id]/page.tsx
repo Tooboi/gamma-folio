@@ -43,7 +43,6 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
     year: "numeric",
     month: "short",
   });
-  // console.log(render);
 
   return (
     <div className="container-2xl">
@@ -119,20 +118,26 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
           {/* Map through the ImageCollection array */}
           {render.imageCollection && render.imageCollection.length > 0 && (
             <div className="mx-auto flex flex-col overflow-hidden rounded-xl border-4 border-stone-900">
-              {render.imageCollection.map((pubID, index) => (
-                <CldImageWrapped
-                  priority
-                  key={index}
-                  quality={100}
-                  dpr={"auto"}
-                  width={1080}
-                  height={1080}
-                  src={`gamma-folio/` + pubID}
-                  sizes="100vw"
-                  alt={render.name}
-                  className="w-full border-b-4 border-stone-900 last:border-b-0"
-                />
-              ))}
+              {render.imageCollection.map((pubID, index) => {
+                // Check if "gamma-folio" is already present in the pubID URL
+                const imageUrl = pubID.includes("gamma-folio")
+                  ? pubID
+                  : `gamma-folio/${pubID}`;
+                return (
+                  <CldImageWrapped
+                    priority
+                    key={index}
+                    quality={100}
+                    dpr={"auto"}
+                    width={1080}
+                    height={1080}
+                    src={imageUrl}
+                    sizes="100vw"
+                    alt={render.name}
+                    className="w-full border-b-4 border-stone-900 last:border-b-0"
+                  />
+                );
+              })}
             </div>
           )}
         </div>

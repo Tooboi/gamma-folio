@@ -18,6 +18,11 @@ export default function RenderCard({ render }: RenderCardProps) {
     Date.now() - new Date(render.createdAt).getTime() <
     1000 * 60 * 60 * 24 * 14;
 
+  // Check if "gamma-folio" is already present in the thumbnail URL
+  const thumbnailSrc = render.thumbnail.includes("gamma-folio")
+    ? render.thumbnail // If already present, use the thumbnail as it is
+    : `gamma-folio/${render.thumbnail}`; // If not, add "gamma-folio"
+
   return (
     <div className="overflow-hidden rounded-xl">
       <Link
@@ -46,11 +51,41 @@ export default function RenderCard({ render }: RenderCardProps) {
           </div>
           <div className="absolute right-0 top-0 z-20 p-4">
             <div className="flex flex-row gap-1">
-              {render.maya ? <div className="h-8 w-8"><MayaSVG /></div> : <p></p>}
-              {render.arnold ? <div className="h-8 w-8"><ArnoldSVG /></div> : <p></p>}
-              {render.zbrush ? <div className="h-8 w-8"><ZbrushSVG /></div> : <p></p>}
-              {render.blender ? <div className="h-8 w-8"><BlenderSVG /></div> : <p></p>}
-              {render.substance ? <div className="h-8 w-8"><SubstanceSVG /></div> : <p></p>}
+              {render.maya ? (
+                <div className="h-8 w-8">
+                  <MayaSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
+              {render.arnold ? (
+                <div className="h-8 w-8">
+                  <ArnoldSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
+              {render.zbrush ? (
+                <div className="h-8 w-8">
+                  <ZbrushSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
+              {render.blender ? (
+                <div className="h-8 w-8">
+                  <BlenderSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
+              {render.substance ? (
+                <div className="h-8 w-8">
+                  <SubstanceSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
             </div>
           </div>
         </section>
@@ -60,7 +95,7 @@ export default function RenderCard({ render }: RenderCardProps) {
             height={800}
             crop="fill"
             aspectRatio="1:1"
-            src={`gamma-folio/` + render.thumbnail}
+            src={thumbnailSrc}
             sizes="100vw"
             alt={render.name}
           />

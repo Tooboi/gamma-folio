@@ -31,12 +31,12 @@ function formatBytes(fileSize: number): string {
 export default function CldThumbWrapper() {
   const [imageId, setImageId] = useState("");
   const [buttonClassName, setButtonClassName] = useState(
-    "btn-block btn rounded-lg border-2 border-byte-700 bg-byte-600 hover:bg-byte-700 active:border-byte-800 active:bg-byte-950 hover:border-byte-400 active:text-byte-400 text-byte-200"
+    "btn bg-stone-600 hover:bg-stone-700 hover:border-stone-500 hover:border-2 btn-wide rounded-lg "
   );
   const maxFileSize = 41943040; // 40MB in B
 
   return (
-    <div className="h-full">
+    <div className="flex flex-col">
       <CldUploadWidget
         uploadPreset="gamma-folio"
         options={{
@@ -90,9 +90,9 @@ export default function CldThumbWrapper() {
           />
         </div>
       ) : (
-        <div className="mx-auto mt-2 max-w-[256px] rounded-lg border border-byte-600 bg-byte-950">
-          <PhotoIcon className="mx-auto w-full text-byte-800/80" />
-          <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-byte-800/80 lg:text-sm">
+        <div className="mt-2 max-w-[256px] rounded-lg border-2 border-stone-700 bg-stone-900">
+          <PhotoIcon className="mx-auto w-full text-stone-700" />
+          <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-stone-600 lg:text-sm">
             Max {formatBytes(maxFileSize)} - 1:1
           </p>
         </div>
