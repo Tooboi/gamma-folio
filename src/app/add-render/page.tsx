@@ -41,15 +41,23 @@ async function addRender(formData: FormData) {
   const maya = Boolean(formData.get("maya") || false);
   const arnold = Boolean(formData.get("arnold") || false);
 
-  // Check if running on the client side before using localStorage
-  const imageCollection = ["one", "two", "three", "four"];
-  //   typeof window !== "undefined"
-  //     ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
-  //     : [];
+  const imageCollectionString = formData
+    .get("imageCollectionArray")
+    ?.toString();
+  const imageCollection = imageCollectionString
+    ? imageCollectionString.split(",")
+    : [];
+  console.log(imageCollection);
+  console.log(imageCollectionString);
 
-  // console.log("Stored Public IDs:", imageCollection);
-
-  if (!name || !caption || !description || !thumbnail || !year) {
+  if (
+    !name ||
+    !caption ||
+    !description ||
+    !thumbnail ||
+    !year ||
+    !imageCollection
+  ) {
     throw Error("Missing required fields");
   }
 
@@ -76,8 +84,6 @@ export default async function AddRenderPage() {
   const session = await getServerSession(authOptions);
   const user = session?.user;
 
-  // const [imageCollection, setImageCollection] = useState([]);
-
   if (user?.email != process.env.ADMIN_EMAIL) {
     redirect("/unathorized");
   }
@@ -85,13 +91,6 @@ export default async function AddRenderPage() {
   if (!session) {
     redirect("/api/auth/signin?callbackUrl=/add-product");
   }
-
-  // const [uploadedImages, setUploadedImages] = useState([]);
-
-  // const handleUploadSuccess = (updatedPublicIds) => {
-  //   // Update the state with the latest uploaded images
-  //   setUploadedImages(updatedPublicIds);
-  // };
 
   return (
     <div className="w-full">
@@ -123,7 +122,7 @@ export default async function AddRenderPage() {
               required
               name="description"
               placeholder="Description"
-              className="textarea mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+              className="textarea mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 placeholder:text-[1.025rem] focus-within:border-stone-500"
             />
             <input
               required
@@ -136,7 +135,7 @@ export default async function AddRenderPage() {
               <div className="text-md border-b-2 border-r-2 border-stone-700 bg-stone-700 pl-2 font-semibold text-stone-300/80">
                 Software Used
               </div>
-              <div className="flex w-full flex-wrap px-2">
+              <div className="flex w-full flex-wrap justify-center px-2">
                 <label className="label join-item cursor-pointer justify-start">
                   <input
                     type="checkbox"
@@ -211,19 +210,16 @@ export default async function AddRenderPage() {
                     </p>
                   </span>
                 </label>
-
                 <div className="join-vertical join"></div>
               </div>
             </div>
           </div>
         </div>
         <div className="divider"></div>
-
         <CldImgColWrapper />
-
-        {/* <CldUploadWrapper onUploadSuccess={handleUploadSuccess} /> */}
-        <FormSubmitButton className="btn-accent btn-block rounded-lg">
-          Add Render
+        <div className="divider"></div>
+        <FormSubmitButton className=" btn-block btn mx-auto mb-4 justify-center rounded-lg border-0 border-stone-600 bg-stone-600 text-lg font-medium text-stone-300 transition-all hover:border-2 hover:border-teal-600 hover:bg-teal-950 hover:text-teal-500">
+          Create New Render
         </FormSubmitButton>
       </form>
     </div>
