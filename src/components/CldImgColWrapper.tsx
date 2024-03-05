@@ -32,7 +32,7 @@ export default function CldUploadImageWrapper() {
   const [publicIds, setPublicIds] = useState<string[]>([]);
   const [imageId, setImageId] = useState("");
   const [buttonClassName, setButtonClassName] = useState(
-    "btn-block btn rounded-lg border-2 border-byte-700 bg-byte-600 hover:bg-byte-700 active:border-byte-800 active:bg-byte-950 hover:border-byte-400 active:text-byte-400 text-byte-200"
+    "btn bg-stone-600 hover:bg-stone-700 hover:border-stone-500 hover:border-2 btn-block rounded-lg "
   );
   const maxFileSize = 41943040; // 40MB in B
 

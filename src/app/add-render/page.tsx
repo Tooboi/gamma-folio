@@ -6,6 +6,11 @@ import { authOptions } from "../api/auth/[...nextauth]/route";
 import CldUploadWrapper from "@/components/CldUploadWrapper";
 import CldThumbWrapper from "@/components/CldThumbWrapper";
 import CldImgColWrapper from "@/components/CldImgColWrapper";
+import SubstanceSVG from "@/components/SVG/SubstanceSVG";
+import BlenderSVG from "@/components/SVG/BlenderSVG";
+import ArnoldSVG from "@/components/SVG/ArnoldSVG";
+import MayaSVG from "@/components/SVG/MayaSVG";
+import ZbrushSVG from "@/components/SVG/ZbrushSVG";
 // import React, { useState } from "react";
 
 export const metadata = {
@@ -37,7 +42,7 @@ async function addRender(formData: FormData) {
   const arnold = Boolean(formData.get("arnold") || false);
 
   // Check if running on the client side before using localStorage
-  const imageCollection = ['one', 'two', 'three', 'four'];
+  const imageCollection = ["one", "two", "three", "four"];
   //   typeof window !== "undefined"
   //     ? JSON.parse(localStorage.getItem("uploadedPublicIds") || "[]")
   //     : [];
@@ -89,90 +94,133 @@ export default async function AddRenderPage() {
   // };
 
   return (
-    <div>
-      <h1 className="mx-auto mb-3 text-lg font-bold">Add Render</h1>
-      <form action={addRender}>
-        <input
-          required
-          name="name"
-          placeholder="Name"
-          className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
-        />
-        <input
-          required
-          name="caption"
-          placeholder="Caption"
-          className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
-        />
-        <textarea
-          required
-          name="description"
-          placeholder="Description"
-          className="textarea-secondary textarea mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
-        />
-        {/* <input
-          required
-          name="thumbnail"
-          placeholder="Thumbnail"
-          type="url"
-          className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
-        /> */}
-        <input
-          required
-          name="year"
-          placeholder="Year"
-          type="number"
-          className="input-bordered input-secondary input mb-3 w-full rounded-lg bg-transparent backdrop-blur-sm"
-        />
-        <CldThumbWrapper />
-        <CldImgColWrapper />
-        <div className="join join-horizontal">
-          <div className="join join-vertical">
-            <label className="label join-item cursor-pointer">
-              <span className="label-text pr-4">Blender</span>
-              <input
-                type="checkbox"
-                name="blender"
-                className="checkbox-accent checkbox mx-4 px-4"
-              />
-            </label>
-            <label className="label join-item cursor-pointer">
-              <span className="label-text">Substance</span>
-              <input
-                type="checkbox"
-                name="substance"
-                className="checkbox-accent checkbox mx-4 px-4"
-              />
-            </label>
-            <label className="label join-item cursor-pointer">
-              <span className="label-text pr-4">Arnold</span>
-              <input
-                type="checkbox"
-                name="arnold"
-                className="checkbox-accent checkbox mx-4 px-4"
-              />
-            </label>
+    <div className="w-full">
+      <form
+        action={addRender}
+        className="rounded-lg border-2 border-stone-700 p-2 px-4 backdrop-blur-2xl"
+      >
+        <h1 className="pb-3 text-center text-2xl font-bold text-stone-300">
+          Add Render
+        </h1>
+        <div className="flex flex-row">
+          <div className="">
+            <CldThumbWrapper />
           </div>
-          <div className="join join-vertical">
-            <label className="label join-item cursor-pointer">
-              <span className="label-text pr-4">Maya</span>
-              <input
-                type="checkbox"
-                name="maya"
-                className="checkbox-accent checkbox mx-4 px-4"
-              />
-            </label>
-            <label className="label join-item cursor-pointer">
-              <span className="label-text">Zbrush</span>
-              <input
-                type="checkbox"
-                name="zbrush"
-                className="checkbox-accent checkbox mx-4 px-4"
-              />
-            </label>
+          <div className="w-full pl-4">
+            <input
+              required
+              name="name"
+              placeholder="Name"
+              className="input mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+            />
+            <input
+              required
+              name="caption"
+              placeholder="Caption"
+              className="input mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+            />
+            <textarea
+              required
+              name="description"
+              placeholder="Description"
+              className="textarea mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+            />
+            <input
+              required
+              name="year"
+              placeholder="Year"
+              type="number"
+              className="input mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+            />
+            <div className="rounded-lg border-2 border-stone-700">
+              <div className="text-md border-b-2 border-r-2 border-stone-700 bg-stone-700 pl-2 font-semibold text-stone-300/80">
+                Software Used
+              </div>
+              <div className="flex w-full flex-wrap px-2">
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    name="blender"
+                    className=" peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                    <div className="h-5 w-5">
+                      <BlenderSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      Blender
+                    </p>
+                  </span>
+                </label>
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    name="substance"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                    <div className="h-5 w-5">
+                      <SubstanceSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      Substance Painter
+                    </p>
+                  </span>
+                </label>
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    name="arnold"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                    <div className="h-5 w-5">
+                      <ArnoldSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      Arnold
+                    </p>
+                  </span>
+                </label>
+
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    name="maya"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                    <div className="h-5 w-5">
+                      <MayaSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">Maya</p>
+                  </span>
+                </label>
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    name="zbrush"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                    <div className="h-5 w-5">
+                      <ZbrushSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      ZBrush
+                    </p>
+                  </span>
+                </label>
+
+                <div className="join-vertical join"></div>
+              </div>
+            </div>
           </div>
-          <div className="join join-vertical"></div>
         </div>
+        <div className="divider"></div>
+
+        <CldImgColWrapper />
+
         {/* <CldUploadWrapper onUploadSuccess={handleUploadSuccess} /> */}
         <FormSubmitButton className="btn-accent btn-block rounded-lg">
           Add Render
