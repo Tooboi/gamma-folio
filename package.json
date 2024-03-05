@@ -24,7 +24,7 @@
     "next": "13.4.7",
     "next-auth": "^4.22.1",
     "next-cloudinary": "^5.16.0",
-    "postcss": "8.4.24",
+    "postcss": "8.4.31",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "prisma": "^4.16.1",
