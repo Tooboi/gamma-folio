@@ -16,7 +16,7 @@ export default function UnAuthPage() {
           d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
-      <span>You are not authorized to access that page</span>
+      <span>Not authorized - Only available to admins</span>
       <div>
     <Link href="/" className="btn btn-md rounded-lg">Home</Link>
   </div>
