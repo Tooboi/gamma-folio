@@ -2,15 +2,12 @@ import { prisma } from "@/lib/db/prisma";
 import RenderCard from "@/components/Cards/RenderCard";
 import PaginationBar from "@/components/PaginationBar";
 
-interface HomeProps {
-  searchParams: { page: string };
+interface Props {
+  page?: string;
 }
 
-export default async function Renders({
-  searchParams: { page = "1" },
-}: HomeProps) {
-  const currentPage = parseInt(page);
-
+export default async function EditRenderPage({ page }: Props) {
+  const currentPage = parseInt(page || "1"); // Default to page 1 if page is not defined
   const pageSize = 24;
   const heroItemCount = 0;
 

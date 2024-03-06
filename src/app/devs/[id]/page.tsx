@@ -2,7 +2,7 @@ import { prisma } from "@/lib/db/prisma";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
-import CldImageWrapped from "../../../components/CldImageWrapper";
+import CldImageWrapped from "../../../components/Wrappers/CldImageWrapper";
 import Link from "next/link";
 
 interface DevPageProps {

@@ -2,7 +2,7 @@ import { prisma } from "@/lib/db/prisma";
 import { DevProject } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
-import CldImageWrapped from "./CldImageWrapper";
+import CldImageWrapped from "../Wrappers/CldImageWrapper";
 
 interface DevCardProps {
   dev: DevProject;

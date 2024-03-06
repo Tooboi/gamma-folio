@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
-import CldImageWrapped from "@/components/CldImageWrapper";
+import CldImageWrapped from "@/components/Wrappers/CldImageWrapper";
 
 import MayaSVG from "@/components/SVG/MayaSVG";
 import ArnoldSVG from "@/components/SVG/ArnoldSVG";

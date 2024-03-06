@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db/prisma";
-import CldImageWrapped from "../components/CldImageWrapper";
+import CldImageWrapped from "../components/Wrappers/CldImageWrapper";
 import Link from "next/link";
 
 export default async function Home() {

@@ -1,4 +1,4 @@
-import RenderCard from "@/components/RenderCard";
+import RenderCard from "@/components/Cards/RenderCard";
 import { prisma } from "@/lib/db/prisma";
 import { Metadata } from "next";
 

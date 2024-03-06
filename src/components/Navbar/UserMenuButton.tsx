@@ -10,6 +10,9 @@ import {
   ArrowRightStartOnRectangleIcon,
   AdjustmentsHorizontalIcon,
   UserIcon,
+  PencilSquareIcon,
+  FilmIcon,
+  PhotoIcon,
 } from "@heroicons/react/24/solid";
 
 interface UserMenuButtonProps {
@@ -53,7 +56,7 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
         <ul
           tabIndex={0}
           role="list"
-          className="dropdown-content menu menu-sm z-30 mt-2 w-52 rounded-lg border-2 border-stone-700 bg-stone-900 p-2 shadow "
+          className="dropdown-content menu menu-sm z-30 mt-2 w-52 gap-2 rounded-lg border-2 border-stone-700 bg-stone-900 p-2 shadow"
         >
           <li className="group rounded-lg transition-all hover:bg-stone-800 active:bg-stone-900 active:ring-2 active:ring-inset active:ring-stone-700">
             <Link
@@ -61,9 +64,21 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
               className="z-30 flex items-center rounded-lg p-2 text-stone-300 transition group-hover:bg-stone-800 group-active:bg-stone-900"
               role="button"
             >
-              <AdjustmentsHorizontalIcon className="h-6 w-6 text-stone-400 group-hover:text-stone-500" />
+              <PhotoIcon className="h-6 w-6 text-stone-400 group-hover:text-stone-500" />
               <span className="ml-3 flex group-hover:text-stone-200">
                 Add Render
+              </span>
+            </Link>
+          </li>
+          <li className="group rounded-lg transition-all hover:bg-stone-800 active:bg-stone-900 active:ring-2 active:ring-inset active:ring-stone-700">
+            <Link
+              href="/edit"
+              className="z-30 flex items-center rounded-lg p-2 text-stone-300 transition group-hover:bg-stone-800 group-active:bg-stone-900"
+              role="button"
+            >
+              <PencilSquareIcon className="h-6 w-6 text-stone-400 group-hover:text-stone-500" />
+              <span className="ml-3 flex group-hover:text-stone-200">
+                Edit Renders
               </span>
             </Link>
           </li>
@@ -79,7 +94,6 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
               </span>
             </button>
           </li>
-          
         </ul>
       ) : (
         <ul

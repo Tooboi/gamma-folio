@@ -2,7 +2,7 @@ import { prisma } from "@/lib/db/prisma";
 import { Render } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
-import CldImageWrapped from "./CldImageWrapper";
+import CldImageWrapped from "../Wrappers/CldImageWrapper";
 
 import MayaSVG from "@/components/SVG/MayaSVG";
 import ArnoldSVG from "@/components/SVG/ArnoldSVG";
