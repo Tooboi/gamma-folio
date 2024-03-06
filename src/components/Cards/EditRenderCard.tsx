@@ -24,7 +24,7 @@ export default function RenderCard({ render }: RenderCardProps) {
     : `gamma-folio/${render.thumbnail}`; // If not, add "gamma-folio"
 
   return (
-    <div className="group relative flex h-[110px] max-w-2xl flex-row overflow-hidden rounded-lg border-2 border-stone-700 bg-stone-800">
+    <div className="group relative flex h-[110px] max-w-2xl flex-row overflow-hidden rounded-lg border-2 border-brand-700 bg-brand-800">
       <div className=" w-[128px]">
         <div className="h-full w-full overflow-hidden">
           <CldImageWrapped
@@ -40,17 +40,17 @@ export default function RenderCard({ render }: RenderCardProps) {
       </div>
       {/* <div className="divider divider-vertical">OR</div> */}
       <div className=" flex w-full flex-col transition-all">
-        <p className="line-clamp-1 select-none px-2 text-left text-lg font-medium text-stone-200 sm:text-xl">
+        <p className="line-clamp-1 select-none px-2 text-left text-lg font-medium text-brand-200 sm:text-xl">
           {render.name}
         </p>
-        <p className="select-none px-2 text-sm font-medium text-stone-300">
+        <p className="select-none px-2 text-sm font-medium text-brand-300">
           {render.year}
         </p>
 
-        <p className="line-clamp-1 select-none border-t-2 border-stone-700 p-1 px-2 text-sm font-light text-stone-400">
+        <p className="line-clamp-1 select-none border-t-2 border-brand-700 p-1 px-2 text-sm font-light text-brand-400">
           {render.caption}
         </p>
-        <p className="line-clamp-1 select-none border-t-2 border-stone-700 px-2 pt-1 text-xs font-light text-stone-400 group-hover:mb-1">
+        <p className="line-clamp-1 select-none border-t-2 border-brand-700 px-2 pt-1 text-xs font-light text-brand-400 group-hover:mb-1">
           {render.description}
         </p>
         <div className="absolute right-0 top-0 z-20 pr-2 pt-2 transition-all group-hover:right-8">
@@ -105,24 +105,24 @@ export default function RenderCard({ render }: RenderCardProps) {
     // <div className="overflow-hidden rounded-xl">
     //   <Link
     //     href={"/edit/" + render.id}
-    //     className="aspect-h-1 aspect-w-1 relative mx-auto min-w-[150px] max-w-[512px] bg-stone-800"
+    //     className="aspect-h-1 aspect-w-1 relative mx-auto min-w-[150px] max-w-[512px] bg-brand-800"
     //   >
     //     <section className="group absolute inset-0 z-10 opacity-0 transition-all hover:opacity-100">
-    //       <div className="image-gradient flex h-full w-full flex-row border-stone-700 transition-all group-hover:border-2" />
+    //       <div className="image-gradient flex h-full w-full flex-row border-brand-700 transition-all group-hover:border-2" />
     //       <div className="absolute bottom-0 left-0 z-20 p-4">
-    //         <p className="select-none text-left text-lg font-medium text-stone-200 sm:text-2xl">
+    //         <p className="select-none text-left text-lg font-medium text-brand-200 sm:text-2xl">
     //           {render.name}
     //         </p>
-    //         <p className="text-md select-none font-medium text-stone-300">
+    //         <p className="text-md select-none font-medium text-brand-300">
     //           {render.year}
     //         </p>
-    //         <p className="text-md hidden select-none font-light text-stone-400 md:block">
+    //         <p className="text-md hidden select-none font-light text-brand-400 md:block">
     //           {render.caption}
     //         </p>
     //       </div>
     //       <div className="absolute left-0 top-0 z-20 p-4">
     //         {isNew && (
-    //           <h2 className="inline-flex items-center rounded-md bg-stone-800/40 px-2 py-1 text-xs font-medium text-stone-400/90 ring-2 ring-inset ring-stone-400/40 backdrop-blur-sm">
+    //           <h2 className="inline-flex items-center rounded-md bg-brand-800/40 px-2 py-1 text-xs font-medium text-brand-400/90 ring-2 ring-inset ring-brand-400/40 backdrop-blur-sm">
     //             NEW
     //           </h2>
     //         )}

@@ -78,21 +78,21 @@ export default function CldUploadImageWrapper() {
               crop="fill"
               aspectRatio="1:1"
               sizes="100vw"
-              className="mx-auto rounded-lg border-2 border-stone-700"
+              className="mx-auto rounded-lg border-2 border-brand-700"
             />
           </div>
           <input
             required
             placeholder={imageId}
-            className="input-disabled input mb-3 hidden w-full rounded-lg border-2 border-stone-500 bg-transparent text-stone-600 backdrop-blur-sm placeholder:text-stone-600 focus:border-stone-600 focus:ring-2 focus:ring-stone-600 focus:ring-offset-2 focus:ring-offset-stone-950"
+            className="input-disabled input mb-3 hidden w-full rounded-lg border-2 border-brand-500 bg-transparent text-brand-600 backdrop-blur-sm placeholder:text-brand-600 focus:border-brand-600 focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 focus:ring-offset-brand-950"
             name="publicId"
             value={imageId}
           />
         </div>
       ) : (
-        <div className="mx-auto mt-2 max-w-[128px] rounded-lg border border-stone-600 bg-stone-950">
-          <PhotoIcon className="mx-auto w-full text-stone-800/80" />
-          <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-stone-800/80 lg:text-sm">
+        <div className="mx-auto mt-2 max-w-[128px] rounded-lg border border-brand-600 bg-brand-950">
+          <PhotoIcon className="mx-auto w-full text-brand-800/80" />
+          <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-brand-800/80 lg:text-sm">
             Max {formatBytes(maxFileSize)}
           </p>
         </div>

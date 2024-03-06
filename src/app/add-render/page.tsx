@@ -96,9 +96,9 @@ export default async function AddRenderPage() {
     <div className="w-full">
       <form
         action={addRender}
-        className="rounded-lg border-2 border-stone-700 p-2 px-4 backdrop-blur-2xl"
+        className="rounded-lg border-2 border-brand-700 p-2 px-4 backdrop-blur-2xl"
       >
-        <h1 className="pb-3 text-center text-2xl font-bold text-stone-300">
+        <h1 className="pb-3 text-center text-2xl font-bold text-brand-300">
           Add Render
         </h1>
         <div className="flex flex-row">
@@ -110,29 +110,29 @@ export default async function AddRenderPage() {
               required
               name="name"
               placeholder="Name"
-              className="input mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+              className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
             />
             <input
               required
               name="caption"
               placeholder="Caption"
-              className="input mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+              className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
             />
             <textarea
               required
               name="description"
               placeholder="Description"
-              className="textarea mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 placeholder:text-[1.025rem] focus-within:border-stone-500"
+              className="textarea mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 placeholder:text-[1.025rem] focus-within:border-brand-500"
             />
             <input
               required
               name="year"
               placeholder="Year"
               type="number"
-              className="input mb-3 w-full rounded-lg border-2 border-stone-700 bg-transparent backdrop-blur-sm placeholder:text-stone-600 focus-within:border-stone-500"
+              className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
             />
-            <div className="rounded-lg border-2 border-stone-700">
-              <div className="text-md border-b-2 border-r-2 border-stone-700 bg-stone-700 pl-2 font-semibold text-stone-300/80">
+            <div className="rounded-lg border-2 border-brand-700">
+              <div className="text-md border-b-2 border-r-2 border-brand-700 bg-brand-700 pl-2 font-semibold text-brand-300/80">
                 Software Used
               </div>
               <div className="flex w-full flex-wrap justify-center px-2">
@@ -142,7 +142,7 @@ export default async function AddRenderPage() {
                     name="blender"
                     className=" peer checkbox hidden"
                   />
-                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
                     <div className="h-5 w-5">
                       <BlenderSVG />
                     </div>
@@ -157,7 +157,7 @@ export default async function AddRenderPage() {
                     name="substance"
                     className="peer checkbox hidden"
                   />
-                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
                     <div className="h-5 w-5">
                       <SubstanceSVG />
                     </div>
@@ -172,7 +172,7 @@ export default async function AddRenderPage() {
                     name="arnold"
                     className="peer checkbox hidden"
                   />
-                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
                     <div className="h-5 w-5">
                       <ArnoldSVG />
                     </div>
@@ -188,7 +188,7 @@ export default async function AddRenderPage() {
                     name="maya"
                     className="peer checkbox hidden"
                   />
-                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
                     <div className="h-5 w-5">
                       <MayaSVG />
                     </div>
@@ -201,7 +201,7 @@ export default async function AddRenderPage() {
                     name="zbrush"
                     className="peer checkbox hidden"
                   />
-                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-stone-700 bg-stone-800 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 transition-all peer-checked:border-stone-400 peer-checked:bg-stone-700 peer-checked:text-stone-300 peer-hover:border-stone-400">
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
                     <div className="h-5 w-5">
                       <ZbrushSVG />
                     </div>
@@ -218,7 +218,7 @@ export default async function AddRenderPage() {
         <div className="divider"></div>
         <CldImgColWrapper />
         <div className="divider"></div>
-        <FormSubmitButton className=" btn-block btn mx-auto mb-4 justify-center rounded-lg border-0 border-stone-600 bg-stone-600 text-lg font-medium text-stone-300 transition-all hover:border-2 hover:border-teal-600 hover:bg-teal-950 hover:text-teal-500">
+        <FormSubmitButton className=" btn-block btn mx-auto mb-4 justify-center rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-accent-600 hover:bg-accent-950 hover:text-accent-500">
           Create New Render
         </FormSubmitButton>
       </form>

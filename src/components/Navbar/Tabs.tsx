@@ -10,7 +10,7 @@ export default function Tabs() {
         >
           <li>
             Renders
-            <span className="block h-[3px] max-w-0 rounded-full bg-stone-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
+            <span className="block h-[3px] max-w-0 rounded-full bg-brand-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
           </li>
         </Link>
         <Link
@@ -19,7 +19,7 @@ export default function Tabs() {
         >
           <li>
             Dev
-            <span className="block h-[3px] max-w-0 rounded-full bg-stone-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
+            <span className="block h-[3px] max-w-0 rounded-full bg-brand-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
           </li>
         </Link>
         <Link
@@ -28,7 +28,7 @@ export default function Tabs() {
         >
           <li>
             About
-            <span className="block h-[3px] max-w-0 rounded-full bg-stone-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
+            <span className="block h-[3px] max-w-0 rounded-full bg-brand-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
           </li>
         </Link>
         <Link
@@ -37,7 +37,7 @@ export default function Tabs() {
         >
           <li>
             Contact
-            <span className="block h-[3px] max-w-0 rounded-full bg-stone-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
+            <span className="block h-[3px] max-w-0 rounded-full bg-brand-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
           </li>
         </Link>
       </ul>

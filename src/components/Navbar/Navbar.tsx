@@ -41,7 +41,7 @@ export default async function Navbar() {
               <input
                 name="searchQuery"
                 placeholder="Search"
-                className="input placeholder-stone-500 h-[2.5rem] w-full min-w-[100px] border-2 border-stone-800 bg-transparent backdrop-blur-sm "
+                className="input placeholder-brand-500 h-[2.5rem] w-full min-w-[100px] border-2 border-brand-800 bg-transparent backdrop-blur-sm "
               />
             </div>
           </form>

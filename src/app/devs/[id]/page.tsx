@@ -44,7 +44,7 @@ export default async function DevPage({ params: { id } }: DevPageProps) {
             <div className="flex justify-evenly gap-0 px-2 sm:justify-center sm:gap-4">
               <Link href={dev.repo} target="_blank">
                 <svg
-                  className="h-12 w-12 fill-stone-600 stroke-stone-600 transition-all hover:fill-stone-500 hover:stroke-stone-500 active:fill-stone-600 active:stroke-stone-600"
+                  className="h-12 w-12 fill-brand-600 stroke-brand-600 transition-all hover:fill-brand-500 hover:stroke-brand-500 active:fill-brand-600 active:stroke-brand-600"
                   viewBox="0 0 128 128"
                 >
                   <path
@@ -58,7 +58,7 @@ export default async function DevPage({ params: { id } }: DevPageProps) {
               <Link
                 href={dev.link}
                 target="_blank"
-                className="btn border-stone-900 bg-stone-800 text-stone-300 transition-all hover:border-stone-800 hover:bg-stone-700 active:border-stone-900 active:bg-stone-800"
+                className="btn border-brand-900 bg-brand-800 text-brand-300 transition-all hover:border-brand-800 hover:bg-brand-700 active:border-brand-900 active:bg-brand-800"
               >
                 Live Link
               </Link>
@@ -68,7 +68,7 @@ export default async function DevPage({ params: { id } }: DevPageProps) {
         <div className="lg:grid lg:grid-cols-6 ">
           <div className="md:col-span-3 lg:col-span-4">
             {/* Map through the ImageCollection array */}
-            <div className="mx-auto flex flex-col overflow-hidden rounded-xl border-4 border-stone-900">
+            <div className="mx-auto flex flex-col overflow-hidden rounded-xl border-4 border-brand-900">
               <CldImageWrapped
                 priority
                 key={dev.id}
@@ -79,22 +79,22 @@ export default async function DevPage({ params: { id } }: DevPageProps) {
                 src={`gamma-folio/` + dev.image}
                 sizes="100vw"
                 alt={dev.title}
-                className="w-full border-b-4 border-stone-900 last:border-b-0"
+                className="w-full border-b-4 border-brand-900 last:border-b-0"
               />
             </div>
           </div>
-          <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-4 border-stone-800 bg-stone-900 md:col-span-3 lg:col-span-2  lg:flex">
+          <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-4 border-brand-800 bg-brand-900 md:col-span-3 lg:col-span-2  lg:flex">
             <div className="p-4">
-              <h1 className="text-pretty mb-4 text-3xl font-bold text-stone-300">
+              <h1 className="text-pretty mb-4 text-3xl font-bold text-brand-300">
                 {dev.title}
               </h1>
-              <p className="text-pretty mb-8 text-stone-300">
+              <p className="text-pretty mb-8 text-brand-300">
                 {dev.description}
               </p>
               <div className="flex justify-between px-2">
                 <Link href={dev.repo} target="_blank">
                   <svg
-                    className="h-12 w-12 fill-stone-600 stroke-stone-600 transition-all hover:fill-stone-500 hover:stroke-stone-500 active:fill-stone-600 active:stroke-stone-600"
+                    className="h-12 w-12 fill-brand-600 stroke-brand-600 transition-all hover:fill-brand-500 hover:stroke-brand-500 active:fill-brand-600 active:stroke-brand-600"
                     viewBox="0 0 128 128"
                   >
                     <path
@@ -108,7 +108,7 @@ export default async function DevPage({ params: { id } }: DevPageProps) {
                 <Link
                   href={dev.link}
                   target="_blank"
-                  className="btn border-stone-900 bg-stone-800 text-stone-300 transition-all hover:border-stone-800 hover:bg-stone-700 active:border-stone-900 active:bg-stone-800"
+                  className="btn border-brand-900 bg-brand-800 text-brand-300 transition-all hover:border-brand-800 hover:bg-brand-700 active:border-brand-900 active:bg-brand-800"
                 >
                   Live Link
                 </Link>

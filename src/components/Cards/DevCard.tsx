@@ -13,15 +13,15 @@ export default function DevCard({ dev }: DevCardProps) {
     <div className="overflow-hidden rounded-md">
       <Link
         href={"/devs/" + dev.id}
-        className="aspect-h-1 aspect-w-1 relative mx-auto min-w-[150px] max-w-[512px] bg-stone-800 "
+        className="aspect-h-1 aspect-w-1 relative mx-auto min-w-[150px] max-w-[512px] bg-brand-800 "
       >
         <section className="group absolute inset-0 z-10 opacity-0 transition-all hover:opacity-100 ">
           <div className="image-gradient-dev flex h-full w-full flex-row transition-all " />
           <div className="absolute bottom-0 left-0 z-20 p-4">
-            <p className="select-none text-left text-lg font-medium text-stone-200 sm:text-2xl">
+            <p className="select-none text-left text-lg font-medium text-brand-200 sm:text-2xl">
               {dev.title}
             </p>
-            <p className="select-none text-left text-sm font-light text-stone-200 ">
+            <p className="select-none text-left text-sm font-light text-brand-200 ">
               {dev.description}
             </p>
           </div>

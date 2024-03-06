@@ -28,7 +28,7 @@ function formatBytes(fileSize: number): string {
 export default function CldUploadImageWrapper() {
   const [publicIdsArray, setPublicIdsArray] = useState<string[]>([]);
   const [buttonClassName, setButtonClassName] = useState(
-    "btn bg-stone-600 hover:bg-stone-700 hover:border-stone-500 hover:border-2 btn-block rounded-lg justify-center mx-auto"
+    "btn bg-brand-600 hover:bg-brand-700 hover:border-brand-500 hover:border-2 btn-block rounded-lg justify-center mx-auto"
   );
   const maxFileSize = 41943040; // 40MB in B
 
@@ -88,21 +88,21 @@ export default function CldUploadImageWrapper() {
               </button>
               {publicIdsArray.length === 0 && (
                 <div className="mx-auto mt-4 flex flex-row gap-4">
-                  <div className="hidden max-w-[256px] rounded-lg border-2 border-stone-700 bg-stone-900 md:block">
-                    <PhotoIcon className="mx-auto w-full text-stone-700" />
-                    <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-stone-600 lg:text-sm">
+                  <div className="hidden max-w-[256px] rounded-lg border-2 border-brand-700 bg-brand-900 md:block">
+                    <PhotoIcon className="mx-auto w-full text-brand-700" />
+                    <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-brand-600 lg:text-sm">
                       Max {formatBytes(maxFileSize)}
                     </p>
                   </div>
-                  <div className="hidden max-w-[256px] rounded-lg border-2 border-stone-700 bg-stone-900 sm:block">
-                    <PhotoIcon className="mx-auto w-full text-stone-700" />
-                    <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-stone-600 lg:text-sm">
+                  <div className="hidden max-w-[256px] rounded-lg border-2 border-brand-700 bg-brand-900 sm:block">
+                    <PhotoIcon className="mx-auto w-full text-brand-700" />
+                    <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-brand-600 lg:text-sm">
                       Max {formatBytes(maxFileSize)}
                     </p>
                   </div>
-                  <div className="max-w-[256px] rounded-lg border-2 border-stone-700 bg-stone-900">
-                    <PhotoIcon className="mx-auto w-full text-stone-700" />
-                    <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-stone-600 lg:text-sm">
+                  <div className="max-w-[256px] rounded-lg border-2 border-brand-700 bg-brand-900">
+                    <PhotoIcon className="mx-auto w-full text-brand-700" />
+                    <p className="mt-[-1rem] select-none pb-2 text-center text-xs text-brand-600 lg:text-sm">
                       Max {formatBytes(maxFileSize)}
                     </p>
                   </div>
@@ -120,10 +120,10 @@ export default function CldUploadImageWrapper() {
               <div className="relative overflow-hidden px-2">
                 <div
                   onClick={() => removeImage(index)}
-                  className="group absolute right-2 w-8 cursor-pointer rounded-bl-lg rounded-tr-lg border-b-2 border-s-2 border-stone-700 bg-stone-800 transition-all hover:bg-rose-600"
+                  className="group absolute right-2 w-8 cursor-pointer rounded-bl-lg rounded-tr-lg border-b-2 border-s-2 border-brand-700 bg-brand-800 transition-all hover:bg-rose-600"
                 >
                   <div className="w-8 pr-1 ">
-                    <XMarkIcon className="fill-stone-500 transition-all group-hover:fill-stone-200" />
+                    <XMarkIcon className="fill-brand-500 transition-all group-hover:fill-brand-200" />
                   </div>
                 </div>
                 <CldImageWrapper
@@ -134,12 +134,12 @@ export default function CldUploadImageWrapper() {
                   crop="fill"
                   aspectRatio="1:1"
                   sizes="100vw"
-                  className="mx-auto rounded-lg border-2 border-stone-700"
+                  className="mx-auto rounded-lg border-2 border-brand-700"
                 />
               </div>
               <input
                 placeholder={id}
-                className="border-byte-500 focus:border-byte-600 input-disabled input mb-3 hidden w-full rounded-lg border-2 bg-transparent text-stone-600 backdrop-blur-sm placeholder:text-stone-600 focus:ring-2 focus:ring-stone-600 focus:ring-offset-2 focus:ring-offset-stone-950"
+                className="border-byte-500 focus:border-byte-600 input-disabled input mb-3 hidden w-full rounded-lg border-2 bg-transparent text-brand-600 backdrop-blur-sm placeholder:text-brand-600 focus:ring-2 focus:ring-brand-600 focus:ring-offset-2 focus:ring-offset-brand-950"
                 name="imageCollectionArray"
                 value={publicIdsArray}
               />

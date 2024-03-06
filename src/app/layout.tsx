@@ -21,7 +21,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="forest"
-      className="background-grid text-stone-300"
+      className="background-grid text-brand-300"
     >
       <body className={rubik.className}>
         <SessionProvider>
