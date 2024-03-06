@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
-import CldImageWrapped from "@/components/CldImageWrapper";
+import CldImageWrapped from "@/components/Wrappers/CldImageWrapper";
 
 import MayaSVG from "@/components/SVG/MayaSVG";
 import ArnoldSVG from "@/components/SVG/ArnoldSVG";
@@ -56,7 +56,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
           <div className="mb-4 flex flex-wrap justify-center">
             <div className="flex flex-wrap justify-center">
               {render.maya ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                   <div className="h-5 w-5">
                     <MayaSVG />
                   </div>
@@ -66,7 +66,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                 <p></p>
               )}
               {render.arnold ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                   <div className="h-5 w-5">
                     <ArnoldSVG />
                   </div>
@@ -76,7 +76,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                 <p></p>
               )}
               {render.zbrush ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                   <div className="h-5 w-5">
                     <ZbrushSVG />
                   </div>
@@ -86,7 +86,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                 <p></p>
               )}
               {render.blender ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                   <div className="h-5 w-5">
                     <BlenderSVG />
                   </div>
@@ -98,7 +98,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                 <p></p>
               )}
               {render.substance ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                   <div className="h-5 w-5">
                     <SubstanceSVG />
                   </div>
@@ -117,7 +117,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
         <div className="md:col-span-3 lg:col-span-4">
           {/* Map through the ImageCollection array */}
           {render.imageCollection && render.imageCollection.length > 0 && (
-            <div className="mx-auto flex flex-col overflow-hidden rounded-xl border-4 border-stone-900">
+            <div className="mx-auto flex flex-col overflow-hidden rounded-xl border-4 border-brand-900">
               {render.imageCollection.map((pubID, index) => {
                 // Check if "gamma-folio" is already present in the pubID URL
                 const imageUrl = pubID.includes("gamma-folio")
@@ -134,29 +134,29 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                     src={imageUrl}
                     sizes="100vw"
                     alt={render.name}
-                    className="w-full border-b-4 border-stone-900 last:border-b-0"
+                    className="w-full border-b-4 border-brand-900 last:border-b-0"
                   />
                 );
               })}
             </div>
           )}
         </div>
-        <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-4 border-stone-800 bg-stone-900 md:col-span-3 lg:col-span-2 lg:flex">
+        <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-4 border-brand-800 bg-brand-900 md:col-span-3 lg:col-span-2 lg:flex">
           <div className="w-full p-4">
-            <h1 className="text-pretty mb-4 text-3xl font-bold text-stone-300">
+            <h1 className="text-pretty mb-4 text-3xl font-bold text-brand-300">
               {render.name}
             </h1>
-            <p className="text-pretty mb-4 text-stone-300">
+            <p className="text-pretty mb-4 text-brand-300">
               {render.description}
             </p>
             <div className="flex flex-col pb-4">
-              <p className="text-lg font-semibold text-stone-300">
+              <p className="text-lg font-semibold text-brand-300">
                 Software Used
               </p>
               <div className="flex flex-wrap ">
                 <div className="">
                   {render.maya ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                       <div className="h-5 w-5">
                         <MayaSVG />
                       </div>
@@ -168,7 +168,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                     <p></p>
                   )}
                   {render.arnold ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                       <div className="h-5 w-5">
                         <ArnoldSVG />
                       </div>
@@ -180,7 +180,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                     <p></p>
                   )}
                   {render.zbrush ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                       <div className="h-5 w-5">
                         <ZbrushSVG />
                       </div>
@@ -192,7 +192,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                     <p></p>
                   )}
                   {render.blender ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                       <div className="h-5 w-5">
                         <BlenderSVG />
                       </div>
@@ -204,7 +204,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                     <p></p>
                   )}
                   {render.substance ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-stone-500 bg-stone-700 px-2.5 py-[0.18rem] text-xs font-medium text-stone-400 ">
+                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                       <div className="h-5 w-5">
                         <SubstanceSVG />
                       </div>
@@ -218,7 +218,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                 </div>
               </div>
             </div>
-            <p className="text-right text-lg font-bold text-stone-300">
+            <p className="text-right text-lg font-bold text-brand-300">
               {createdAtDate}
             </p>
           </div>

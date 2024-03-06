@@ -1,134 +1,105 @@
-import FormSubmitButton from "@/components/FormSubmitButton";
 import { prisma } from "@/lib/db/prisma";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import { authOptions } from "../api/auth/[...nextauth]/route";
-import CldUploadWrapper from "@/components/Wrappers/CldUploadWrapper";
-import CldThumbWrapper from "@/components/Wrappers/CldThumbWrapper";
-import CldImgColWrapper from "@/components/Wrappers/CldImgColWrapper";
-import SubstanceSVG from "@/components/SVG/SubstanceSVG";
-import BlenderSVG from "@/components/SVG/BlenderSVG";
-import ArnoldSVG from "@/components/SVG/ArnoldSVG";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { cache } from "react";
+
 import MayaSVG from "@/components/SVG/MayaSVG";
+import ArnoldSVG from "@/components/SVG/ArnoldSVG";
 import ZbrushSVG from "@/components/SVG/ZbrushSVG";
-// import React, { useState } from "react";
+import BlenderSVG from "@/components/SVG/BlenderSVG";
+import SubstanceSVG from "@/components/SVG/SubstanceSVG";
+import CldEditImageWrapper from "@/components/Wrappers/CldEditImageWrapper";
+import FormSubmitButton from "@/components/FormSubmitButton";
+import CldEditImgColWrapper from "@/components/Wrappers/CldEditImgColWrapper";
+import Link from "next/link";
 
-export const metadata = {
-  title: "Add Render - GAMMA2DOT2",
-};
-
-type UploadResult = {
-  info: {
-    public_id: string;
+interface RenderPageProps {
+  params: {
+    id: string;
   };
-  event: "success";
-};
-
-async function addRender(formData: FormData) {
-  "use server";
-
-  const session = await getServerSession(authOptions);
-
-  const name = formData.get("name")?.toString();
-  const caption = formData.get("caption")?.toString();
-  const description = formData.get("description")?.toString();
-  const thumbnail = formData.get("publicId")?.toString();
-  const year = Number(formData.get("year") || 0);
-
-  const blender = Boolean(formData.get("blender") || false);
-  const zbrush = Boolean(formData.get("zbrush") || false);
-  const substance = Boolean(formData.get("substance") || false);
-  const maya = Boolean(formData.get("maya") || false);
-  const arnold = Boolean(formData.get("arnold") || false);
-
-  const imageCollectionString = formData
-    .get("imageCollectionArray")
-    ?.toString();
-  const imageCollection = imageCollectionString
-    ? imageCollectionString.split(",")
-    : [];
-  console.log(imageCollection);
-  console.log(imageCollectionString);
-
-  if (
-    !name ||
-    !caption ||
-    !description ||
-    !thumbnail ||
-    !year ||
-    !imageCollection
-  ) {
-    throw Error("Missing required fields");
-  }
-
-  await prisma.render.create({
-    data: {
-      name,
-      caption,
-      description,
-      thumbnail,
-      imageCollection,
-      year,
-      blender,
-      zbrush,
-      substance,
-      maya,
-      arnold,
-    },
-  });
-
-  redirect("/");
 }
 
-export default async function AddRenderPage() {
-  const session = await getServerSession(authOptions);
-  const user = session?.user;
+const getRender = cache(async (id: string) => {
+  const render = await prisma.render.findUnique({ where: { id } });
+  if (!render) notFound();
+  return render;
+});
 
-  if (user?.email != process.env.ADMIN_EMAIL) {
-    redirect("/unathorized");
-  }
+async function updateRender() {
+  "use server";
+  return;
+}
 
-  if (!session) {
-    redirect("/api/auth/signin?callbackUrl=/add-product");
-  }
+export async function generateMetadata({
+  params: { id },
+}: RenderPageProps): Promise<Metadata> {
+  const render = await getRender(id);
+
+  return {
+    title: render.name + " - GAMMA2DOT2",
+    description: render.description,
+    openGraph: {
+      images: [{ url: render.thumbnail }],
+    },
+  };
+}
+
+export default async function EditPage({ params: { id } }: RenderPageProps) {
+  const render = await getRender(id);
+  const createdAtDate = new Date(render.createdAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+  });
 
   return (
     <div className="w-full">
       <form
-        action={addRender}
+        action={updateRender}
         className="rounded-lg border-2 border-brand-700 p-2 px-4 backdrop-blur-2xl"
       >
         <h1 className="pb-3 text-center text-2xl font-bold text-brand-300">
-          Add Render
+          Edit Render
         </h1>
         <div className="flex flex-row">
-          <div className="">
-            <CldThumbWrapper />
+          <div>
+            <CldEditImageWrapper render={render} />
           </div>
           <div className="w-full pl-4">
+            <label htmlFor="name" className="pl-2 text-stone-400">
+              Name
+            </label>
             <input
-              required
+              id="name"
               name="name"
-              placeholder="Name"
+              placeholder={render.name}
               className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
             />
+            <label htmlFor="caption" className="pl-2 text-stone-400">
+              Caption
+            </label>
             <input
-              required
+              id="caption"
               name="caption"
-              placeholder="Caption"
+              placeholder={render.caption}
               className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
             />
+            <label htmlFor="description" className="pl-2 text-stone-400">
+              Description
+            </label>
             <textarea
-              required
+              id="description"
               name="description"
-              placeholder="Description"
-              className="textarea mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 placeholder:text-[1.025rem] focus-within:border-brand-500"
+              placeholder={render.description}
+              className="textarea w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-[1.025rem] placeholder:text-brand-600 focus-within:border-brand-500"
             />
+            <label htmlFor="year" className="pl-2 text-stone-400">
+              Year
+            </label>
             <input
-              required
+              id="year"
               name="year"
-              placeholder="Year"
               type="number"
+              placeholder={render.year.toString()}
               className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
             />
             <div className="rounded-lg border-2 border-brand-700">
@@ -139,6 +110,7 @@ export default async function AddRenderPage() {
                 <label className="label join-item cursor-pointer justify-start">
                   <input
                     type="checkbox"
+                    defaultChecked={render.blender}
                     name="blender"
                     className=" peer checkbox hidden"
                   />
@@ -154,6 +126,7 @@ export default async function AddRenderPage() {
                 <label className="label join-item cursor-pointer justify-start">
                   <input
                     type="checkbox"
+                    defaultChecked={render.substance}
                     name="substance"
                     className="peer checkbox hidden"
                   />
@@ -169,6 +142,7 @@ export default async function AddRenderPage() {
                 <label className="label join-item cursor-pointer justify-start">
                   <input
                     type="checkbox"
+                    defaultChecked={render.arnold}
                     name="arnold"
                     className="peer checkbox hidden"
                   />
@@ -185,6 +159,7 @@ export default async function AddRenderPage() {
                 <label className="label join-item cursor-pointer justify-start">
                   <input
                     type="checkbox"
+                    defaultChecked={render.maya}
                     name="maya"
                     className="peer checkbox hidden"
                   />
@@ -198,6 +173,7 @@ export default async function AddRenderPage() {
                 <label className="label join-item cursor-pointer justify-start">
                   <input
                     type="checkbox"
+                    defaultChecked={render.zbrush}
                     name="zbrush"
                     className="peer checkbox hidden"
                   />
@@ -216,12 +192,56 @@ export default async function AddRenderPage() {
           </div>
         </div>
         <div className="divider"></div>
-        <CldImgColWrapper />
+        <CldEditImgColWrapper render={render} />
         <div className="divider"></div>
-        <FormSubmitButton className=" btn-block btn mx-auto mb-4 justify-center rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-accent-600 hover:bg-accent-950 hover:text-accent-500">
-          Create New Render
-        </FormSubmitButton>
+        <div className="flex w-full flex-col justify-between gap-2 xs:flex-row">
+          <Link
+            href={"/edit"}
+            className="btn mx-auto w-28 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950/80 hover:text-rose-500 xs:mx-0"
+          >
+            Cancel
+          </Link>
+          {/* The button to open modal */}
+
+          {/* <button className="btn mx-auto w-48 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950 hover:text-rose-500 xs:mx-0">
+            Delete Render
+          </button> */}
+          <FormSubmitButton className="btn mb-4 w-64 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-accent-600 hover:bg-accent-950 hover:text-accent-500">
+            Update render
+          </FormSubmitButton>
+        </div>
       </form>
+      <div className="mx-auto mt-8 max-w-xl rounded-lg border-2 border-rose-700 bg-rose-950/20 backdrop-blur-2xl">
+        <h1 className="border-b-2 border-rose-700 py-2 text-center text-2xl font-bold text-brand-300">
+          Danger Zone
+        </h1>
+        <div className="flex w-full justify-end px-4 py-4">
+          <h1 className="pe-8 pt-2 text-lg">Permanently delete your render</h1>
+          <label
+            htmlFor="my_modal_6"
+            className="btn mx-auto w-48 rounded-lg border-2 border-rose-700 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950 hover:text-rose-500 xs:mx-0"
+          >
+            Delete Render
+          </label>
+
+          {/* Put this part before </body> tag */}
+          <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+          <div className="modal overflow-visible" role="dialog">
+            <div className="z-100 modal-box absolute border-2 border-rose-700 -top-96">
+              <h3 className="text-lg font-bold">Delete render?</h3>
+              <p className="py-4">You cannot undo this action!</p>
+              <div className="modal-action">
+                <label
+                  htmlFor="my_modal_6"
+                  className="btn mx-auto w-28 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950/80 hover:text-rose-500 xs:mx-0"
+                >
+                  Delete
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

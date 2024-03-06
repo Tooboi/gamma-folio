@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
       #29252480 0.2em,
       transparent 0.2em
     ),
-    linear-gradient(90deg, rgba(41, 37, 36, 0.5) 0.2em, transparent 0.2em);
+    linear-gradient(90deg, #29252480 0.2em, transparent 0.2em);
   background-size: 12dvw 12dvw;
 }
 

@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db/prisma";
-import DevCard from "@/components/DevCard";
+import DevCard from "@/components/Cards/DevCard";
 
 interface HomeProps {
     searchParams: { page: string };
