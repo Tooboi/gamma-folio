@@ -1,13 +1,22 @@
 import { prisma } from "@/lib/db/prisma";
 import EditRenderCard from "@/components/Cards/EditRenderCard";
 import PaginationBar from "@/components/PaginationBar";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
 interface Props {
   page?: string;
 }
 
 export default async function EditRendersPage({ page }: Props) {
-  const currentPage = parseInt(page || "1"); // Default to page 1 if page is not defined
+  const session = await getServerSession(authOptions);
+  const user = session?.user;
+
+  if (user?.email != process.env.ADMIN_EMAIL) {
+    redirect("/unathorized");
+  }
+  const currentPage = parseInt("1"); // Default to page 1 if page is not defined
   const pageSize = 24;
   const heroItemCount = 0;
 

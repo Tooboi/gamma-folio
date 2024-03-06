@@ -1,15 +1,17 @@
 import { prisma } from "@/lib/db/prisma";
-import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
-import CldImageWrapped from "@/components/Wrappers/CldImageWrapper";
 
 import MayaSVG from "@/components/SVG/MayaSVG";
 import ArnoldSVG from "@/components/SVG/ArnoldSVG";
 import ZbrushSVG from "@/components/SVG/ZbrushSVG";
 import BlenderSVG from "@/components/SVG/BlenderSVG";
 import SubstanceSVG from "@/components/SVG/SubstanceSVG";
+import CldEditImageWrapper from "@/components/Wrappers/CldEditImageWrapper";
+import FormSubmitButton from "@/components/FormSubmitButton";
+import CldEditImgColWrapper from "@/components/Wrappers/CldEditImgColWrapper";
+import Link from "next/link";
 
 interface RenderPageProps {
   params: {
@@ -22,6 +24,11 @@ const getRender = cache(async (id: string) => {
   if (!render) notFound();
   return render;
 });
+
+async function updateRender() {
+  "use server";
+  return;
+}
 
 export async function generateMetadata({
   params: { id },
@@ -45,182 +52,193 @@ export default async function EditPage({ params: { id } }: RenderPageProps) {
   });
 
   return (
-    <div className="container-2xl">
-      <div className="mb-4 h-fit flex-row lg:hidden">
-        <div className="w-full lg:p-4">
-          <h1 className="text-pretty text-center text-2xl font-bold">
-            {render.name}
-          </h1>
-          <p className="text-center text-lg font-bold">{createdAtDate}</p>
-          <p className="text-pretty mb-4 text-center">{render.description}</p>
-          <div className="mb-4 flex flex-wrap justify-center">
-            <div className="flex flex-wrap justify-center">
-              {render.maya ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                  <div className="h-5 w-5">
-                    <MayaSVG />
-                  </div>
-                  <p className="text-md select-none pl-2 font-normal">Maya</p>
-                </span>
-              ) : (
-                <p></p>
-              )}
-              {render.arnold ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                  <div className="h-5 w-5">
-                    <ArnoldSVG />
-                  </div>
-                  <p className="text-md select-none pl-2 font-normal">Arnold</p>
-                </span>
-              ) : (
-                <p></p>
-              )}
-              {render.zbrush ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                  <div className="h-5 w-5">
-                    <ZbrushSVG />
-                  </div>
-                  <p className="text-md select-none pl-2 font-normal">ZBrush</p>
-                </span>
-              ) : (
-                <p></p>
-              )}
-              {render.blender ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                  <div className="h-5 w-5">
-                    <BlenderSVG />
-                  </div>
-                  <p className="text-md select-none pl-2 font-normal">
-                    Blender
-                  </p>
-                </span>
-              ) : (
-                <p></p>
-              )}
-              {render.substance ? (
-                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                  <div className="h-5 w-5">
-                    <SubstanceSVG />
-                  </div>
-                  <p className="text-md select-none pl-2 font-normal">
-                    Substance Painter
-                  </p>
-                </span>
-              ) : (
-                <p></p>
-              )}
+    <div className="w-full">
+      <form
+        action={updateRender}
+        className="rounded-lg border-2 border-brand-700 p-2 px-4 backdrop-blur-2xl"
+      >
+        <h1 className="pb-3 text-center text-2xl font-bold text-brand-300">
+          Edit Render
+        </h1>
+        <div className="flex flex-row">
+          <div>
+            <CldEditImageWrapper render={render} />
+          </div>
+          <div className="w-full pl-4">
+            <label htmlFor="name" className="pl-2 text-stone-400">
+              Name
+            </label>
+            <input
+              id="name"
+              name="name"
+              placeholder={render.name}
+              className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
+            />
+            <label htmlFor="caption" className="pl-2 text-stone-400">
+              Caption
+            </label>
+            <input
+              id="caption"
+              name="caption"
+              placeholder={render.caption}
+              className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
+            />
+            <label htmlFor="description" className="pl-2 text-stone-400">
+              Description
+            </label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder={render.description}
+              className="textarea w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-[1.025rem] placeholder:text-brand-600 focus-within:border-brand-500"
+            />
+            <label htmlFor="year" className="pl-2 text-stone-400">
+              Year
+            </label>
+            <input
+              id="year"
+              name="year"
+              type="number"
+              placeholder={render.year.toString()}
+              className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
+            />
+            <div className="rounded-lg border-2 border-brand-700">
+              <div className="text-md border-b-2 border-r-2 border-brand-700 bg-brand-700 pl-2 font-semibold text-brand-300/80">
+                Software Used
+              </div>
+              <div className="flex w-full flex-wrap justify-center px-2">
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    defaultChecked={render.blender}
+                    name="blender"
+                    className=" peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
+                    <div className="h-5 w-5">
+                      <BlenderSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      Blender
+                    </p>
+                  </span>
+                </label>
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    defaultChecked={render.substance}
+                    name="substance"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
+                    <div className="h-5 w-5">
+                      <SubstanceSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      Substance Painter
+                    </p>
+                  </span>
+                </label>
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    defaultChecked={render.arnold}
+                    name="arnold"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
+                    <div className="h-5 w-5">
+                      <ArnoldSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      Arnold
+                    </p>
+                  </span>
+                </label>
+
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    defaultChecked={render.maya}
+                    name="maya"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
+                    <div className="h-5 w-5">
+                      <MayaSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">Maya</p>
+                  </span>
+                </label>
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    defaultChecked={render.zbrush}
+                    name="zbrush"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
+                    <div className="h-5 w-5">
+                      <ZbrushSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      ZBrush
+                    </p>
+                  </span>
+                </label>
+                <div className="join-vertical join"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="lg:grid lg:grid-cols-6 ">
-        <div className="md:col-span-3 lg:col-span-4">
-          {/* Map through the ImageCollection array */}
-          {render.imageCollection && render.imageCollection.length > 0 && (
-            <div className="mx-auto flex flex-col overflow-hidden rounded-xl border-4 border-brand-900">
-              {render.imageCollection.map((pubID, index) => {
-                // Check if "gamma-folio" is already present in the pubID URL
-                const imageUrl = pubID.includes("gamma-folio")
-                  ? pubID
-                  : `gamma-folio/${pubID}`;
-                return (
-                  <CldImageWrapped
-                    priority
-                    key={index}
-                    quality={100}
-                    dpr={"auto"}
-                    width={1080}
-                    height={1080}
-                    src={imageUrl}
-                    sizes="100vw"
-                    alt={render.name}
-                    className="w-full border-b-4 border-brand-900 last:border-b-0"
-                  />
-                );
-              })}
-            </div>
-          )}
+        <div className="divider"></div>
+        <CldEditImgColWrapper render={render} />
+        <div className="divider"></div>
+        <div className="flex w-full flex-col justify-between gap-2 xs:flex-row">
+          <Link
+            href={"/edit"}
+            className="btn mx-auto w-28 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950/80 hover:text-rose-500 xs:mx-0"
+          >
+            Cancel
+          </Link>
+          {/* The button to open modal */}
+
+          {/* <button className="btn mx-auto w-48 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950 hover:text-rose-500 xs:mx-0">
+            Delete Render
+          </button> */}
+          <FormSubmitButton className="btn mb-4 w-64 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-accent-600 hover:bg-accent-950 hover:text-accent-500">
+            Update render
+          </FormSubmitButton>
         </div>
-        <div className="sticky top-4 ml-4 hidden h-fit flex-row rounded-lg border-4 border-brand-800 bg-brand-900 md:col-span-3 lg:col-span-2 lg:flex">
-          <div className="w-full p-4">
-            <h1 className="text-pretty mb-4 text-3xl font-bold text-brand-300">
-              {render.name}
-            </h1>
-            <p className="text-pretty mb-4 text-brand-300">
-              {render.description}
-            </p>
-            <div className="flex flex-col pb-4">
-              <p className="text-lg font-semibold text-brand-300">
-                Software Used
-              </p>
-              <div className="flex flex-wrap ">
-                <div className="">
-                  {render.maya ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                      <div className="h-5 w-5">
-                        <MayaSVG />
-                      </div>
-                      <p className="text-md select-none pl-2 font-normal">
-                        Maya
-                      </p>
-                    </span>
-                  ) : (
-                    <p></p>
-                  )}
-                  {render.arnold ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                      <div className="h-5 w-5">
-                        <ArnoldSVG />
-                      </div>
-                      <p className="text-md select-none pl-2 font-normal">
-                        Arnold
-                      </p>
-                    </span>
-                  ) : (
-                    <p></p>
-                  )}
-                  {render.zbrush ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                      <div className="h-5 w-5">
-                        <ZbrushSVG />
-                      </div>
-                      <p className="text-md select-none pl-2 font-normal">
-                        ZBrush
-                      </p>
-                    </span>
-                  ) : (
-                    <p></p>
-                  )}
-                  {render.blender ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                      <div className="h-5 w-5">
-                        <BlenderSVG />
-                      </div>
-                      <p className="text-md select-none pl-2 font-normal">
-                        Blender
-                      </p>
-                    </span>
-                  ) : (
-                    <p></p>
-                  )}
-                  {render.substance ? (
-                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
-                      <div className="h-5 w-5">
-                        <SubstanceSVG />
-                      </div>
-                      <p className="text-md select-none pl-2 font-normal">
-                        Substance Painter
-                      </p>
-                    </span>
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
+      </form>
+      <div className="mx-auto mt-8 max-w-xl rounded-lg border-2 border-rose-700 bg-rose-950/20 backdrop-blur-2xl">
+        <h1 className="border-b-2 border-rose-700 py-2 text-center text-2xl font-bold text-brand-300">
+          Danger Zone
+        </h1>
+        <div className="flex w-full justify-end px-4 py-4">
+          <h1 className="pe-8 pt-2 text-lg">Permanently delete your render</h1>
+          <label
+            htmlFor="my_modal_6"
+            className="btn mx-auto w-48 rounded-lg border-2 border-rose-700 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950 hover:text-rose-500 xs:mx-0"
+          >
+            Delete Render
+          </label>
+
+          {/* Put this part before </body> tag */}
+          <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+          <div className="modal overflow-visible" role="dialog">
+            <div className="z-100 modal-box absolute border-2 border-rose-700 -top-96">
+              <h3 className="text-lg font-bold">Delete render?</h3>
+              <p className="py-4">You cannot undo this action!</p>
+              <div className="modal-action">
+                <label
+                  htmlFor="my_modal_6"
+                  className="btn mx-auto w-28 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950/80 hover:text-rose-500 xs:mx-0"
+                >
+                  Delete
+                </label>
               </div>
             </div>
-            <p className="text-right text-lg font-bold text-brand-300">
-              {createdAtDate}
-            </p>
           </div>
         </div>
       </div>
