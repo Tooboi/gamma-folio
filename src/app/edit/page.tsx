@@ -1,12 +1,12 @@
 import { prisma } from "@/lib/db/prisma";
-import RenderCard from "@/components/Cards/RenderCard";
+import EditRenderCard from "@/components/Cards/EditRenderCard";
 import PaginationBar from "@/components/PaginationBar";
 
 interface Props {
   page?: string;
 }
 
-export default async function EditRenderPage({ page }: Props) {
+export default async function EditRendersPage({ page }: Props) {
   const currentPage = parseInt(page || "1"); // Default to page 1 if page is not defined
   const pageSize = 24;
   const heroItemCount = 0;
@@ -23,10 +23,10 @@ export default async function EditRenderPage({ page }: Props) {
   });
   return (
     <div className="flex flex-col items-center">
-      <div className="max-w-8xl mx-auto min-h-screen pb-6 pt-4 md:px-4 lg:px-10">
-        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
+      <div className="max-w-8xl mx-auto min-h-screen pb-6 pt-4 ">
+        <div className="flex flex-col gap-4">
           {renders.map((render) => (
-            <RenderCard render={render} key={render.id} />
+            <EditRenderCard render={render} key={render.id} />
           ))}
         </div>
       </div>
