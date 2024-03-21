@@ -11,7 +11,14 @@ export default async function Home() {
     take: 1,
     orderBy: { createdAt: "desc" },
   });
-
+  // Function to check if "gamma-folio" is already present in the thumbnail URL
+  const getThumbnailSrc = (thumbnail: string) => {
+    if (thumbnail.includes("gamma-folio")) {
+      return thumbnail; // If already present, use the thumbnail as it is
+    } else {
+      return `gamma-folio/${thumbnail}`; // If not, add "gamma-folio"
+    }
+  };
   return (
     <div className="flex flex-col items-center">
       <div className="flex w-full flex-col rounded-xl border-4 border-brand-800 bg-brand-900 py-6 transition-all sm:w-1/2">
@@ -43,7 +50,7 @@ export default async function Home() {
                   height="720"
                   crop="thumb"
                   aspectRatio="16:9"
-                  src={`gamma-folio/` + latestRender.thumbnail}
+                  src={getThumbnailSrc(latestRender.thumbnail)}
                   sizes="100vw"
                   alt={latestRender.name}
                 />
