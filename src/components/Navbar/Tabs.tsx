@@ -40,6 +40,15 @@ export default function Tabs() {
             <span className="block h-[3px] max-w-0 rounded-full bg-brand-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
           </li>
         </Link>
+        <Link
+          href="/downloads"
+          className="group mx-auto px-2 text-[1.08rem] transition-all  xs:px-6 md:text-xl"
+        >
+          <li>
+            Downloads
+            <span className="block h-[3px] max-w-0 rounded-full bg-brand-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full"></span>
+          </li>
+        </Link>
       </ul>
     </div>
   );
