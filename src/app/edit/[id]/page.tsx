@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { cache } from "react";
 
 import MayaSVG from "@/components/SVG/MayaSVG";
@@ -12,6 +12,7 @@ import CldEditImageWrapper from "@/components/Wrappers/CldEditImageWrapper";
 import FormSubmitButton from "@/components/FormSubmitButton";
 import CldEditImgColWrapper from "@/components/Wrappers/CldEditImgColWrapper";
 import Link from "next/link";
+import DeleteRenderButton from "@/components/Wrappers/DeleteRenderButton";
 
 interface RenderPageProps {
   params: {
@@ -29,6 +30,12 @@ async function updateRender() {
   "use server";
   return;
 }
+
+// async function deleteRender(id: string) {
+//   "use server";
+//   await prisma.render.delete({ where: { id } });
+//   redirect("/edit");
+// }
 
 export async function generateMetadata({
   params: { id },
@@ -227,15 +234,16 @@ export default async function EditPage({ params: { id } }: RenderPageProps) {
           {/* Put this part before </body> tag */}
           <input type="checkbox" id="my_modal_6" className="modal-toggle" />
           <div className="modal overflow-visible" role="dialog">
-            <div className="z-100 modal-box absolute border-2 border-rose-700 -top-96">
+            <div className="z-100 modal-box absolute -top-96 border-2 border-rose-700">
               <h3 className="text-lg font-bold">Delete render?</h3>
               <p className="py-4">You cannot undo this action!</p>
-              <div className="modal-action">
+              <div className="modal-action flex w-full justify-between">
+                <DeleteRenderButton id={id} />
                 <label
                   htmlFor="my_modal_6"
-                  className="btn mx-auto w-28 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-rose-600 hover:bg-rose-950/80 hover:text-rose-500 xs:mx-0"
+                  className="btn mx-auto w-32 rounded-lg border-0 border-brand-600 bg-brand-600 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-teal-600 hover:bg-teal-950/80 hover:text-teal-500 xs:mx-0"
                 >
-                  Delete
+                  Nevermind
                 </label>
               </div>
             </div>

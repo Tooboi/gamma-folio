@@ -36,7 +36,7 @@ export default async function Navbar() {
           <Tabs />
         </div>
         <div className="flex-none gap-2 hidden xs:flex">
-          <form action={searchProducts}>
+          {/* <form action={searchProducts}>
             <div className="form-control">
               <input
                 name="searchQuery"
@@ -44,7 +44,7 @@ export default async function Navbar() {
                 className="input placeholder-brand-500 h-[2.5rem] w-full min-w-[100px] border-2 border-brand-800 bg-transparent backdrop-blur-sm "
               />
             </div>
-          </form>
+          </form> */}
           <UserMenuButton session={session} />
         </div>
       </div>
