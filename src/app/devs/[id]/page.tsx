@@ -32,6 +32,10 @@ export async function generateMetadata({
 
 export default async function DevPage({ params: { id } }: DevPageProps) {
   const dev = await getDev(id);
+    // Check if "gamma-folio" is already present in the image URL
+    const imageSrc = dev.image.includes("gamma-folio")
+    ? dev.image // If already present, use the image as it is
+    : `gamma-folio/${dev.image}`; // If not, add "gamma-folio" to the image URL
   return (
     <>
       <div className="container-2xl">
@@ -76,7 +80,7 @@ export default async function DevPage({ params: { id } }: DevPageProps) {
                 dpr={"auto"}
                 width={1080}
                 height={1080}
-                src={`gamma-folio/` + dev.image}
+                src={imageSrc}
                 sizes="100vw"
                 alt={dev.title}
                 className="w-full border-b-4 border-brand-900 last:border-b-0"

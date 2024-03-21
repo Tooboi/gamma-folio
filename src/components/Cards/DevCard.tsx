@@ -9,6 +9,11 @@ interface DevCardProps {
 }
 
 export default function DevCard({ dev }: DevCardProps) {
+  // Check if "gamma-folio" is already present in the thumbnail URL
+  const thumbnailSrc = dev.image.includes("gamma-folio")
+    ? dev.image // If already present, use the thumbnail as it is
+    : `gamma-folio/${dev.image}`; // If not, add "gamma-folio" to this file so the image is correctly imported
+
   return (
     <div className="overflow-hidden rounded-md">
       <Link
@@ -28,12 +33,11 @@ export default function DevCard({ dev }: DevCardProps) {
         </section>
         <div className="h-full w-full">
               <CldImageWrapped
-                priority
                 width="800"
                 height="800"
                 crop="thumb"
                 aspectRatio="1:1"
-                src={`gamma-folio/` + dev.image}
+                src={thumbnailSrc}
                 sizes="100vw"
                 alt={dev.title}
               />
