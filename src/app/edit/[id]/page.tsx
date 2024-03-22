@@ -26,8 +26,16 @@ const getRender = cache(async (id: string) => {
   return render;
 });
 
-async function updateRender() {
-  "use server";
+async function updateRender(id: string, formData: FormData) {
+  const updatedRender = await prisma.render.update({
+    where: {
+      id: id,
+    },
+    data: {
+      name: name,
+    },
+  });
+  // "use server";
   return;
 }
 
