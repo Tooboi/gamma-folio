@@ -48,6 +48,8 @@ model Download {
   imageName   String
   mobile      Boolean
   pValue      String
+  buttonText  String
+  label       String
 
   @@map("downloads")
 }
