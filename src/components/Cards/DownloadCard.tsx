@@ -43,7 +43,7 @@ export default function DownloadCard({ download }: DownloadCardProps) {
           onClick={() => {
             handelDownload(download.downloadUrl, download.imageName);
           }}
-          className=" btn-block btn mx-auto h-10 justify-center rounded-b-md rounded-t-none border-0 border-brand-600 bg-brand-600 text-[0.985rem] text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-accent-600 hover:bg-accent-950 hover:text-accent-500"
+          className="btn-block btn mx-auto h-10 justify-center rounded-b-md rounded-t-none border-0 border-brand-600 bg-brand-600 text-[0.985rem] text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-accent-600 hover:bg-accent-950 hover:text-accent-500 active:hover:scale-100 active:hover:border-accent-700 active:hover:text-accent-700 active:focus:scale-100"
         >
           {download.buttonText}
         </button>
