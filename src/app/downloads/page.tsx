@@ -29,7 +29,8 @@ export default async function DownloadPage() {
                 />
                 <Link
                   href={
-                    "https://res.cloudinary.com/dlvmcylti/raw/upload/v1711550226/GammaStarter24.blend"
+                    "https://res.cloudinary.com/dlvmcylti/raw/upload/v1711550226/GammaStarter24"
+                    // "https://asset.cloudinary.com/dlvmcylti/bf957dccb07f0ad1841e38ad0e516ca6"
                   }
                   className=" btn-block btn mx-auto h-10 justify-center rounded-b-md rounded-t-none border-0 border-brand-600 bg-brand-600 text-[0.985rem] text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-accent-600 hover:bg-accent-950 hover:text-accent-500"
                 >
