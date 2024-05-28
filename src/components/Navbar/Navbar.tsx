@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { authOptions } from "../../app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/lib/auth";
 import UserMenuButton from "./UserMenuButton";
 import Tabs from "./Tabs";
 
