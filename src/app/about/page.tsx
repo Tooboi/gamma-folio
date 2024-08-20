@@ -4,6 +4,9 @@ import ZbrushSVG from "@/components/SVG/ZbrushSVG";
 import BlenderSVG from "@/components/SVG/BlenderSVG";
 import SubstanceSVG from "@/components/SVG/SubstanceSVG";
 import OctaneSVG from "@/components/SVG/OctaneSVG";
+import DesignerSVG from "@/components/SVG/DesignerSVG";
+import TouchdesignerSVG from "@/components/SVG/TouchdesignerSVG";
+import ResolumeSVG from "@/components/SVG/ResolumeSVG";
 
 export default function About() {
   return (
@@ -42,8 +45,8 @@ export default function About() {
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
         Learning everyday
       </h1>
-      <div className="pt-6">
-        <div className="align-items flex-row justify-center">
+      <div className="pt-8">
+        <div className="flex flex-wrap justify-center">
           <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
             <div className="h-5 w-5">
               <MayaSVG />
@@ -66,9 +69,13 @@ export default function About() {
             <div className="h-5 w-5">
               <OctaneSVG />
             </div>
-            <p className="text-md select-none pl-2 font-normal">
-              Octane
-            </p>
+            <p className="text-md select-none pl-2 font-normal">Octane</p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <ZbrushSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">ZBrush</p>
           </span>
           <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
             <div className="h-5 w-5">
@@ -80,9 +87,25 @@ export default function About() {
           </span>
           <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
             <div className="h-5 w-5">
-              <ZbrushSVG />
+              <DesignerSVG />
             </div>
-            <p className="text-md select-none pl-2 font-normal">ZBrush</p>
+            <p className="text-md select-none pl-2 font-normal">
+              Substance Designer
+            </p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <TouchdesignerSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">
+              TouchDesigner
+            </p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <ResolumeSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">Resolume</p>
           </span>
         </div>
       </div>
