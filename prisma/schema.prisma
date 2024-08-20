@@ -20,6 +20,8 @@ model Render {
   maya            Boolean
   zbrush          Boolean
   arnold          Boolean
+  octane          Boolean
+  designer        Boolean
   createdAt       DateTime   @default(now())
   updatedAt       DateTime   @updatedAt
   CartItem        CartItem[]
@@ -50,6 +52,7 @@ model Download {
   pValue      String
   buttonText  String
   label       String
+  downloads   Int
 
   @@map("downloads")
 }

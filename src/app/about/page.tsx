@@ -1,14 +1,24 @@
+import MayaSVG from "@/components/SVG/MayaSVG";
+import ArnoldSVG from "@/components/SVG/ArnoldSVG";
+import ZbrushSVG from "@/components/SVG/ZbrushSVG";
+import BlenderSVG from "@/components/SVG/BlenderSVG";
+import SubstanceSVG from "@/components/SVG/SubstanceSVG";
+import OctaneSVG from "@/components/SVG/OctaneSVG";
+import DesignerSVG from "@/components/SVG/DesignerSVG";
+import TouchdesignerSVG from "@/components/SVG/TouchdesignerSVG";
+import ResolumeSVG from "@/components/SVG/ResolumeSVG";
+
 export default function About() {
   return (
     <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-6 md:px-4 lg:px-10">
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
         Hey I&apos;m Josh Pica :)
       </h1>
-      <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
+      <h1 className="select-none py-3 text-center text-[1.3rem] tracking-tight text-brand-400">
         I am a passionate 3D artist who loves to create original and visually
         captivating content through the world of computer-generated art.
       </h1>
-      <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
+      <h1 className="select-none py-3 text-center text-[1.3rem] tracking-tight text-brand-400">
         Ever since I was young, I have been fascinated by the boundless
         possibilities of digital art. With a deep-rooted love for both
         technology and creativity, I found my true calling in the realm of 3D
@@ -16,7 +26,7 @@ export default function About() {
         aesthetics, I strive to push the boundaries of imagination and bring my
         artistic visions to life.
       </h1>
-      <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
+      <h1 className="select-none py-3 text-center text-[1.3rem] tracking-tight text-brand-400">
         I believe that art has the power to transcend boundaries and connect
         people from all walks of life. My ultimate goal is to inspire, provoke
         thought, and create experiences that leave a lasting impact on viewers.
@@ -24,8 +34,10 @@ export default function About() {
         ever-evolving landscape of digital creativity and make a meaningful
         difference in the world.
       </h1>
-      <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
-        Over the past few years my love for web development has grown. I am always trying to keep up to date with recent technologies and improve on my JS development skills.
+      <h1 className="select-none py-3 text-center text-[1.3rem] tracking-tight text-brand-400">
+        Over the past few years my love for web development has grown. I am
+        always trying to keep up to date with recent technologies and improve on
+        my JS development skills.
       </h1>
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
         Inspired by the world around me
@@ -33,6 +45,70 @@ export default function About() {
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
         Learning everyday
       </h1>
+      <div className="pt-8">
+        <div className="flex flex-wrap justify-center">
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <MayaSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">Maya</p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <ArnoldSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">Arnold</p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <BlenderSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">Blender</p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <OctaneSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">Octane</p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <ZbrushSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">ZBrush</p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <SubstanceSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">
+              Substance Painter
+            </p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <DesignerSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">
+              Substance Designer
+            </p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <TouchdesignerSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">
+              TouchDesigner
+            </p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <ResolumeSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">Resolume</p>
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
