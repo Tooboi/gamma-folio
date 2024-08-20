@@ -9,6 +9,8 @@ import ArnoldSVG from "@/components/SVG/ArnoldSVG";
 import ZbrushSVG from "@/components/SVG/ZbrushSVG";
 import BlenderSVG from "@/components/SVG/BlenderSVG";
 import SubstanceSVG from "@/components/SVG/SubstanceSVG";
+import OctaneSVG from "@/components/SVG/OctaneSVG";
+import DesignerSVG from "@/components/SVG/DesignerSVG";
 interface RenderCardProps {
   render: Render;
 }
@@ -82,6 +84,20 @@ export default function RenderCard({ render }: RenderCardProps) {
               {render.substance ? (
                 <div className="h-8 w-8">
                   <SubstanceSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
+              {render.designer ? (
+                <div className="h-8 w-8">
+                  <DesignerSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
+              {render.octane ? (
+                <div className="h-8 w-8 py-[0.08rem] pr-[0.08rem]">
+                  <OctaneSVG />
                 </div>
               ) : (
                 <p></p>

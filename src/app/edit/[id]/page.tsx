@@ -8,6 +8,8 @@ import ArnoldSVG from "@/components/SVG/ArnoldSVG";
 import ZbrushSVG from "@/components/SVG/ZbrushSVG";
 import BlenderSVG from "@/components/SVG/BlenderSVG";
 import SubstanceSVG from "@/components/SVG/SubstanceSVG";
+import OctaneSVG from "@/components/SVG/OctaneSVG";
+import DesignerSVG from "@/components/SVG/DesignerSVG";
 import CldEditImageWrapper from "@/components/Wrappers/CldEditImageWrapper";
 import FormSubmitButton from "@/components/FormSubmitButton";
 import CldEditImgColWrapper from "@/components/Wrappers/CldEditImgColWrapper";
