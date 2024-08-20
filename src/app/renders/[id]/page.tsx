@@ -228,6 +228,18 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                   ) : (
                     <p></p>
                   )}
+                  {render.octane ? (
+                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+                      <div className="h-5 w-5">
+                        <OctaneSVG />
+                      </div>
+                      <p className="text-md select-none pl-2 font-normal">
+                        Octane
+                      </p>
+                    </span>
+                  ) : (
+                    <p></p>
+                  )}
                   {render.substance ? (
                     <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
                       <div className="h-5 w-5">
@@ -235,6 +247,18 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                       </div>
                       <p className="text-md select-none pl-2 font-normal">
                         Substance Painter
+                      </p>
+                    </span>
+                  ) : (
+                    <p></p>
+                  )}
+                  {render.designer ? (
+                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+                      <div className="h-5 w-5">
+                        <DesignerSVG />
+                      </div>
+                      <p className="text-md select-none pl-2 font-normal">
+                        Substance Designer
                       </p>
                     </span>
                   ) : (
