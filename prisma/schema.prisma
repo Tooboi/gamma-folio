@@ -50,6 +50,7 @@ model Download {
   pValue      String
   buttonText  String
   label       String
+  downloads   Int
 
   @@map("downloads")
 }
