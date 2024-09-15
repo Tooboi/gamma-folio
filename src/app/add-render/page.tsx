@@ -83,7 +83,7 @@ async function addRender(formData: FormData) {
     },
   });
 
-  redirect("/");
+  redirect("/renders");
 }
 
 export default async function AddRenderPage() {
