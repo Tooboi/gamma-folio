@@ -99,7 +99,7 @@ export default function CldEditUploadImageWrapper({
                 </button>
                 <div className="flex justify-center">
                   {publicIdsArray.length > 0 && (
-                    <div className="flex flex-wrap place-content-center">
+                    <div className="flex flex-wrap place-content-center pt-4">
                       {publicIdsArray.map((publicId, index) => {
                         // Check if "gamma-folio" is already present in the thumbnail URL
                         const thumbnailSrc = publicId.includes("gamma-folio")

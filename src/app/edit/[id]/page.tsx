@@ -59,6 +59,10 @@ async function updateRender(formData: FormData) {
   const maya = formData.has("maya");
   const zbrush = formData.has("zbrush");
 
+  const imageCollection = formData.getAll("imageCollection[]").map(String);
+  console.log(imageCollection);
+  
+
   if (!id) {
     throw new Error("ID is missing");
   }
@@ -79,6 +83,7 @@ async function updateRender(formData: FormData) {
       arnold,
       maya,
       zbrush,
+      imageCollection,
     },
   });
   // return updatedRender;
