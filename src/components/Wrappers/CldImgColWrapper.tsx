@@ -116,8 +116,8 @@ export default function CldUploadImageWrapper() {
       {publicIdsArray.length > 0 && (
         <>
           {publicIdsArray.map((id, index) => (
-            <div key={index} className="h-full">
-              <div className="relative overflow-hidden px-2">
+            <div key={index} className="h-full p-2">
+              <div className="relative overflow-hidden">
                 <div
                   onClick={() => removeImage(index)}
                   className="group absolute right-2 w-8 cursor-pointer rounded-bl-lg rounded-tr-lg border-b-2 border-s-2 border-brand-700 bg-brand-800 transition-all hover:bg-rose-600"
