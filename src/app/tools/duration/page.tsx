@@ -27,6 +27,11 @@ export default function AnimationCalculator() {
     }
   };
 
+  const handleModeChange = (newMode: "calculateTime" | "calculateFrames") => {
+    setMode(newMode);
+    setResult(null); // Clear result when switching modes
+  };
+
   return (
     <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-4 transition-all md:px-4 lg:px-10 lg:pt-16">
       <section className="rounded-lg border-2 border-stone-700 bg-stone-800">
@@ -40,22 +45,14 @@ export default function AnimationCalculator() {
 
           <div className="mb-4 flex">
             <button
-              className={`btn mr-2 ${
-                mode === "calculateTime"
-                  ? "btn rounded-lg border-2 border-teal-600 bg-teal-950 text-lg font-medium text-teal-500 transition-all hover:border-2 hover:border-teal-500 hover:bg-teal-800 hover:text-brand-300"
-                  : "btn rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-teal-600 hover:bg-teal-950 hover:text-teal-500"
-              }`}
-              onClick={() => setMode("calculateTime")}
+              className={`btn mr-2 ${mode === "calculateTime" ? "btn rounded-lg border-2 border-teal-600 bg-teal-950 text-lg font-medium text-teal-500 transition-all hover:border-2 hover:border-teal-500 hover:bg-teal-800 hover:text-brand-300" : "btn rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-teal-600 hover:bg-teal-950 hover:text-teal-500"}`}
+              onClick={() => handleModeChange("calculateTime")}
             >
               Total Time
             </button>
             <button
-              className={`btn ${
-                mode === "calculateFrames"
-                  ? "btn rounded-lg border-2 border-cyan-600 bg-cyan-950 text-lg font-medium text-cyan-500 transition-all hover:border-2 hover:border-cyan-500 hover:bg-cyan-800 hover:text-brand-300"
-                  : "btn rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-cyan-600 hover:bg-cyan-950 hover:text-cyan-500"
-              }`}
-              onClick={() => setMode("calculateFrames")}
+              className={`btn ${mode === "calculateFrames" ? "btn rounded-lg border-2 border-cyan-600 bg-cyan-950 text-lg font-medium text-cyan-500 transition-all hover:border-2 hover:border-cyan-500 hover:bg-cyan-800 hover:text-brand-300" : "btn rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-cyan-600 hover:bg-cyan-950 hover:text-cyan-500"}`}
+              onClick={() => handleModeChange("calculateFrames")}
             >
               Total Frames
             </button>
@@ -88,9 +85,7 @@ export default function AnimationCalculator() {
                       id="framesPerSecondTime"
                       placeholder="In FPS"
                       className="input w-full max-w-xs rounded-lg border-2 border-teal-600 bg-teal-950/20"
-                      onChange={(e) =>
-                        setFramesPerSecond(Number(e.target.value))
-                      }
+                      onChange={(e) => setFramesPerSecond(Number(e.target.value))}
                     />
                   </label>
                 </div>
@@ -136,9 +131,7 @@ export default function AnimationCalculator() {
                       id="framesPerSecondFrames"
                       placeholder="In FPS"
                       className="input w-full max-w-xs rounded-lg border-2 border-teal-600 bg-teal-950/20"
-                      onChange={(e) =>
-                        setFramesPerSecond(Number(e.target.value))
-                      }
+                      onChange={(e) => setFramesPerSecond(Number(e.target.value))}
                     />
                   </label>
                 </div>
