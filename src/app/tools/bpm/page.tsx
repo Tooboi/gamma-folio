@@ -3,27 +3,35 @@
 import { useState } from "react";
 
 export default function BpmToFramesConverter() {
-  const [bpm, setBpm] = useState(0); // Initialized to 0 to handle number directly
-  const [fps, setFps] = useState(0); // Initialized to 0 to handle number directly
+  const [bpm, setBpm] = useState(0);
+  const [fps, setFps] = useState(0);
   const [framesPerBeat, setFramesPerBeat] = useState<number | null>(null);
   const [framesPerBar, setFramesPerBar] = useState<number | null>(null);
-  const [timeSignature, setTimeSignature] = useState("4/4"); // Default to 4/4 time
+  const [timeSignature, setTimeSignature] = useState("4/4");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null); // Error message state
+
+  const formatNumber = (num: number) => {
+    return Number.isInteger(num) ? num.toString() : num.toFixed(2);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (bpm <= 0 || fps <= 0) {
-      alert("BPM and FPS must be greater than 0.");
+      setErrorMessage("BPM and FPS must be greater than 0.");
+      setFramesPerBeat(null);
+      setFramesPerBar(null);
       return;
     }
 
-    const beatsPerBar = timeSignature === "3/4" ? 3 : 4; // Support 3/4 and 4/4 for now
+    const beatsPerBar = timeSignature === "3/4" ? 3 : 4;
     const secondsPerBeat = 60 / bpm;
     const framesBeat = fps * secondsPerBeat;
     const framesBar = framesBeat * beatsPerBar;
 
     setFramesPerBeat(framesBeat);
     setFramesPerBar(framesBar);
+    setErrorMessage(null); // Clear any previous errors
   };
 
   return (
@@ -95,18 +103,35 @@ export default function BpmToFramesConverter() {
             >
               Calculate
             </button>
+
+            {/* Error Message */}
+            {errorMessage && (
+              <div className="mt-4 text-lg font-semibold text-red-500">
+                {errorMessage}
+              </div>
+            )}
           </form>
 
-          {framesPerBeat !== null && framesPerBar !== null && (
+          {/* Displaying calculated values */}
+          {framesPerBeat !== null && framesPerBar !== null && !errorMessage && (
             <div className="mt-6">
               <h3 className="text-lg font-semibold text-stone-300">
-                Frames Per Beat: {framesPerBeat.toFixed(2)}
+                Frames Per Beat:{" "}
+                <strong className="text-cyan-500">
+                  {formatNumber(framesPerBeat)}
+                </strong>
               </h3>
               <h3 className="text-lg font-semibold text-stone-300">
-                Frames Per Bar: {framesPerBar.toFixed(2)}
+                Frames Per Bar:{" "}
+                <strong className="text-cyan-500">
+                  {formatNumber(framesPerBar)}
+                </strong>
               </h3>
               <h3 className="text-lg font-semibold text-stone-300">
-                Frames Per 4 Bars: {(framesPerBar * 4).toFixed(2)}
+                Frames Per 4 Bars:{" "}
+                <strong className="text-cyan-500">
+                  {formatNumber(framesPerBar * 4)}
+                </strong>
               </h3>
             </div>
           )}
