@@ -45,6 +45,15 @@ export default function About() {
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
         Learning everyday
       </h1>
+      <div className="mx-auto max-w-lg border-2 border-accent-800 rounded-lg bg-accent-950">
+        <h1 className="select-none py-3 text-center text-lg sm:text-2xl tracking-tight text-brand-400">
+          Contact me at:
+        </h1>
+        <h1 className="select-none pb-3 text-center text-lg sm:text-2xl tracking-tight text-brand-400">
+          gamma2dot2@gmail.com
+        </h1>
+      </div>
+
       <div className="pt-8">
         <div className="flex flex-wrap justify-center">
           <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">

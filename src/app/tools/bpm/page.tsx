@@ -1,0 +1,117 @@
+"use client";
+
+import { useState } from "react";
+
+export default function BpmToFramesConverter() {
+  const [bpm, setBpm] = useState(0); // Initialized to 0 to handle number directly
+  const [fps, setFps] = useState(0); // Initialized to 0 to handle number directly
+  const [framesPerBeat, setFramesPerBeat] = useState<number | null>(null);
+  const [framesPerBar, setFramesPerBar] = useState<number | null>(null);
+  const [timeSignature, setTimeSignature] = useState("4/4"); // Default to 4/4 time
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (bpm <= 0 || fps <= 0) {
+      alert("BPM and FPS must be greater than 0.");
+      return;
+    }
+
+    const beatsPerBar = timeSignature === "3/4" ? 3 : 4; // Support 3/4 and 4/4 for now
+    const secondsPerBeat = 60 / bpm;
+    const framesBeat = fps * secondsPerBeat;
+    const framesBar = framesBeat * beatsPerBar;
+
+    setFramesPerBeat(framesBeat);
+    setFramesPerBar(framesBar);
+  };
+
+  return (
+    <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-4 md:px-4 lg:px-10">
+      <section className="rounded-lg border-2 border-stone-700 bg-stone-800">
+        <div className="mx-auto max-w-2xl px-4 py-8">
+          <h2 className="mb-1 text-xl font-bold text-stone-300">
+            BPM to Frames Converter
+          </h2>
+          <h2 className="text-md font-regular mb-6 text-stone-300">
+            Convert Beats Per Minute (BPM) to Frames Per Second (FPS)
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+              <label className="form-control w-full max-w-xs">
+                <div className="label">
+                  <span className="label-text">Beats Per Minute (BPM)</span>
+                </div>
+                <input
+                  type="number"
+                  name="bpm"
+                  id="bpm"
+                  placeholder="0"
+                  className="input w-full max-w-xs rounded-lg border-2 border-cyan-600 bg-cyan-950/20"
+                  onChange={(e) => setBpm(Number(e.target.value))}
+                />
+              </label>
+
+              <label className="form-control w-full max-w-xs">
+                <div className="label">
+                  <span className="label-text">Frames Per Second (FPS)</span>
+                </div>
+                <input
+                  type="number"
+                  name="fps"
+                  id="fps"
+                  placeholder="0"
+                  className="input w-full max-w-xs rounded-lg border-2 border-cyan-600 bg-cyan-950/20"
+                  onChange={(e) => setFps(Number(e.target.value))}
+                />
+              </label>
+
+              <label className="form-control w-full max-w-xs">
+                <div className="label">
+                  <span className="label-text">Time Signature</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <span className={timeSignature === "4/4" ? "font-bold" : ""}>
+                    4/4
+                  </span>
+                  <input
+                    type="checkbox"
+                    className="toggle"
+                    checked={timeSignature === "3/4"}
+                    onChange={() =>
+                      setTimeSignature(timeSignature === "4/4" ? "3/4" : "4/4")
+                    }
+                  />
+                  <span className={timeSignature === "3/4" ? "font-bold" : ""}>
+                    3/4
+                  </span>
+                </div>
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              className="btn-block btn mx-auto my-8 h-12 justify-center rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-sky-600 hover:bg-sky-950 hover:text-sky-500"
+            >
+              Calculate
+            </button>
+          </form>
+
+          {framesPerBeat !== null && framesPerBar !== null && (
+            <div className="mt-6">
+              <h3 className="text-lg font-semibold text-stone-300">
+                Frames Per Beat: {framesPerBeat.toFixed(2)}
+              </h3>
+              <h3 className="text-lg font-semibold text-stone-300">
+                Frames Per Bar: {framesPerBar.toFixed(2)}
+              </h3>
+              <h3 className="text-lg font-semibold text-stone-300">
+                Frames Per 4 Bars: {(framesPerBar * 4).toFixed(2)}
+              </h3>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
