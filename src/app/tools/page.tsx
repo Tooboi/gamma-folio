@@ -91,7 +91,7 @@ const Home = () => {
         </div>
         <div>
           <Link href="tools/ratio" className="w-full">
-            <div className="group h-36 rounded-lg border-2 border-cyan-800 bg-cyan-950 transition hover:bg-cyan-900 active:border-cyan-900 active:bg-cyan-950">
+            <div className="group h-36 rounded-lg border-2 border-sky-800 bg-sky-950 transition hover:bg-sky-900 active:border-sky-900 active:bg-sky-950">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="48"
