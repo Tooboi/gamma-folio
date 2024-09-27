@@ -6,7 +6,7 @@ import { Rubik } from "next/font/google";
 import SessionProvider from "./SessionProvider";
 import Script from "next/script";
 
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -52,6 +52,7 @@ export default function RootLayout({
           <Footer />
         </SessionProvider>
       </body>
+      <GoogleAnalytics gaId='G-DF8DN8Q9LH' />
     </html>
   );
 }
