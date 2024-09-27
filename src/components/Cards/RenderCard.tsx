@@ -30,6 +30,7 @@ export default function RenderCard({ render }: RenderCardProps) {
       <Link
         href={"/renders/" + render.id}
         className="aspect-h-1 aspect-w-1 relative mx-auto min-w-[150px] max-w-[512px] bg-brand-800"
+        // onClick={() => sendGTMEvent({ event: 'buttonClicked', value: 'xyz' })}
       >
         <section className="group absolute inset-0 z-10 opacity-0 transition-all hover:opacity-100">
           <div className="image-gradient flex h-full w-full flex-row border-brand-700 transition-all group-hover:border-2" />
