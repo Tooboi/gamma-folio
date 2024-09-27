@@ -102,7 +102,7 @@ export default function BpmToFramesConverter() {
             <button
               type="submit"
               className="btn-block btn mx-auto my-8 h-12 justify-center rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-sky-600 hover:bg-sky-950 hover:text-sky-500"
-              onClick={() => sendGTMEvent({ event: 'BPM to FPS', value: 'clicked' })}
+              onClick={() => sendGTMEvent({ event: 'buttonClicked', value: 'BPM to FPS' })}
             >
               Calculate
             </button>

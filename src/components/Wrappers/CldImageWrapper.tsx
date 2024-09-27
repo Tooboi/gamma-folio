@@ -4,9 +4,11 @@
 
  
 import { CldImage as CldImageDefault, CldImageProps }  from 'next-cloudinary';
+
+import { sendGTMEvent } from '@next/third-parties/google'
  
 const CldImage = (props: CldImageProps) => {
-  return <CldImageDefault {...props} />
+  return <><CldImageDefault onClick={() => sendGTMEvent({ event: 'buttonClicked', value: {...props} })} {...props} /></>
 }
  
 export default CldImage;
