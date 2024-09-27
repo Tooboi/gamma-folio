@@ -6,6 +6,8 @@ import { Rubik } from "next/font/google";
 import SessionProvider from "./SessionProvider";
 import Script from "next/script";
 
+import { GoogleTagManager } from "@next/third-parties/google";
+
 const rubik = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
@@ -46,6 +48,7 @@ export default function RootLayout({
           <main className="m-auto min-h-screen min-w-[300px] max-w-7xl p-4">
             {children}
           </main>
+          <GoogleTagManager gtmId="GTM-KMB769RD" />
           <Footer />
         </SessionProvider>
       </body>
