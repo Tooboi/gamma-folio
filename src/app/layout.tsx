@@ -24,20 +24,19 @@ export default function RootLayout({
       data-theme="forest"
       className="background-grid text-brand-300"
     >
-      <head>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-DF8DN8Q9LH"
-        ></Script>
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
+      <head></head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-DF8DN8Q9LH"
+      ></Script>
+      <Script id="google-analytics">
+        {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
                      
             gtag('config', 'G-DF8DN8Q9LH');
          `}
-        </Script>
-      </head>
+      </Script>
       <body className={rubik.className}>
         <SessionProvider>
           <Navbar />
