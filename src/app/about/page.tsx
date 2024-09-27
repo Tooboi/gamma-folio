@@ -8,6 +8,11 @@ import DesignerSVG from "@/components/SVG/DesignerSVG";
 import TouchdesignerSVG from "@/components/SVG/TouchdesignerSVG";
 import ResolumeSVG from "@/components/SVG/ResolumeSVG";
 
+export const metadata = {
+  title: "GAMMA2DOT2 - About Me",
+  caption: "Gamma 2.2 - Josh Pica",
+};
+
 export default function About() {
   return (
     <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-6 md:px-4 lg:px-10">

@@ -3,6 +3,11 @@ import DownloadCard from "../../components/Cards/DownloadCard";
 import CldImageWrapped from "../../components/Wrappers/CldImageWrapper";
 import Link from "next/link";
 
+export const metadata = {
+  title: "GAMMA2DOT2 - Downloads",
+  caption: "Gamma 2.2 - Josh Pica",
+};
+
 export default async function DownloadPage() {
   const downloads = await prisma.download.findMany({
     orderBy: { id: "desc" },

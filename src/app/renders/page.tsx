@@ -2,6 +2,11 @@ import { prisma } from "@/lib/db/prisma";
 import RenderCard from "@/components/Cards/RenderCard";
 import PaginationBar from "@/components/PaginationBar";
 
+export const metadata = {
+  title: "GAMMA2DOT2 - Renders",
+  caption: "Gamma 2.2 - Josh Pica",
+};
+
 interface HomeProps {
   searchParams: { page: string };
 }

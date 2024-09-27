@@ -5,6 +5,11 @@ interface HomeProps {
     searchParams: { page: string };
   }
 
+  export const metadata = {
+    title: "GAMMA2DOT2 - Devs",
+    caption: "Gamma 2.2 - Josh Pica",
+  };
+
 export default async function Dev() {
     const devs = await prisma.devProject.findMany({
         orderBy: { createdAt: "desc" }
