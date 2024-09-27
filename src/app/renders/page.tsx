@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/db/prisma";
 import RenderCard from "@/components/Cards/RenderCard";
 import PaginationBar from "@/components/PaginationBar";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { sendGAEvent } from '@next/third-parties/google'
 
 export const metadata = {
   title: "GAMMA2DOT2 - Renders",
@@ -41,6 +43,7 @@ export default async function Renders({
       {totalPages > 1 && (
         <PaginationBar currentPage={currentPage} totalPages={totalPages} />
       )}
+      <GoogleAnalytics gaId='G-DF8DN8Q9LH' dataLayerName="RenderPage" />
     </div>
   );
 }

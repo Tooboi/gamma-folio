@@ -3,7 +3,8 @@ import { Render } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
 import CldImageWrapped from "../Wrappers/CldImageWrapper";
-// import { sendGTMEvent } from '@next/third-parties/google'
+import { sendGTMEvent } from "@next/third-parties/google";
+import { sendGAEvent } from "@next/third-parties/google";
 
 import MayaSVG from "@/components/SVG/MayaSVG";
 import ArnoldSVG from "@/components/SVG/ArnoldSVG";
@@ -116,6 +117,10 @@ export default function RenderCard({ render }: RenderCardProps) {
             src={thumbnailSrc}
             sizes="100vw"
             alt={render.name}
+            onLoad={() => {
+              sendGAEvent("event", "buttonClicked", { value: `${render.name}` });
+              sendGTMEvent({ event: "buttonClicked", value: `${render.name}` });
+            }}
           />
         </div>
       </Link>
