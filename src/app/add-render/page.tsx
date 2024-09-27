@@ -13,6 +13,7 @@ import MayaSVG from "@/components/SVG/MayaSVG";
 import ZbrushSVG from "@/components/SVG/ZbrushSVG";
 import OctaneSVG from "@/components/SVG/OctaneSVG";
 import DesignerSVG from "@/components/SVG/DesignerSVG";
+import { GoogleTagManager } from "@next/third-parties/google";
 // import React, { useState } from "react";
 
 export const metadata = {
@@ -258,6 +259,7 @@ export default async function AddRenderPage() {
           Create New Render
         </FormSubmitButton>
       </form>
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
     </div>
   );
 }

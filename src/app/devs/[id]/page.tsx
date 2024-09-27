@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { cache } from "react";
 import CldImageWrapped from "../../../components/Wrappers/CldImageWrapper";
 import Link from "next/link";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 interface DevPageProps {
   params: {
@@ -121,6 +122,7 @@ export default async function DevPage({ params: { id } }: DevPageProps) {
           </div>
         </div>
       </div>
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
     </>
   );
 }

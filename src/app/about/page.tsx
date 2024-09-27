@@ -7,6 +7,7 @@ import OctaneSVG from "@/components/SVG/OctaneSVG";
 import DesignerSVG from "@/components/SVG/DesignerSVG";
 import TouchdesignerSVG from "@/components/SVG/TouchdesignerSVG";
 import ResolumeSVG from "@/components/SVG/ResolumeSVG";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
   title: "GAMMA2DOT2 - About Me",
@@ -123,6 +124,7 @@ export default function About() {
           </span>
         </div>
       </div>
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
     </div>
   );
 }

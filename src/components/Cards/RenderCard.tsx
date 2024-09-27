@@ -117,10 +117,6 @@ export default function RenderCard({ render }: RenderCardProps) {
             src={thumbnailSrc}
             sizes="100vw"
             alt={render.name}
-            onLoad={() => {
-              sendGAEvent("event", "buttonClicked", { value: `${render.name}` });
-              sendGTMEvent({ event: "buttonClicked", value: `${render.name}` });
-            }}
           />
         </div>
       </Link>

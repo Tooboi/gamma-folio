@@ -1,5 +1,6 @@
 "use client";
 
+import { GoogleTagManager } from "@next/third-parties/google";
 import { useState } from "react";
 
 export default function AnimationCalculator() {
@@ -163,6 +164,7 @@ export default function AnimationCalculator() {
           )}
         </div>
       </section>
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
     </div>
   );
 }
