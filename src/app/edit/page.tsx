@@ -8,6 +8,11 @@ import { redirect } from "next/navigation";
 //   page?: string;
 // }
 
+export const metadata = {
+  title: "GAMMA2DOT2 - Edit Renders",
+  caption: "Gamma 2.2 - Josh Pica",
+};
+
 export default async function EditRendersPage() {
   const session = await getServerSession(authOptions);
   const user = session?.user;
