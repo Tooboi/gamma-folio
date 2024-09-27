@@ -2,6 +2,7 @@ import { prisma } from "@/lib/db/prisma";
 import DownloadCard from "../../components/Cards/DownloadCard";
 import CldImageWrapped from "../../components/Wrappers/CldImageWrapper";
 import Link from "next/link";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = {
   title: "GAMMA2DOT2 - Downloads",
@@ -50,6 +51,7 @@ export default async function DownloadPage() {
           </div>
         </div>
       </div>
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
     </div>
   );
 }

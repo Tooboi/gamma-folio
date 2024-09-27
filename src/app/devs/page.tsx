@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
 import DevCard from "@/components/Cards/DevCard";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 interface HomeProps {
     searchParams: { page: string };
@@ -26,5 +27,6 @@ export default async function Dev() {
       ))}
     </div>
   </div>
+  <GoogleTagManager gtmId="GTM-KMB769RD" />
 </div>;
 }

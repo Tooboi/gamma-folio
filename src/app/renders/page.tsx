@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/db/prisma";
 import RenderCard from "@/components/Cards/RenderCard";
 import PaginationBar from "@/components/PaginationBar";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { sendGAEvent } from '@next/third-parties/google'
 
 export const metadata = {
@@ -44,6 +44,7 @@ export default async function Renders({
         <PaginationBar currentPage={currentPage} totalPages={totalPages} />
       )}
       <GoogleAnalytics gaId='G-DF8DN8Q9LH' dataLayerName="RenderPage" />
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
     </div>
   );
 }

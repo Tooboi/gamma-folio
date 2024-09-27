@@ -13,6 +13,7 @@ import SubstanceSVG from "@/components/SVG/SubstanceSVG";
 import OctaneSVG from "@/components/SVG/OctaneSVG";
 import DesignerSVG from "@/components/SVG/DesignerSVG";
 import { log } from "console";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 interface RenderPageProps {
   params: {
@@ -273,6 +274,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
           </div>
         </div>
       </div>
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
     </div>
   );
 }

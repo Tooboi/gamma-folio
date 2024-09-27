@@ -1,5 +1,6 @@
 // import { Link } from "react-router-dom";
 
+import { GoogleTagManager } from "@next/third-parties/google";
 import Link from "next/link";
 
 export const metadata = {
@@ -128,6 +129,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
     </div>
   );
 };
