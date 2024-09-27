@@ -21,7 +21,7 @@ export default function Footer() {
             className="transition-color acive:text-brand-700 hover:text-brand-600"
             href="https://github.com/Tooboi/gamma-folio"
           >
-            Tooboi
+            Josh Pica
           </Link>
         </p>
       </div>

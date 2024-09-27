@@ -103,7 +103,6 @@ export default async function Home() {
           </Link>
         </div>
       </div>
-
       <div className="flex w-full flex-col  pt-6 transition-all sm:w-1/2">
         <Link
           className=" btn-block btn mx-auto mb-4 h-24 justify-center rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-tertiary-600 hover:bg-tertiary-950 hover:text-tertiary-500"
