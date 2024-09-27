@@ -2,6 +2,11 @@
 
 import Link from "next/link";
 
+export const metadata = {
+  title: "GAMMA2DOT2 - Tools",
+  caption: "Gamma 2.2 - Josh Pica",
+};
+
 const Home = () => {
   return (
     <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-4 md:px-4 lg:px-10 lg:pt-8">
