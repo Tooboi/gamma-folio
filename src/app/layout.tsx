@@ -39,6 +39,7 @@ export default function RootLayout({
             gtag('config', 'G-DF8DN8Q9LH');
          `}
       </Script>
+      <GoogleTagManager gtmId="GTM-KMB769RD" />
       <body className={rubik.className}>
         <SessionProvider>
           <Navbar />
@@ -48,7 +49,6 @@ export default function RootLayout({
           <main className="m-auto min-h-screen min-w-[300px] max-w-7xl p-4">
             {children}
           </main>
-          <GoogleTagManager gtmId="GTM-KMB769RD" />
           <Footer />
         </SessionProvider>
       </body>
