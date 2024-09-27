@@ -4,6 +4,7 @@ import Tabs from "../components/Navbar/Tabs";
 import "./globals.css";
 import { Rubik } from "next/font/google";
 import SessionProvider from "./SessionProvider";
+import Script from "next/script";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -23,6 +24,20 @@ export default function RootLayout({
       data-theme="forest"
       className="background-grid text-brand-300"
     >
+      <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DF8DN8Q9LH"
+        ></Script>
+        <Script id="google-analytics">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+                     
+            gtag('config', 'G-DF8DN8Q9LH');
+         `}
+        </Script>
+      </head>
       <body className={rubik.className}>
         <SessionProvider>
           <Navbar />
