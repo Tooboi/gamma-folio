@@ -124,7 +124,7 @@ export default function About() {
           </span>
         </div>
       </div>
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
     </div>
   );
 }

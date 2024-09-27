@@ -51,7 +51,7 @@ export default async function DownloadPage() {
           </div>
         </div>
       </div>
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
     </div>
   );
 }

@@ -143,7 +143,7 @@ export default function BpmToFramesConverter() {
           )}
         </div>
       </section>
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
     </div>
   );
 }

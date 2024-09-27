@@ -122,7 +122,7 @@ export default async function DevPage({ params: { id } }: DevPageProps) {
           </div>
         </div>
       </div>
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
     </>
   );
 }

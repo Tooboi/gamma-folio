@@ -259,7 +259,7 @@ export default async function AddRenderPage() {
           Create New Render
         </FormSubmitButton>
       </form>
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
     </div>
   );
 }

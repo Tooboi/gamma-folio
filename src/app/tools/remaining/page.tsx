@@ -80,7 +80,7 @@ export default function Remaining() {
                     )}
                 </div>
             </section>
-            <GoogleTagManager gtmId="GTM-KMB769RD" />
+            {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
         </div>
     );
 }
