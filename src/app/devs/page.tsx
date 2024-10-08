@@ -27,6 +27,6 @@ export default async function Dev() {
       ))}
     </div>
   </div>
-  <GoogleTagManager gtmId="GTM-KMB769RD" />
+  {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
 </div>;
 }

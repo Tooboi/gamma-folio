@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { GoogleTagManager, sendGTMEvent } from "@next/third-parties/google";
 import { sendGAEvent } from "@next/third-parties/google";
+import Link from "next/link";
 
 export default function BpmToFramesConverter() {
   const [bpm, setBpm] = useState(0);
@@ -38,7 +39,27 @@ export default function BpmToFramesConverter() {
 
   return (
     <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-4 md:px-4 lg:px-10">
-      <section className="rounded-lg border-2 border-stone-700 bg-stone-800">
+      <section className="relative rounded-lg border-2 border-stone-700 bg-stone-800">
+        <Link
+          href="/tools"
+          className="absolute -left-[4rem] hidden rounded-md border-2 border-stone-600 bg-stone-800 p-2 transition-all hover:border-stone-500 hover:bg-stone-700 active:scale-95 active:border-stone-600 active:bg-stone-800 lg:block"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="stroke-stone-300"
+          >
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+        </Link>
         <div className="mx-auto max-w-2xl px-4 py-8">
           <h2 className="mb-1 text-xl font-bold text-stone-300">
             BPM to Frames Converter
@@ -143,7 +164,7 @@ export default function BpmToFramesConverter() {
           )}
         </div>
       </section>
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
     </div>
   );
 }

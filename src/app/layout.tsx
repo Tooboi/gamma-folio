@@ -4,9 +4,10 @@ import Tabs from "../components/Navbar/Tabs";
 import "./globals.css";
 import { Rubik } from "next/font/google";
 import SessionProvider from "./SessionProvider";
-import Script from "next/script";
+import { Analytics } from '@vercel/analytics/react';
+// import Script from "next/script";
 
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+// import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -39,7 +40,7 @@ export default function RootLayout({
             gtag('config', 'G-DF8DN8Q9LH');
          `}
       </Script> */}
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
       <body className={rubik.className}>
         <SessionProvider>
           <Navbar />
@@ -48,11 +49,12 @@ export default function RootLayout({
           </div>
           <main className="m-auto min-h-screen min-w-[300px] max-w-7xl p-4">
             {children}
+            <Analytics />
           </main>
           <Footer />
         </SessionProvider>
       </body>
-      <GoogleAnalytics gaId='G-DF8DN8Q9LH' />
+      {/* <GoogleAnalytics gaId='G-DF8DN8Q9LH' /> */}
     </html>
   );
 }

@@ -43,8 +43,8 @@ export default async function Renders({
       {totalPages > 1 && (
         <PaginationBar currentPage={currentPage} totalPages={totalPages} />
       )}
-      <GoogleAnalytics gaId='G-DF8DN8Q9LH' dataLayerName="RenderPage" />
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleAnalytics gaId='G-DF8DN8Q9LH' dataLayerName="RenderPage" />
+      <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
     </div>
   );
 }

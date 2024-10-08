@@ -51,7 +51,7 @@ export default async function Home() {
 
       <div className="relative mt-6 hidden w-full flex-col rounded-lg bg-brand-900 px-8 ring-4 ring-brand-700 ring-offset-[3px] ring-offset-rose-500 transition-all sm:flex sm:w-3/5 ">
         <div className="absolute right-0 h-full rounded-r-md border-l-[3px] border-rose-500 bg-rose-950 transition-all ">
-          <p className="select-none pt-[3.1rem] text-2xl font-semibold tracking-widest text-rose-500 transition-all [writing-mode:vertical-lr] active:text-rose-700">
+          <p className="select-none pt-[6.7rem] text-2xl font-semibold tracking-widest text-rose-500 transition-all [writing-mode:vertical-lr] active:text-rose-700">
             PORTFOLIOS
           </p>
         </div>
@@ -62,6 +62,16 @@ export default async function Home() {
           >
             <h1 className="text-center text-xl transition-all xs:text-[1.4rem] md:text-3xl">
               Renders
+            </h1>
+          </Link>
+        </div>
+        <div className="mx-auto flex w-full flex-col pl-8 pr-16 pt-2 transition-all sm:w-1/2 sm:px-0">
+          <Link
+            className=" btn-block btn mx-auto mb-4 h-24 justify-center rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-indigo-600 hover:bg-indigo-950 hover:text-indigo-500"
+            href={"/animations"}
+          >
+            <h1 className="text-center text-xl transition-all xs:text-[1.4rem] md:text-3xl">
+              Animations
             </h1>
           </Link>
         </div>
@@ -89,6 +99,16 @@ export default async function Home() {
           >
             <h1 className="text-center text-2xl transition-all xs:text-3xl">
               Renders
+            </h1>
+          </Link>
+        </div>
+        <div className="mx-auto flex w-full flex-col px-8 pt-2 transition-all sm:w-1/2 sm:px-0">
+          <Link
+            className=" btn-block btn mx-auto mb-4 h-24 justify-center rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-indigo-600 hover:bg-indigo-950 hover:text-indigo-500"
+            href={"/animations"}
+          >
+            <h1 className="text-center text-2xl transition-all xs:text-3xl">
+              Animations
             </h1>
           </Link>
         </div>

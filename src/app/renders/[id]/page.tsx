@@ -274,7 +274,7 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
           </div>
         </div>
       </div>
-      <GoogleTagManager gtmId="GTM-KMB769RD" />
+      {/* <GoogleTagManager gtmId="GTM-KMB769RD" /> */}
     </div>
   );
 }
