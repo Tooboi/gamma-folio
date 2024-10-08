@@ -1,6 +1,7 @@
 "use client";
 
 import { GoogleTagManager } from "@next/third-parties/google";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function RatioCalculator() {
@@ -50,7 +51,27 @@ export default function RatioCalculator() {
 
   return (
     <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-4 transition-all md:px-4 lg:px-10">
-      <section className="rounded-lg border-2 border-stone-700 bg-stone-800">
+      <section className="relative rounded-lg border-2 border-stone-700 bg-stone-800">
+        <Link
+          href="/tools"
+          className="absolute -left-[4rem] hidden rounded-md border-2 border-stone-600 bg-stone-800 p-2 transition-all hover:border-stone-500 hover:bg-stone-700 active:scale-95 active:border-stone-600 active:bg-stone-800 lg:block"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="stroke-stone-300"
+          >
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+        </Link>
         <div className="mx-auto max-w-2xl px-4 py-8">
           <h2 className="mb-1 text-xl font-bold text-stone-300">
             Ratio Calculator
@@ -149,27 +170,35 @@ export default function RatioCalculator() {
               <h3 className="text-lg font-semibold text-stone-300">
                 Calculated Results:
               </h3>
-              <p className="text-stone-300 text-xl">
+              <p className="text-xl text-stone-300">
                 {A === null ? (
-                  <strong className="text-sky-400">{formatNumber(calculated.A)}</strong>
+                  <strong className="text-sky-400">
+                    {formatNumber(calculated.A)}
+                  </strong>
                 ) : (
                   formatNumber(calculated.A)
                 )}{" "}
                 :{" "}
                 {B === null ? (
-                  <strong className="text-sky-400">{formatNumber(calculated.B)}</strong>
+                  <strong className="text-sky-400">
+                    {formatNumber(calculated.B)}
+                  </strong>
                 ) : (
                   formatNumber(calculated.B)
                 )}{" "}
                 ={" "}
                 {C === null ? (
-                  <strong className="text-sky-400">{formatNumber(calculated.C)}</strong>
+                  <strong className="text-sky-400">
+                    {formatNumber(calculated.C)}
+                  </strong>
                 ) : (
                   formatNumber(calculated.C)
                 )}{" "}
                 :{" "}
                 {D === null ? (
-                  <strong className="text-sky-400">{formatNumber(calculated.D)}</strong>
+                  <strong className="text-sky-400">
+                    {formatNumber(calculated.D)}
+                  </strong>
                 ) : (
                   formatNumber(calculated.D)
                 )}

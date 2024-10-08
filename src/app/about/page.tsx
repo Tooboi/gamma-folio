@@ -51,11 +51,11 @@ export default function About() {
       <h1 className="select-none py-3 text-center text-2xl tracking-tight text-brand-400">
         Learning everyday
       </h1>
-      <div className="mx-auto max-w-lg border-2 border-accent-800 rounded-lg bg-accent-950">
-        <h1 className="select-none py-3 text-center text-lg sm:text-2xl tracking-tight text-brand-400">
+      <div className="mx-auto max-w-lg rounded-lg border-2 border-accent-800 bg-accent-950">
+        <h1 className="select-none py-3 text-center text-lg tracking-tight text-brand-400 sm:text-2xl">
           Contact me at:
         </h1>
-        <h1 className="select-none pb-3 text-center text-lg sm:text-2xl tracking-tight text-brand-400">
+        <h1 className="select-none pb-3 text-center text-lg tracking-tight text-brand-400 sm:text-2xl">
           gamma2dot2@gmail.com
         </h1>
       </div>

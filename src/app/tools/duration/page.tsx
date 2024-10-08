@@ -1,6 +1,7 @@
 "use client";
 
 import { GoogleTagManager } from "@next/third-parties/google";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function AnimationCalculator() {
@@ -8,8 +9,14 @@ export default function AnimationCalculator() {
   const [framesPerSecond, setFramesPerSecond] = useState<number | "">(0);
   const [totalMinutes, setTotalMinutes] = useState<number | "">(0);
   const [totalSeconds, setTotalSeconds] = useState<number | "">(0);
-  const [result, setResult] = useState<{ minutes?: number; seconds?: number; frames?: number } | null>(null);
-  const [mode, setMode] = useState<"calculateTime" | "calculateFrames">("calculateTime");
+  const [result, setResult] = useState<{
+    minutes?: number;
+    seconds?: number;
+    frames?: number;
+  } | null>(null);
+  const [mode, setMode] = useState<"calculateTime" | "calculateFrames">(
+    "calculateTime"
+  );
 
   const handleCalculate = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,7 +27,12 @@ export default function AnimationCalculator() {
       const minutes = Math.floor(totalSeconds / 60);
       const seconds = Math.floor(totalSeconds % 60);
       setResult({ minutes, seconds });
-    } else if (mode === "calculateFrames" && totalMinutes && totalSeconds && framesPerSecond) {
+    } else if (
+      mode === "calculateFrames" &&
+      totalMinutes &&
+      totalSeconds &&
+      framesPerSecond
+    ) {
       // Calculate total frames from time
       const totalTimeInSeconds = totalMinutes * 60 + totalSeconds;
       const frames = totalTimeInSeconds * framesPerSecond;
@@ -35,7 +47,27 @@ export default function AnimationCalculator() {
 
   return (
     <div className="mx-auto min-h-screen max-w-3xl px-4 pb-6 pt-4 transition-all md:px-4 lg:px-10 lg:pt-16">
-      <section className="rounded-lg border-2 border-stone-700 bg-stone-800">
+      <section className="relative rounded-lg border-2 border-stone-700 bg-stone-800">
+        <Link
+          href="/tools"
+          className="absolute -left-[4rem] hidden rounded-md border-2 border-stone-600 bg-stone-800 p-2 transition-all hover:border-stone-500 hover:bg-stone-700 active:scale-95 active:border-stone-600 active:bg-stone-800 lg:block"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="stroke-stone-300"
+          >
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+        </Link>
         <div className="mx-auto max-w-2xl px-4 py-8">
           <h2 className="mb-1 text-xl font-bold text-stone-300">
             Animation Duration & Frame Calculator
@@ -46,13 +78,21 @@ export default function AnimationCalculator() {
 
           <div className="mb-4 flex">
             <button
-              className={`btn mr-2 ${mode === "calculateTime" ? "btn rounded-lg border-2 border-teal-600 bg-teal-950 text-lg font-medium text-teal-500 transition-all hover:border-2 hover:border-teal-500 hover:bg-teal-800 hover:text-brand-300" : "btn rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-teal-600 hover:bg-teal-950 hover:text-teal-500"}`}
+              className={`btn mr-2 ${
+                mode === "calculateTime"
+                  ? "btn rounded-lg border-2 border-teal-600 bg-teal-950 text-lg font-medium text-teal-500 transition-all hover:border-2 hover:border-teal-500 hover:bg-teal-800 hover:text-brand-300"
+                  : "btn rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-teal-600 hover:bg-teal-950 hover:text-teal-500"
+              }`}
               onClick={() => handleModeChange("calculateTime")}
             >
               Total Time
             </button>
             <button
-              className={`btn ${mode === "calculateFrames" ? "btn rounded-lg border-2 border-cyan-600 bg-cyan-950 text-lg font-medium text-cyan-500 transition-all hover:border-2 hover:border-cyan-500 hover:bg-cyan-800 hover:text-brand-300" : "btn rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-cyan-600 hover:bg-cyan-950 hover:text-cyan-500"}`}
+              className={`btn ${
+                mode === "calculateFrames"
+                  ? "btn rounded-lg border-2 border-cyan-600 bg-cyan-950 text-lg font-medium text-cyan-500 transition-all hover:border-2 hover:border-cyan-500 hover:bg-cyan-800 hover:text-brand-300"
+                  : "btn rounded-lg border-2 border-brand-600 bg-brand-700 text-lg font-medium text-brand-300 transition-all hover:border-2 hover:border-cyan-600 hover:bg-cyan-950 hover:text-cyan-500"
+              }`}
               onClick={() => handleModeChange("calculateFrames")}
             >
               Total Frames
@@ -86,7 +126,9 @@ export default function AnimationCalculator() {
                       id="framesPerSecondTime"
                       placeholder="In FPS"
                       className="input w-full max-w-xs rounded-lg border-2 border-teal-600 bg-teal-950/20"
-                      onChange={(e) => setFramesPerSecond(Number(e.target.value))}
+                      onChange={(e) =>
+                        setFramesPerSecond(Number(e.target.value))
+                      }
                     />
                   </label>
                 </div>
@@ -132,7 +174,9 @@ export default function AnimationCalculator() {
                       id="framesPerSecondFrames"
                       placeholder="In FPS"
                       className="input w-full max-w-xs rounded-lg border-2 border-teal-600 bg-teal-950/20"
-                      onChange={(e) => setFramesPerSecond(Number(e.target.value))}
+                      onChange={(e) =>
+                        setFramesPerSecond(Number(e.target.value))
+                      }
                     />
                   </label>
                 </div>
