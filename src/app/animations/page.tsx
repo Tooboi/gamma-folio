@@ -57,7 +57,7 @@ export default function Animations() {
         />
         <div className="border-t-2 border-brand-600 bg-brand-800">
           <h1 className="select-none py-1 text-center text-lg text-brand-400">
-            VJ Demo Reel 2022
+            Kylee & Their Blob
           </h1>
         </div>
       </div>
