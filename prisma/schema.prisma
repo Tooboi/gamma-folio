@@ -22,6 +22,7 @@ model Render {
   arnold          Boolean
   octane          Boolean
   designer        Boolean
+  houdini         Boolean
   createdAt       DateTime   @default(now())
   updatedAt       DateTime   @updatedAt
   CartItem        CartItem[]

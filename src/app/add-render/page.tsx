@@ -13,6 +13,7 @@ import MayaSVG from "@/components/SVG/MayaSVG";
 import ZbrushSVG from "@/components/SVG/ZbrushSVG";
 import OctaneSVG from "@/components/SVG/OctaneSVG";
 import DesignerSVG from "@/components/SVG/DesignerSVG";
+import HoudiniSVG from "@/components/SVG/HoudiniSVG";
 import { GoogleTagManager } from "@next/third-parties/google";
 // import React, { useState } from "react";
 
@@ -45,6 +46,7 @@ async function addRender(formData: FormData) {
   const arnold = Boolean(formData.get("arnold") || false);
   const octane = Boolean(formData.get("octane") || false);
   const designer = Boolean(formData.get("designer") || false);
+  const houdini = Boolean(formData.get("houdini") || false);
 
   const imageCollectionString = formData
     .get("imageCollectionArray")
@@ -81,6 +83,7 @@ async function addRender(formData: FormData) {
       arnold,
       octane,
       designer,
+      houdini,
     },
   });
 
@@ -155,6 +158,21 @@ export default async function AddRenderPage() {
                     </div>
                     <p className="text-md select-none pl-2 font-normal">
                       Blender
+                    </p>
+                  </span>
+                </label>
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    name="houdini"
+                    className=" peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
+                    <div className="h-5 w-5">
+                      <HoudiniSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      Houdini
                     </p>
                   </span>
                 </label>
