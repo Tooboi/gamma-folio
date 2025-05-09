@@ -12,6 +12,7 @@ import BlenderSVG from "@/components/SVG/BlenderSVG";
 import SubstanceSVG from "@/components/SVG/SubstanceSVG";
 import OctaneSVG from "@/components/SVG/OctaneSVG";
 import DesignerSVG from "@/components/SVG/DesignerSVG";
+import HoudiniSVG from "@/components/SVG/HoudiniSVG";
 import { log } from "console";
 import { GoogleTagManager } from "@next/third-parties/google";
 
@@ -96,6 +97,18 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                   </div>
                   <p className="text-md select-none pl-2 font-normal">
                     Blender
+                  </p>
+                </span>
+              ) : (
+                <p></p>
+              )}
+              {render.houdini ? (
+                <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+                  <div className="h-5 w-5">
+                    <HoudiniSVG />
+                  </div>
+                  <p className="text-md select-none pl-2 font-normal">
+                    Houdini
                   </p>
                 </span>
               ) : (
@@ -224,6 +237,18 @@ export default async function RenderPage({ params: { id } }: RenderPageProps) {
                       </div>
                       <p className="text-md select-none pl-2 font-normal">
                         Blender
+                      </p>
+                    </span>
+                  ) : (
+                    <p></p>
+                  )}
+                   {render.houdini ? (
+                    <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+                      <div className="h-5 w-5">
+                        <HoudiniSVG />
+                      </div>
+                      <p className="text-md select-none pl-2 font-normal">
+                        Houdini
                       </p>
                     </span>
                   ) : (
