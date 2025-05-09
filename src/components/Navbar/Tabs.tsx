@@ -3,20 +3,20 @@ import Link from "next/link";
 export default function Tabs() {
   return (
     <div className="w-full">
-      <ul className="mx-auto flex flex-row justify-center px-2 md:w-1/2">
+      <ul className="mx-auto items-center  flex flex-row justify-center px-2 md:w-1/2">
         <li>
           <div className="dropdown-hover dropdown">
             <div
               tabIndex={0}
               role="button"
-              className="group btn block rounded-lg border-none border-transparent bg-transparent pt-1 text-[1.08rem] font-normal normal-case transition-all duration-300 hover:bg-transparent xs:px-6 md:pt-0 md:text-xl"
+              className="group btn block content-center rounded-lg border-none border-transparent bg-transparent pt-1 text-[1.08rem] font-normal normal-case transition-all duration-300 hover:bg-transparent xs:px-6 md:pt-0 md:text-xl"
             >
               Portfolios
               <span className="mt-1 block h-[3px] max-w-0 rounded-full bg-brand-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full md:mt-0"></span>
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content menu z-[100] w-52 rounded-lg border-2 border-brand-700 bg-brand-900 p-2 group-hover:bg-transparent"
+              className="dropdown-content  menu z-[100] w-52 rounded-lg border-2 border-brand-700 bg-brand-900 p-2 group-hover:bg-transparent"
             >
               <li>
                 <Link
@@ -39,7 +39,7 @@ export default function Tabs() {
                   href="/devs"
                   className="rounded-md text-[1rem] text-brand-300"
                 >
-                  Developer
+                  Development
                 </Link>
               </li>
             </ul>
