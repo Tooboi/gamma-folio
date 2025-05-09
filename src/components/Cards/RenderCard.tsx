@@ -13,6 +13,7 @@ import BlenderSVG from "@/components/SVG/BlenderSVG";
 import SubstanceSVG from "@/components/SVG/SubstanceSVG";
 import OctaneSVG from "@/components/SVG/OctaneSVG";
 import DesignerSVG from "@/components/SVG/DesignerSVG";
+import HoudiniSVG from "@/components/SVG/HoudiniSVG";
 interface RenderCardProps {
   render: Render;
 }
@@ -80,6 +81,13 @@ export default function RenderCard({ render }: RenderCardProps) {
               {render.blender ? (
                 <div className="h-8 w-8">
                   <BlenderSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
+              {render.houdini ? (
+                <div className="h-8 w-8">
+                  <HoudiniSVG />
                 </div>
               ) : (
                 <p></p>
