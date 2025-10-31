@@ -3,7 +3,7 @@ import { CldImage, CldUploadButton } from "next-cloudinary";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-export default function CldUploadWrapper() {
+export default function CldUploadWrapper({ onUploadSuccess }) {
   const router = useRouter();
   const [imageId, setImageId] = useState("");
   const [publicIdsArray, setPublicIdsArray] = useState([]);
@@ -30,6 +30,11 @@ export default function CldUploadWrapper() {
 
     // Save the updated array to local storage
     localStorage.setItem("uploadedPublicIds", JSON.stringify(updatedPublicIds));
+
+    setPublicIdsArray(updatedPublicIds);
+
+    // Pass the updatedPublicIds to the parent component
+    onUploadSuccess(updatedPublicIds);
 
     setTimeout(() => {
       router.refresh();
@@ -61,7 +66,7 @@ export default function CldUploadWrapper() {
           </svg>
           <h1 className="mt-[0.15rem]">Upload Images</h1>
         </div>
-      </CldUploadButton>
+      </CldUploadButton >
       {imageId && (
         <div className="mx-4 rounded-lg border-2 border-stone-800 bg-transparent p-2 backdrop-blur-sm">
           <h2 className="text-sm">Uploaded Public IDs:</h2>
