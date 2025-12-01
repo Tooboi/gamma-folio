@@ -94,7 +94,7 @@ export default async function AddRenderPage() {
   const session = await getServerSession(authOptions);
   const user = session?.user;
 
-  const [imageCollection, setImageCollection] = useState([]);
+  // const [imageCollection, setImageCollection] = useState([]);
 
   if (user?.email != process.env.ADMIN_EMAIL) {
     redirect("/unathorized");
@@ -104,12 +104,12 @@ export default async function AddRenderPage() {
     redirect("/api/auth/signin?callbackUrl=/add-product");
   }
 
-  const [uploadedImages, setUploadedImages] = useState([]);
+  // const [uploadedImages, setUploadedImages] = useState([]);
 
-  const handleUploadSuccess = (updatedPublicIds) => {
-    // Update the state with the latest uploaded images
-    setUploadedImages(updatedPublicIds);
-  };
+  // const handleUploadSuccess = (updatedPublicIds) => {
+  //   // Update the state with the latest uploaded images
+  //   setUploadedImages(updatedPublicIds);
+  // };
 
   return (
     <div className="w-full">

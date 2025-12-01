@@ -24,7 +24,7 @@ export default async function Home() {
       <div className="flex w-full flex-col rounded-xl border-4 border-brand-700 bg-brand-900 py-4 transition-all sm:w-1/2">
         <h1 className="text-center text-3xl tracking-wide">Josh Pica</h1>
         <p className="text-center text-lg leading-5">Full Stack Web Dev</p>
-        <p className="text-center text-lg leading-5">3D Artist & VJ</p>
+        <p className="text-center text-lg leading-5">3D Artist</p>
         <div className="mx-4 mt-4 flex flex-col rounded-lg border-2 border-emerald-700 bg-emerald-950 px-4 py-1 transition-all">
           <p className="text-center text-lg leading-6 text-emerald-300">
             Commissions Open
@@ -135,8 +135,8 @@ export default async function Home() {
       </div>
       <div className="relative mt-2 hidden w-full flex-col rounded-lg bg-brand-900 px-8 ring-4 ring-brand-700 ring-offset-[3px] ring-offset-accent-500 transition-all sm:flex sm:w-3/5 ">
         <div className="absolute right-0 h-full rounded-r-md border-l-[3px] border-accent-500 bg-accent-950 transition-all ">
-          <p className="select-none pt-[4rem] text-2xl font-semibold tracking-widest text-accent-500 transition-all [writing-mode:vertical-lr] active:text-rose-700">
-            INTERACT
+          <p className="select-none pt-[3.1rem] text-2xl font-semibold tracking-widest text-accent-500 transition-all [writing-mode:vertical-lr] active:text-rose-700">
+            FREE STUFF
           </p>
         </div>
         <div className="mx-auto flex w-full flex-col pl-8 pr-16 pt-6 transition-all sm:w-1/2 sm:px-0">
@@ -163,7 +163,7 @@ export default async function Home() {
       <div className="relative  mt-6 flex w-full flex-col rounded-lg bg-brand-900 px-8 ring-4 ring-brand-700 ring-offset-[3px] ring-offset-accent-500 transition-all sm:hidden sm:w-3/5 ">
         <div className="absolute right-0 w-full rounded-t-md border-b-[3px] border-accent-500 bg-accent-950 transition-all ">
           <p className="select-none  text-center text-2xl font-semibold tracking-widest text-accent-500 transition-all active:text-accent-700">
-            INTERACT
+            FREE STUFF
           </p>
         </div>
         <div className="mx-auto flex w-full flex-col px-8 pt-14 transition-all sm:w-1/2 sm:px-0">
