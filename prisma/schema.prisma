@@ -23,7 +23,8 @@ model Render {
   octane          Boolean
   designer        Boolean
   houdini         Boolean
-  NSFW            Boolean
+  renderman       Boolean
+  nsfw            Boolean
   createdAt       DateTime   @default(now())
   updatedAt       DateTime   @updatedAt
   CartItem        CartItem[]

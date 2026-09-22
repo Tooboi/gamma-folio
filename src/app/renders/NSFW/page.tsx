@@ -4,7 +4,7 @@ import PaginationBar from "@/components/PaginationBar";
 import AgeGateModal from "@/components/AgeGateModal";
 
 export const metadata = {
-  title: "GAMMA2DOT2 - Renders",
+  title: "GAMMA2DOT2 - Renders (NSFW)",
   caption: "Gamma 2.2 - Josh Pica",
 };
 
@@ -22,7 +22,7 @@ export default async function Renders({
 
   const totalItemCount = await prisma.render.count({
     where: {
-      NSFW: true,
+      nsfw: true,
     },
   });
 
@@ -30,7 +30,7 @@ export default async function Renders({
 
   const renders = await prisma.render.findMany({
     where: {
-      NSFW: true,
+      nsfw: true,
     },
     orderBy: { createdAt: "desc" },
     skip:
