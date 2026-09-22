@@ -30,7 +30,7 @@ export default function CldUploadImageWrapper() {
   const [buttonClassName, setButtonClassName] = useState(
     "btn bg-brand-600 hover:bg-brand-700 hover:border-brand-500 hover:border-2 btn-block rounded-lg justify-center mx-auto"
   );
-  const maxFileSize = 52428800; // 50MB in B
+  const maxFileSize = 10485760; // 10MB in B
 
   const handleSuccess = (result: UploadResult) => {
     const { info } = result;

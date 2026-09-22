@@ -155,7 +155,7 @@ export default async function AddRenderPage() {
               type="number"
               className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
             />{" "}
-            <div className="flex items-center gap-2 mb-3">
+            <div className="mb-3 flex items-center gap-2">
               <input
                 type="checkbox"
                 name="nsfw"
@@ -166,6 +166,9 @@ export default async function AddRenderPage() {
               <label className="label m-0 cursor-pointer p-0">
                 <span className="label-text text-brand-300">NSFW</span>
               </label>
+              <span className="label-text pl-2 text-brand-600">
+                will not appear on main page - visit gamma2dot2.com/renders/NSFW
+              </span>
             </div>
             <div className="rounded-lg border-2 border-brand-700">
               <div className="text-md border-b-2 border-r-2 border-brand-700 bg-brand-700 pl-2 font-semibold text-brand-300/80">

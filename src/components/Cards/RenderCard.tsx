@@ -14,6 +14,7 @@ import SubstanceSVG from "@/components/SVG/SubstanceSVG";
 import OctaneSVG from "@/components/SVG/OctaneSVG";
 import DesignerSVG from "@/components/SVG/DesignerSVG";
 import HoudiniSVG from "@/components/SVG/HoudiniSVG";
+import RendermanSVG from "@/components/SVG/RendermanSVG";
 interface RenderCardProps {
   render: Render;
 }
@@ -56,58 +57,65 @@ export default function RenderCard({ render }: RenderCardProps) {
             )}
           </div>
           <div className="absolute right-0 top-0 z-20 p-4">
-            <div className="flex flex-row gap-1">
+            <div className="flex flex-row gap-0">
               {render.maya ? (
-                <div className="h-8 w-8">
+                <div className="h-8 w-8 mx-1">
                   <MayaSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.arnold ? (
-                <div className="h-8 w-8">
+                <div className="h-8 w-8 mx-1">
                   <ArnoldSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.zbrush ? (
-                <div className="h-8 w-8">
+                <div className="h-8 w-8 mx-1">
                   <ZbrushSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.blender ? (
-                <div className="h-8 w-8">
+                <div className="h-8 w-8 mx-1">
                   <BlenderSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.houdini ? (
-                <div className="h-8 w-8">
+                <div className="h-8 w-8 mx-1">
                   <HoudiniSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.substance ? (
-                <div className="h-8 w-8">
+                <div className="h-8 w-8 mx-1">
                   <SubstanceSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.designer ? (
-                <div className="h-8 w-8">
+                <div className="h-8 w-8 mx-1">
                   <DesignerSVG />
                 </div>
               ) : (
                 <p></p>
               )}
+              {render.renderman ? (
+                <div className="h-8 w-8 mx-1">
+                  <RendermanSVG />
+                </div>
+              ) : (
+                <p></p>
+              )}
               {render.octane ? (
-                <div className="h-8 w-8 py-[0.08rem] pr-[0.08rem]">
+                <div className="h-8 w-8 py-[0.08rem] pr-[0.08rem] mx-1">
                   <OctaneSVG />
                 </div>
               ) : (
