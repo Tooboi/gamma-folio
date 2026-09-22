@@ -228,7 +228,7 @@ export default async function AddRenderPage() {
                       <RendermanSVG />
                     </div>
                     <p className="text-md select-none pl-2 font-normal">
-                      Renderman
+                      RenderMan
                     </p>
                   </span>
                 </label>
