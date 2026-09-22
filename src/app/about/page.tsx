@@ -8,6 +8,8 @@ import DesignerSVG from "@/components/SVG/DesignerSVG";
 import TouchdesignerSVG from "@/components/SVG/TouchdesignerSVG";
 import ResolumeSVG from "@/components/SVG/ResolumeSVG";
 import { GoogleTagManager } from "@next/third-parties/google";
+import RendermanSVG from "@/components/SVG/RendermanSVG";
+import HoudiniSVG from "@/components/SVG/HoudiniSVG";
 
 export const metadata = {
   title: "GAMMA2DOT2 - About Me",
@@ -79,6 +81,18 @@ export default function About() {
               <BlenderSVG />
             </div>
             <p className="text-md select-none pl-2 font-normal">Blender</p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <HoudiniSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">Houdini</p>
+          </span>
+          <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
+            <div className="h-5 w-5">
+              <RendermanSVG />
+            </div>
+            <p className="text-md select-none pl-2 font-normal">RenderMan</p>
           </span>
           <span className="my-0.5 me-2 inline-flex items-center rounded border border-brand-500 bg-brand-700 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 ">
             <div className="h-5 w-5">

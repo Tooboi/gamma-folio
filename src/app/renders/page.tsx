@@ -23,7 +23,7 @@ export default async function Renders({
 
 const totalItemCount = await prisma.render.count({
   where: {
-    NSFW: false,
+    nsfw: false,
   },
 });
 
@@ -31,7 +31,7 @@ const totalItemCount = await prisma.render.count({
 
 const renders = await prisma.render.findMany({
   where: {
-    NSFW: false,
+    nsfw: false,
   },
   orderBy: { createdAt: "desc" },
   skip:

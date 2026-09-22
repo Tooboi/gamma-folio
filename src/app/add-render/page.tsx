@@ -15,6 +15,7 @@ import OctaneSVG from "@/components/SVG/OctaneSVG";
 import DesignerSVG from "@/components/SVG/DesignerSVG";
 import HoudiniSVG from "@/components/SVG/HoudiniSVG";
 import { GoogleTagManager } from "@next/third-parties/google";
+import RendermanSVG from "@/components/SVG/RendermanSVG";
 // import React, { useState } from "react";
 
 export const metadata = {
@@ -38,6 +39,7 @@ async function addRender(formData: FormData) {
   const description = formData.get("description")?.toString();
   const thumbnail = formData.get("publicId")?.toString();
   const year = Number(formData.get("year") || 0);
+  const nsfw = Boolean(formData.get("nsfw") || false);
 
   const blender = Boolean(formData.get("blender") || false);
   const zbrush = Boolean(formData.get("zbrush") || false);
@@ -47,6 +49,7 @@ async function addRender(formData: FormData) {
   const octane = Boolean(formData.get("octane") || false);
   const designer = Boolean(formData.get("designer") || false);
   const houdini = Boolean(formData.get("houdini") || false);
+  const renderman = Boolean(formData.get("renderman") || false);
 
   const imageCollectionString = formData
     .get("imageCollectionArray")
@@ -84,6 +87,8 @@ async function addRender(formData: FormData) {
       octane,
       designer,
       houdini,
+      renderman,
+      nsfw,
     },
   });
 
@@ -141,7 +146,7 @@ export default async function AddRenderPage() {
               required
               name="description"
               placeholder="Description"
-              className="textarea mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 placeholder:text-[1.025rem] focus-within:border-brand-500"
+              className="textarea mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-[1.025rem] placeholder:text-brand-600 focus-within:border-brand-500"
             />
             <input
               required
@@ -149,7 +154,19 @@ export default async function AddRenderPage() {
               placeholder="Year"
               type="number"
               className="input mb-3 w-full rounded-lg border-2 border-brand-700 bg-transparent backdrop-blur-sm placeholder:text-brand-600 focus-within:border-brand-500"
-            />
+            />{" "}
+            <div className="flex items-center gap-2 mb-3">
+              <input
+                type="checkbox"
+                name="nsfw"
+                title="Mark as NSFW content"
+                className="checkbox rounded-lg border-2 border-brand-700 bg-transparent text-brand-600"
+              />
+
+              <label className="label m-0 cursor-pointer p-0">
+                <span className="label-text text-brand-300">NSFW</span>
+              </label>
+            </div>
             <div className="rounded-lg border-2 border-brand-700">
               <div className="text-md border-b-2 border-r-2 border-brand-700 bg-brand-700 pl-2 font-semibold text-brand-300/80">
                 Software Used
@@ -197,6 +214,21 @@ export default async function AddRenderPage() {
                     </div>
                     <p className="text-md select-none pl-2 font-normal">
                       Octane
+                    </p>
+                  </span>
+                </label>
+                <label className="label join-item cursor-pointer justify-start">
+                  <input
+                    type="checkbox"
+                    name="renderman"
+                    className="peer checkbox hidden"
+                  />
+                  <span className="my-0.5 me-2 inline-flex items-center rounded border-2 border-brand-700 bg-brand-800 px-2.5 py-[0.18rem] text-xs font-medium text-brand-400 transition-all peer-checked:border-brand-400 peer-checked:bg-brand-700 peer-checked:text-brand-300 peer-hover:border-brand-400">
+                    <div className="h-5 w-5">
+                      <RendermanSVG />
+                    </div>
+                    <p className="text-md select-none pl-2 font-normal">
+                      Renderman
                     </p>
                   </span>
                 </label>
