@@ -33,7 +33,7 @@ export default function CldUploadImageWrapper() {
   const [buttonClassName, setButtonClassName] = useState(
     "btn-block btn btn-secondary rounded-lg "
   );
-  const maxFileSize = 10485760; // 25MB in B
+  const maxFileSize = 52428800; // 50MB in B
 
   return (
     <div className="h-full">
