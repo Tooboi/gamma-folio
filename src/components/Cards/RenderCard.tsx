@@ -39,10 +39,10 @@ export default function RenderCard({ render }: RenderCardProps) {
         <section className="group absolute inset-0 z-10 sm:opacity-0 transition-all sm:hover:opacity-100 opacity-100">
           <div className="sm:image-gradient image-gradient-mobile flex h-full w-full flex-row border-brand-700 transition-all group-hover:border-2" />
           <div className="absolute bottom-0 left-0 z-20 p-4">
-            <p className="select-none text-left text-lg font-medium text-brand-200 sm:text-2xl">
+            <p className="select-none text-left font-medium text-brand-200 sm:text-2xl text-sm">
               {render.name}
             </p>
-            <p className="sm:text-md text-sm select-none font-medium text-brand-300">
+            <p className="sm:text-md text-xs select-none font-medium text-brand-300">
               {render.year}
             </p>
             <p className="text-md hidden select-none font-light text-brand-400 md:block">
@@ -56,66 +56,66 @@ export default function RenderCard({ render }: RenderCardProps) {
               </h2>
             )}
           </div>
-          <div className="absolute right-0 top-0 z-20 p-4">
+          <div className="absolute right-0 top-0 z-20 sm:p-4 p-3">
             <div className="flex flex-row gap-0">
               {render.maya ? (
-                <div className="h-8 w-8 mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 mx-1">
                   <MayaSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.arnold ? (
-                <div className="h-8 w-8 mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 mx-1">
                   <ArnoldSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.zbrush ? (
-                <div className="h-8 w-8 mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 mx-1">
                   <ZbrushSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.blender ? (
-                <div className="h-8 w-8 mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 mx-1">
                   <BlenderSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.houdini ? (
-                <div className="h-8 w-8 mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 mx-1">
                   <HoudiniSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.substance ? (
-                <div className="h-8 w-8 mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 mx-1">
                   <SubstanceSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.designer ? (
-                <div className="h-8 w-8 mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 mx-1">
                   <DesignerSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.renderman ? (
-                <div className="h-8 w-8 mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 mx-1">
                   <RendermanSVG />
                 </div>
               ) : (
                 <p></p>
               )}
               {render.octane ? (
-                <div className="h-8 w-8 py-[0.08rem] pr-[0.08rem] mx-1">
+                <div className="sm:h-8 sm:w-8 w-6 h-6 py-[0.08rem] pr-[0.08rem] mx-1">
                   <OctaneSVG />
                 </div>
               ) : (
