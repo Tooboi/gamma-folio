@@ -5,7 +5,7 @@ export default function Tabs() {
     <div className="w-full">
       <ul className="mx-auto items-center  flex flex-row justify-center px-2 md:w-1/2">
         <li>
-          <div className="dropdown-hover dropdown">
+          <div className="dropdown dropdown-hover">
             <div
               tabIndex={0}
               role="button"
@@ -15,8 +15,8 @@ export default function Tabs() {
               <span className="mt-1 block h-[3px] max-w-0 rounded-full bg-brand-600 transition-all duration-300 group-focus-within:max-w-full group-hover:max-w-full md:mt-0"></span>
             </div>
             <ul
-              tabIndex={0}
-              className="dropdown-content  menu z-[100] w-52 rounded-lg border-2 border-brand-700 bg-brand-900 p-2 group-hover:bg-transparent"
+              tabIndex={-1}
+              className="dropdown-content menu z-[100] w-52 rounded-lg border-2 border-brand-700 bg-brand-900 p-2 group-hover:bg-transparent"
             >
               <li>
                 <Link
