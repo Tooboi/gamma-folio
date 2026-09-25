@@ -36,13 +36,13 @@ export default function RenderCard({ render }: RenderCardProps) {
         className="aspect-h-1 aspect-w-1 relative mx-auto min-w-[150px] max-w-[512px] bg-brand-800"
         // onClick={() => sendGTMEvent({ event: 'buttonClicked', value: 'BPM to FPS' })}
       >
-        <section className="group absolute inset-0 z-10 opacity-0 transition-all hover:opacity-100">
-          <div className="image-gradient flex h-full w-full flex-row border-brand-700 transition-all group-hover:border-2" />
+        <section className="group absolute inset-0 z-10 sm:opacity-0 transition-all sm:hover:opacity-100 opacity-100">
+          <div className="sm:image-gradient image-gradient-mobile flex h-full w-full flex-row border-brand-700 transition-all group-hover:border-2" />
           <div className="absolute bottom-0 left-0 z-20 p-4">
             <p className="select-none text-left text-lg font-medium text-brand-200 sm:text-2xl">
               {render.name}
             </p>
-            <p className="text-md select-none font-medium text-brand-300">
+            <p className="sm:text-md text-sm select-none font-medium text-brand-300">
               {render.year}
             </p>
             <p className="text-md hidden select-none font-light text-brand-400 md:block">
