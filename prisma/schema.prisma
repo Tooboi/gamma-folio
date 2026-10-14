@@ -50,6 +50,7 @@ model Download {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   downloadUrl String
+  fileName    String?
   imageName   String
   mobile      Boolean
   pValue      String
