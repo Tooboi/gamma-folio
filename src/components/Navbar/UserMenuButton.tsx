@@ -13,6 +13,7 @@ import {
   PencilSquareIcon,
   FilmIcon,
   PhotoIcon,
+  ArrowDownTrayIcon,
 } from "@heroicons/react/24/solid";
 
 interface UserMenuButtonProps {
@@ -81,6 +82,18 @@ export default function UserMenuButton({ session }: UserMenuButtonProps) {
                 <PencilSquareIcon className="h-6 w-6 text-stone-400 group-hover:text-stone-500" />
                 <span className="ml-3 flex group-hover:text-stone-200">
                   Edit Renders
+                </span>
+              </Link>
+            </li>
+            <li className="group rounded-lg transition-all hover:bg-stone-800 active:bg-stone-900 active:ring-2 active:ring-inset active:ring-stone-700">
+              <Link
+                href="/manage-downloads"
+                className="z-30 flex items-center rounded-lg p-2 text-stone-300 transition group-hover:bg-stone-800 group-active:bg-stone-900"
+                role="button"
+              >
+                <ArrowDownTrayIcon className="h-6 w-6 text-stone-400 group-hover:text-stone-500" />
+                <span className="ml-3 flex group-hover:text-stone-200">
+                  Manage Downloads
                 </span>
               </Link>
             </li>
